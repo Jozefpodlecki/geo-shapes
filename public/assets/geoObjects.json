@@ -1,0 +1,32 @@
+[
+    {
+        "id": "af",
+        "type": "country",
+        "fullName": "Afghanistan",
+        "shortName": "Afghanistan",
+        "code": "af",
+        "thumbnailUrl": "/assets/images/af.jfif",
+        "flagUrl": "/assets/flags/af.png",
+        "search": "country af Afghanistan"
+    },
+    {
+        "id": "cz",
+        "type": "country",
+        "fullName": "Czech Republic",
+        "shortName": "Czechia",
+        "code": "cz",
+        "thumbnailUrl": "/assets/images/cz.jfif",
+        "flagUrl": "/assets/flags/cz.png",
+        "search": "country cz Czech Republic Czechia"
+    },
+    {
+        "id": "hr",
+        "type": "country",
+        "fullName": "Croatia",
+        "shortName": "Croatia",
+        "code": "hr",
+        "thumbnailUrl": "/assets/images/hr.jfif",
+        "flagUrl": "/assets/flags/hr.jpg",
+        "search": "country hr Croatia"
+    }
+]
