@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { useEffect } from 'react';
-import './countryPage.scss';
 import ToolTip from './ToolTip';
 import { useState } from 'react';
 import { useCallback } from 'react';
@@ -10,6 +9,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import { baseUrl } from '../appConstants';
 import { useParams } from 'react-router-dom';
 import { CzFirstLevel } from '../svgs';
+import './countryPage.scss';
 
 const CountryPage: FunctionComponent = () => {
     const [{x,y}, setPosition] = useState({

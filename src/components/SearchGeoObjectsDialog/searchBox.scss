@@ -1,0 +1,39 @@
+.searchbox {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+
+    &__icon {
+        padding: 10px 0 10px 10px;
+        border: 1px solid gray;
+        border-radius: none;
+        color: gray;
+        border-right: none;
+    }
+
+    &__clearIcon {
+        cursor: pointer;
+        position: absolute;
+        margin-left: 170px;
+        margin-top: 1px;
+        padding: 10px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__input {
+        padding: 10px;
+        width: 300px;
+        background-color: transparent;
+        border: 1px solid gray;
+        border-left: none;
+        caret-color: white;
+        color: white;
+    
+        &:focus {
+            outline: none;
+        }
+    }
+}

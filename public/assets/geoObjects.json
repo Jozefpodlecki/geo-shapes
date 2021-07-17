@@ -28,5 +28,55 @@
         "thumbnailUrl": "/assets/images/hr.jfif",
         "flagUrl": "/assets/flags/hr.jpg",
         "search": "country hr Croatia"
+    },
+    {
+        "id": "ru",
+        "type": "country",
+        "fullName": "Russian Federation",
+        "shortName": "Russia",
+        "code": "hr",
+        "thumbnailUrl": "/assets/images/ru.jfif",
+        "flagUrl": "/assets/flags/ru.png",
+        "search": "country ru Russian Federation"
+    },
+    {
+        "id": "kz",
+        "type": "country",
+        "fullName": "Republic of Kazakhstan",
+        "shortName": "Kazakhstan",
+        "code": "kz",
+        "thumbnailUrl": "/assets/images/kz.jfif",
+        "flagUrl": "/assets/flags/kz.png",
+        "search": "country kz Republic of Kazakhstan"
+    },
+    {
+        "id": "mn",
+        "type": "country",
+        "fullName": "Mongolia",
+        "shortName": "Mongolia",
+        "code": "mn",
+        "thumbnailUrl": "/assets/images/mn.jfif",
+        "flagUrl": "/assets/flags/mn.png",
+        "search": "country mn Mongolia"
+    },
+    {
+        "id": "cn",
+        "type": "country",
+        "fullName": "China",
+        "shortName": "China",
+        "code": "cn",
+        "thumbnailUrl": "/assets/images/cn.jfif",
+        "flagUrl": "/assets/flags/cn.png",
+        "search": "country cn China"
+    },
+    {
+        "id": "kg",
+        "type": "country",
+        "fullName": "Kyrgyz Republic",
+        "shortName": "Kyrgyzstan",
+        "code": "kg",
+        "thumbnailUrl": "/assets/images/kg.jfif",
+        "flagUrl": "/assets/flags/kg.png",
+        "search": "country kg Kyrgyzstan"
     }
 ]

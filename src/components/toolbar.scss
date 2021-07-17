@@ -1,25 +1,33 @@
+@import "_constants";
+
 .toolbar {
     display: flex;
     align-items: center;
 
     &__logo {
         margin-left: 10px;
+        font-family: 'Zen Loop', cursive;
     }
-}
 
-.icon-button {
-    margin-left: auto;
-    cursor: pointer;
-    padding: 10px;
-    transition: opacity .3s ease-in;
-    text-align: center;
+    &__menu {
+        margin-left: auto;
+        display: flex;
+    }
+
+    &__iconButton {
+        color: $text-color;
+        cursor: pointer;
+        padding: 10px;
+        transition: opacity .3s ease-in;
+        text-align: center;
+        
+        &__text {
+            margin-top: 2px;
+            font-size: 10px;
+        }
     
-    &__text {
-        margin-top: 2px;
-        font-size: 10px;
-    }
-
-    &:hover {
-        opacity: 0.6;
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }
