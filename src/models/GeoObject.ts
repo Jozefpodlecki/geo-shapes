@@ -1,4 +1,4 @@
-type Country = {
+export type Country = {
     id: string;
     type: "country";
     fullName: string;
@@ -10,4 +10,11 @@ type Country = {
     search: string;
 }
 
-export type GeoObject = Country
+export type Continent = {
+    id: string;
+    type: "continent";
+    fullName: string;
+    search: string;
+}
+
+export type GeoObject = Country | Continent

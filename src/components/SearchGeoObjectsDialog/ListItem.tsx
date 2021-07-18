@@ -1,17 +1,10 @@
-import React, { ChangeEvent, FunctionComponent } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import GridLoader from 'react-spinners/GridLoader';
-import { Link, Route } from 'react-router-dom';
-import { useState } from 'react';
-import { useCallback } from 'react';
-import { useEffect } from 'react';
-import useDebounce from 'use-debounce/lib/useDebounce';
+import { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { baseUrl } from '../../appConstants';
+import { Country } from 'models/GeoObject';
 import './listItem.scss';
-import { GeoObject } from 'models/GeoObject';
 
-type Props = GeoObject
+type Props = Country;
 
 const ListItem: FunctionComponent<Props> = ({
     capital,

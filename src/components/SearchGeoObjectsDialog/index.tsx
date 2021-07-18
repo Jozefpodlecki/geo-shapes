@@ -1,19 +1,17 @@
-import React, { ChangeEvent, FunctionComponent } from 'react';
-import { baseUrl } from 'appConstants';
+import React, { FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import GridLoader from 'react-spinners/GridLoader';
-import { Link, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
 import { searchGeoObjects } from 'api';
 import { GeoObject } from 'models/GeoObject';
 import useDebounce from 'use-debounce/lib/useDebounce';
-
-import './index.scss';
 import ListItem from './ListItem';
 import SearchBox from './SearchBox';
+
+import './index.scss';
 
 type Props = {
     isShowing: boolean;
@@ -81,7 +79,8 @@ const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
                 value={_value}
             />
             <div className="searchDialog__list">
-                {isLoading ? <GridLoader color="white" size={12} /> : items.map(pr => <ListItem key={pr.id} {...pr} />)}
+                {isLoading ? <GridLoader color="white" size={12} /> : 
+                    items.map(pr => pr.type === "country" && <ListItem key={pr.id} {...pr} />)}
             </div>
         </div>
     </div>

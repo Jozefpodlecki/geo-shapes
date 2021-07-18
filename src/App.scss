@@ -1,7 +1,3 @@
-#root {
-    height: inherit;
-}
-
 .app {
     display: flex;
     flex-direction: column;
@@ -12,31 +8,4 @@
 
 .content { 
     flex: 1;
-}
-
-.world {
-    flex: 1;
-    stroke: white;
-    stroke-width: 0.5;
-    overflow: hidden;
-}
-
-.worldsvg {
-    path:hover {
-        cursor: pointer;
-        transition: fill .3s ease-in;
-        fill: white;
-    }
-}
-
-.tooltip .geoObject {
-    display: flex;
-
-    &__image {
-        width: 50px;
-    }
-
-    &__info {
-        padding-left: 10px;
-    }
 }

@@ -1,9 +1,6 @@
-import React, { ChangeEvent, FunctionComponent, useEffect, useRef, useState } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { DrawOption } from 'components/DrawPage/types';
+import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
 import { GeoJSON, Circle, MapContainer, Pane, TileLayer, useMap, useMapEvents } from 'react-leaflet';
-import { faCircle, faCircleNotch, faDrawPolygon, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './App.scss';
 
 type State = {
     type: "LineString" | "Polygon";
@@ -12,11 +9,11 @@ type State = {
 
 type Props = {
     onChange(): void;
-    option: "none" | "polygon" | "circle" | "lineString";
+    drawOption: DrawOption;
 }
 
-const MapHandler: FunctionComponent<Props> = ({
-    option
+const DrawHandler: FunctionComponent<Props> = ({
+    drawOption
 }) => {
     const [isDragging, setDragging] = useState(false);
     const [center, setCenter] = useState({
@@ -32,17 +29,17 @@ const MapHandler: FunctionComponent<Props> = ({
     });
     const map = useMapEvents({
         click: (event) => {
-            if(!created && option === "circle") {
+            if(!created && drawOption === "circle") {
                 map.dragging.disable();
                 setCreated(true);
                 setCenter(event.latlng);
                 setRadius(100);
             }
-            if(!completed && created && option === "circle") {
+            if(!completed && created && drawOption === "circle") {
                 map.dragging.enable();
                 setCompleted(true);
             }
-            if(option === "polygon") {
+            if(drawOption === "polygon") {
                 const { lat, lng } = event.latlng;
                 const item = [lng, lat];
                 setData(state => {
@@ -54,7 +51,7 @@ const MapHandler: FunctionComponent<Props> = ({
                     };
                 });
             }
-            if(option === "lineString") {
+            if(drawOption === "lineString") {
                 const { lat, lng } = event.latlng;
                 const item = [lng, lat];
                 setData(state => {
@@ -71,7 +68,7 @@ const MapHandler: FunctionComponent<Props> = ({
             
         },
         mousemove(event) {
-            if(created && !completed && option === "circle") {
+            if(created && !completed && drawOption === "circle") {
                 const radius = event.latlng.distanceTo(center);
                 setRadius(radius);
             }
@@ -80,13 +77,13 @@ const MapHandler: FunctionComponent<Props> = ({
 
     useEffect(() => {
 
-        if(option === "none") {
+        if(drawOption === "none") {
             return;
         }
        
-        if((option === "polygon" && data.type === "Polygon")
-        || (option === "circle" && data.type === "Polygon")
-        || (option === "lineString" && data.type === "LineString")) {
+        if((drawOption === "polygon" && data.type === "Polygon")
+        || (drawOption === "circle" && data.type === "Polygon")
+        || (drawOption === "lineString" && data.type === "LineString")) {
             return;
         }
 
@@ -94,7 +91,7 @@ const MapHandler: FunctionComponent<Props> = ({
             let type: "LineString" | "Polygon" = "LineString";
             let coordinates: number[][] | number[][][] = [];
 
-            if(option === "circle" || option === "polygon") {
+            if(drawOption === "circle" || drawOption === "polygon") {
                 type = "Polygon";
 
                 if(data.type === "LineString") {
@@ -110,9 +107,9 @@ const MapHandler: FunctionComponent<Props> = ({
                 coordinates,
             }
         });
-    }, [data, option]);
+    }, [data, drawOption]);
 
-    if(option == "none") {
+    if(drawOption == "none") {
         return null;
     }
 
@@ -136,4 +133,4 @@ const MapHandler: FunctionComponent<Props> = ({
     </>
 }
 
-export default MapHandler;
+export default DrawHandler;

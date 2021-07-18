@@ -1,0 +1,71 @@
+@import "_constants";
+
+.world-page {
+    flex: 1;
+    overflow: hidden;
+
+    .svg {
+        fill: black;
+        stroke: white;
+        stroke-width: 0.5;
+
+        path {
+            &.selected {
+                fill: white;
+            }
+
+            &:hover:not(.selected) {
+                cursor: pointer;
+                transition: fill .3s ease-in;
+                fill: lightgray;
+            }
+        }
+    }
+
+    .popup {
+        position: absolute;
+        width: 300px;
+        padding: 10px;
+        background: #000000;
+        border: 1px solid white;
+
+        &__body {
+            display: flex;
+        }
+
+        &__iconButton {
+            width: 35px;
+            color: $text-color;
+            cursor: pointer;
+            padding: 10px;
+            transition: opacity .3s ease-in;
+            text-align: center;
+        }
+
+        &__image {
+            width: 50px;
+            height: 100%;
+        }
+
+        &__info {
+            padding-left: 10px;
+        }
+
+        &__footer {
+            display: flex;
+        }
+    }
+
+    .tooltip .geoObject {
+        display: flex;
+    
+        &__image {
+            width: 50px;
+            height: 100%;
+        }
+    
+        &__info {
+            padding-left: 10px;
+        }
+    }
+}

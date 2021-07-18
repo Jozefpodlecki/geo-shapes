@@ -3,10 +3,13 @@
 .toolbar {
     display: flex;
     align-items: center;
-
+    flex: 0 0 50px;
+    
     &__logo {
         margin-left: 10px;
         font-family: 'Zen Loop', cursive;
+        font-size: 35px;
+        padding: 5px;
     }
 
     &__menu {
@@ -21,6 +24,11 @@
         transition: opacity .3s ease-in;
         text-align: center;
         
+        &--selected {
+            color: gray;
+            pointer-events: none;
+        }
+
         &__text {
             margin-top: 2px;
             font-size: 10px;
