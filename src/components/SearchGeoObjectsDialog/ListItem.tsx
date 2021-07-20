@@ -4,16 +4,19 @@ import { baseUrl } from '../../appConstants';
 import { Country } from 'models/GeoObject';
 import './listItem.scss';
 
-type Props = Country;
+type Props = Country & {
+    onClick(): void;
+}
 
 const ListItem: FunctionComponent<Props> = ({
     capital,
-    code,
+    countryCode,
     flagUrl,
     fullName,
     id,
     thumbnailUrl,
-    type
+    type,
+    onClick,
 }) => {
     return <div key={id} className="geoObject">
         <div className="geoObject__imageWrapper">
@@ -21,7 +24,7 @@ const ListItem: FunctionComponent<Props> = ({
             background: `url(${baseUrl + thumbnailUrl}) center center / cover`
         }}></div>
         </div>
-        <Link className="geoObject__link" to={`/country/${code}`}>
+        <Link className="geoObject__link" onClick={onClick} to={`/country/${countryCode}`}>
             <div>
                 <div className="geoObject__name">{fullName}</div>
                 <div className="geoObject__type">{type}</div>

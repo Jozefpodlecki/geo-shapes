@@ -1,8 +1,8 @@
 import { FunctionComponent, useState } from 'react';
-import CountryPage from './components/CountryPage';
-import Toolbar from './components/Toolbar';
+import CountryPage from 'components/CountryPage';
+import Toolbar from 'components/Toolbar';
 import { Route, Switch } from 'react-router-dom';
-import SearchGeoObjectsDialog from './components/SearchGeoObjectsDialog';
+import SearchGeoObjectsDialog from 'components/SearchGeoObjectsDialog';
 import DrawPage from 'components/DrawPage/DrawPage';
 import ExplorePage from 'components/ExplorePage';
 import { NotificationContainer } from 'react-notifications';
@@ -19,12 +19,13 @@ const App: FunctionComponent = () => {
         <Toolbar onSearch={onSearch} />
         <SearchGeoObjectsDialog
             onHide={onHide}
+            onClick={onHide}
             isShowing={isShowing}/>
         <Switch>
             <Route exact path="/" component={WorldPage}/>
             <Route exact path="/explore" component={ExplorePage}/>
             <Route exact path="/draw" component={DrawPage}/>
-            <Route exact path="/country/:code" component={CountryPage}/>
+            <Route exact path="/country/:countryCode" component={CountryPage}/>
         </Switch>
         <NotificationContainer/>
     </div>;

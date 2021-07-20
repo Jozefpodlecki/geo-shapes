@@ -1,0 +1,27 @@
+.country-page {
+    
+    .region {
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+    
+        &__image {
+            width: 50px;
+        }
+    
+        &__info {
+            padding-left: 10px;
+        }
+    }
+    
+    .geoObject {
+        display: flex;
+    
+        &__image {
+            width: 50px;
+        }
+    
+        &__info {
+            padding-left: 10px;
+        }
+    }
+}

@@ -4,79 +4,107 @@
         "type": "country",
         "fullName": "Afghanistan",
         "shortName": "Afghanistan",
-        "code": "af",
+        "capital": "Kabul",
+        "countryCode": "af",
         "thumbnailUrl": "/assets/images/af.jfif",
         "flagUrl": "/assets/flags/af.png",
-        "search": "country af Afghanistan"
+        "search": "country af Afghanistan",
+        "center": [50, 20]
     },
     {
         "id": "cz",
         "type": "country",
         "fullName": "Czech Republic",
         "shortName": "Czechia",
-        "code": "cz",
+        "capital": "Prague",
+        "countryCode": "cz",
         "thumbnailUrl": "/assets/images/cz.jfif",
         "flagUrl": "/assets/flags/cz.png",
-        "search": "country cz Czech Republic Czechia"
+        "search": "country cz Czech Republic Czechia",
+        "center": [50, 20]
     },
     {
         "id": "hr",
         "type": "country",
         "fullName": "Croatia",
         "shortName": "Croatia",
-        "code": "hr",
+        "capital": "Zagreb",
+        "countryCode": "hr",
         "thumbnailUrl": "/assets/images/hr.jfif",
         "flagUrl": "/assets/flags/hr.jpg",
-        "search": "country hr Croatia"
+        "search": "country hr Croatia",
+        "center": [50, 20]
     },
     {
         "id": "ru",
         "type": "country",
         "fullName": "Russian Federation",
         "shortName": "Russia",
-        "code": "hr",
+        "capital": "Moscow",
+        "countryCode": "hr",
         "thumbnailUrl": "/assets/images/ru.jfif",
         "flagUrl": "/assets/flags/ru.png",
-        "search": "country ru Russian Federation"
+        "search": "country ru Russian Federation",
+        "center": [50, 20]
     },
     {
         "id": "kz",
         "type": "country",
         "fullName": "Republic of Kazakhstan",
         "shortName": "Kazakhstan",
-        "code": "kz",
+        "capital": "Nur-Sultan",
+        "countryCode": "kz",
         "thumbnailUrl": "/assets/images/kz.jfif",
         "flagUrl": "/assets/flags/kz.png",
-        "search": "country kz Republic of Kazakhstan"
+        "search": "country kz Republic of Kazakhstan",
+        "center": [50, 20]
     },
     {
         "id": "mn",
         "type": "country",
         "fullName": "Mongolia",
         "shortName": "Mongolia",
-        "code": "mn",
+        "capital": "Ulaanbaatar",
+        "countryCode": "mn",
         "thumbnailUrl": "/assets/images/mn.jfif",
         "flagUrl": "/assets/flags/mn.png",
-        "search": "country mn Mongolia"
+        "search": "country mn Mongolia",
+        "center": [50, 20]
     },
     {
         "id": "cn",
         "type": "country",
         "fullName": "China",
         "shortName": "China",
-        "code": "cn",
+        "capital": "Beijing",
+        "countryCode": "cn",
         "thumbnailUrl": "/assets/images/cn.jfif",
         "flagUrl": "/assets/flags/cn.png",
-        "search": "country cn China"
+        "search": "country cn China",
+        "center": [50, 20]
     },
     {
         "id": "kg",
         "type": "country",
         "fullName": "Kyrgyz Republic",
         "shortName": "Kyrgyzstan",
-        "code": "kg",
+        "capital": "Bishkek",
+        "countryCode": "kg",
         "thumbnailUrl": "/assets/images/kg.jfif",
         "flagUrl": "/assets/flags/kg.png",
-        "search": "country kg Kyrgyzstan"
+        "search": "country kg Kyrgyzstan",
+        "center": [50, 20]
+    },
+    {
+        "id": "pl",
+        "type": "country",
+        "fullName": "Poland",
+        "shortName": "Poland",
+        "capital": "Warsaw",
+        "countryCode": "pl",
+        "thumbnailUrl": "/assets/images/mn.jfif",
+        "flagUrl": "/assets/flags/pl.png",
+        "search": "country pl Poland",
+        "center": [50, 20]
     }
 ]

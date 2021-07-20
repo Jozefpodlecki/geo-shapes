@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload, faEye, faHome, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faDownload, faEye, faGlobe, faHome, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
 import './toolbar.scss';
 import { NavLink } from 'react-router-dom';
 
@@ -13,7 +13,14 @@ const Toolbar: FunctionComponent<Props> = ({
 }) => {
 
     return <div className="toolbar">
-        <div className="toolbar__logo">Geo-shapes</div>
+        <div className="toolbar__logo">
+            <div className="toolbar__logoText">
+                Geo-shapes
+            </div>
+            <div className="toolbar__logoIcon">
+                <FontAwesomeIcon icon={faGlobe}/>
+            </div>
+        </div>
         <div className="toolbar__menu">
             <NavLink activeClassName="toolbar__iconButton--selected" className="toolbar__iconButton" exact to={`/`}>
                 <FontAwesomeIcon icon={faHome}/>
@@ -31,4 +38,4 @@ const Toolbar: FunctionComponent<Props> = ({
     </div>;
 }
 
-export default Toolbar;
+export default memo(Toolbar);

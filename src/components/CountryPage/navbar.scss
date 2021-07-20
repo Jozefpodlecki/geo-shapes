@@ -1,0 +1,59 @@
+.country-page {
+
+    &__navbar {
+        display: flex;
+        padding: 10px;
+    }
+
+    &__navbarCountry {
+        display: flex;
+    }
+
+    &__navbarCountryFlag {
+        width: 50px;
+        height: 30px;
+    }
+
+    &__navbarCountryTitle {
+        font-size: 25px;
+        margin-left: 5px;
+    }
+
+    &__navbarMapSwitch {
+        display: flex;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    &__navbarMapOption {
+        transition: color .3s ease-in,
+            background .3s ease-in,
+            border-color .3s ease-in;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        padding: 0 10px;
+        border: 1px solid white;
+        text-align: center;
+        width: 100px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            color: gray;
+        }
+
+        &--selected {
+            pointer-events: none;
+            user-select: none;
+            cursor: none;
+            background: white;
+            color: black;
+        }
+
+        & + & {
+            border-left: none;
+        }
+    }
+}

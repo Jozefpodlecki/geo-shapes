@@ -16,6 +16,7 @@ import './index.scss';
 type Props = {
     isShowing: boolean;
     onHide(): void;
+    onClick(): void;
 }
 
 type State = {
@@ -26,6 +27,7 @@ type State = {
 const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
     isShowing,
     onHide,
+    onClick,
 }) => {
     const [{
         isLoading,
@@ -35,7 +37,7 @@ const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
         items: [],
     });
     const [_value, setValue] = useState("");
-    const [value] = useDebounce(_value, 50000);
+    const [value] = useDebounce(_value, 1000);
 
     const onClear = useCallback(() => {
         setValue("");
@@ -78,9 +80,9 @@ const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
                 onClear={onClear}
                 value={_value}
             />
-            <div className="searchDialog__list">
+            <div className={`searchDialog__list ${isLoading ? "searchDialog__list--center": ""}`}>
                 {isLoading ? <GridLoader color="white" size={12} /> : 
-                    items.map(pr => pr.type === "country" && <ListItem key={pr.id} {...pr} />)}
+                    items.map(pr => pr.type === "country" && <ListItem onClick={onClick} key={pr.id} {...pr} />)}
             </div>
         </div>
     </div>

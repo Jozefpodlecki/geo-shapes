@@ -1,6 +1,7 @@
 import { baseUrl } from "./appConstants";
-import { GeoObject } from "./models/GeoObject";
+import { Country, GeoObject } from "models/GeoObject";
 import { Region } from "./models/Region";
+import { GeoJsonObject } from "geojson";
 
 type Options = {
     phrase: string;
@@ -17,6 +18,25 @@ export const searchGeoObjects = async (options: Options): Promise<GeoObject[]> =
 }
 
 export const getRegions = (countryCode: string): Promise<Region[]> => {
-    return fetch(`${baseUrl}/assets/${countryCode}.json`)
+    
+    return fetch(`${baseUrl}/assets/regions/${countryCode}.json`)
+        .then(pr => pr.json());
+}
+
+export const getCountry = async (countryCode: string): Promise<Country | undefined> => {
+    const countries = await fetch(`${baseUrl}/assets/geoObjects.json`)
+        .then<Country[]>(pr => pr.json());
+
+    return countries
+        .find(pr => pr.countryCode.includes(countryCode));
+}
+
+export const getCountrySvg = (countryCode: string) => {
+    return fetch(`${baseUrl}/assets/shapes/${countryCode}/first-level.svg`)
+        .then(pr => pr.text());
+}
+
+export const getCountryGeojson = (countryCode: string): Promise<GeoJsonObject | undefined> => {
+    return fetch(`${baseUrl}/assets/geojson/${countryCode}.geojson`)
         .then(pr => pr.json());
 }

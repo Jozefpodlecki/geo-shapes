@@ -4,10 +4,11 @@ export type Country = {
     fullName: string;
     capital: string;
     shortName: string;
-    code: string;
+    countryCode: string;
     thumbnailUrl: string;
     flagUrl: string;
     search: string;
+    center: [number, number];
 }
 
 export type Continent = {

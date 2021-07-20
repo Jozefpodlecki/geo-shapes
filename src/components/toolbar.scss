@@ -4,12 +4,17 @@
     display: flex;
     align-items: center;
     flex: 0 0 50px;
+    background: gray;
     
     &__logo {
         margin-left: 10px;
-        font-family: 'Zen Loop', cursive;
         font-size: 35px;
         padding: 5px;
+        display: flex;
+    }
+
+    &__logoIcon {
+        margin-left: 5px;
     }
 
     &__menu {

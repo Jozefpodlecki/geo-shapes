@@ -29,6 +29,11 @@
         flex: 1;
         display: flex;
         flex-wrap: wrap;
+        
+        &--center {
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &__close {
@@ -38,17 +43,7 @@
 
 
 
-// .geoObject {
-//     display: flex;
 
-//     &__image {
-//         width: 50px;
-//     }
-
-//     &__info {
-//         padding-left: 10px;
-//     }
-// }
 
 // .geoObject {
 //     flex: 1 1 300px;
@@ -122,19 +117,5 @@
 //         .geoObject__type {
 //             font-size: 14px;
 //         }
-//     }
-// }
-
-
-
-// .geoObject {
-//     display: flex;
-
-//     &__image {
-//         width: 50px;
-//     }
-
-//     &__info {
-//         padding-left: 10px;
 //     }
 // }
