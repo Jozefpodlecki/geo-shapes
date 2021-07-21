@@ -5,6 +5,7 @@ import { GeoObject } from 'models/GeoObject';
 import { searchGeoObjects } from 'api';
 import Popup from './Popup';
 import './index.scss';
+import CountryTooltip from './CountryTooltip';
 
 const WorldPage: FunctionComponent = () => {
     
@@ -116,20 +117,14 @@ const WorldPage: FunctionComponent = () => {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         /> */}
-        {geoObject && geoObject.type === "country" && selected?.item?.id !== geoObject.id ? <ToolTip
-            show={hasEntered}
-            x={x}
-            y={y}>
-            {<div className="geoObject">
-                <div>
-                    <img className="geoObject__image" src={baseUrl + geoObject.flagUrl}/>
-                </div>
-                <div className="geoObject__info">
-                    <div>Country: {geoObject.fullName}</div>
-                    <div>Capital: {geoObject.capital}</div>
-                </div>
-            </div>}
-        </ToolTip> : null}
+        {geoObject && geoObject.type === "country" && selected?.item?.id !== geoObject.id ? 
+            <CountryTooltip
+                hasEntered={hasEntered}
+                capital={geoObject.capital}
+                x={x}
+                y={y}
+                flagUrl={geoObject.flagUrl}
+                fullName={geoObject.fullName}/> : null}
         {selected && selected.item.type === "country" ? <Popup onExport={onExport} {...selected.item}/> : null}
     </div>;
 }

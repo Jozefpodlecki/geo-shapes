@@ -106,5 +106,53 @@
         "flagUrl": "/assets/flags/pl.png",
         "search": "country pl Poland",
         "center": [50, 20]
+    },
+    {
+        "id": "pl",
+        "type": "country",
+        "fullName": "Poland",
+        "shortName": "Poland",
+        "capital": "Warsaw",
+        "countryCode": "pl",
+        "thumbnailUrl": "/assets/images/mn.jfif",
+        "flagUrl": "/assets/flags/pl.png",
+        "search": "country pl Poland",
+        "center": [50, 20]
+    },
+    {
+        "id": "pl",
+        "type": "country",
+        "fullName": "Poland",
+        "shortName": "Poland",
+        "capital": "Warsaw",
+        "countryCode": "pl",
+        "thumbnailUrl": "/assets/images/mn.jfif",
+        "flagUrl": "/assets/flags/pl.png",
+        "search": "country pl Poland",
+        "center": [50, 20]
+    },
+    {
+        "id": "pl",
+        "type": "country",
+        "fullName": "Poland",
+        "shortName": "Poland",
+        "capital": "Warsaw",
+        "countryCode": "pl",
+        "thumbnailUrl": "/assets/images/mn.jfif",
+        "flagUrl": "/assets/flags/pl.png",
+        "search": "country pl Poland",
+        "center": [50, 20]
+    },
+    {
+        "id": "pl",
+        "type": "country",
+        "fullName": "Poland",
+        "shortName": "Poland",
+        "capital": "Warsaw",
+        "countryCode": "pl",
+        "thumbnailUrl": "/assets/images/mn.jfif",
+        "flagUrl": "/assets/flags/pl.png",
+        "search": "country pl Poland",
+        "center": [50, 20]
     }
 ]

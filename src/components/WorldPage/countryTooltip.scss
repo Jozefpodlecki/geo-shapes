@@ -1,0 +1,17 @@
+@import "_constants";
+
+.world-page {
+
+    .tooltip .geoObject {
+        display: flex;
+    
+        &__image {
+            width: 50px;
+            height: 100%;
+        }
+    
+        &__info {
+            padding-left: 10px;
+        }
+    }
+}
