@@ -162,13 +162,6 @@ const CountryPage: FunctionComponent = () => {
                 region={region}
             />
             <div className="country-page__map">
-                {/* <div
-                    className="country-page__svg"
-                    ref={svgWrapperRef}
-                    dangerouslySetInnerHTML={{ __html: svg }}
-                    // onMouseEnter={onMouseEnter}
-                    // onMouseLeave={onMouseLeave}
-                />  */}
                 {mapType === "svg" ? <SvgMap
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}

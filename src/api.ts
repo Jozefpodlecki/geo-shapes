@@ -31,6 +31,11 @@ export const getCountry = async (countryCode: string): Promise<Country | undefin
         .find(pr => pr.countryCode.includes(countryCode));
 }
 
+export const getWorldSvg = () => {
+    return fetch(`${baseUrl}/assets/shapes/world.svg`)
+        .then(pr => pr.text());
+}
+
 export const getCountrySvg = (countryCode: string) => {
     return fetch(`${baseUrl}/assets/shapes/${countryCode}/first-level.svg`)
         .then(pr => pr.text());

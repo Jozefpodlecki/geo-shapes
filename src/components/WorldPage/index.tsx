@@ -1,11 +1,10 @@
 import { FunctionComponent, useCallback, useEffect, useState } from 'react';
-import ToolTip from 'components/ToolTip';
-import { baseUrl } from 'appConstants';
 import { GeoObject } from 'models/GeoObject';
-import { searchGeoObjects } from 'api';
+import { getWorldSvg, searchGeoObjects } from 'api';
 import Popup from './Popup';
 import './index.scss';
 import CountryTooltip from './CountryTooltip';
+import SvgMap from './SvgMap';
 
 const WorldPage: FunctionComponent = () => {
     
@@ -18,8 +17,9 @@ const WorldPage: FunctionComponent = () => {
         item: GeoObject;
         center: [number, number];
     }>();
-
+    const [svg, setSvg] = useState<string>("");
     const [hasEntered, setEntered] = useState(false);
+    const [isLoading, setLoading] = useState(true);
     const [geoObject, setGeoObject] = useState<GeoObject>()
     const [geoObjects, setGeoObjects] = useState<GeoObject[]>([])
 
@@ -58,34 +58,48 @@ const WorldPage: FunctionComponent = () => {
             x: event.clientX,
             y: event.clientY
         })
+
         const target = event.target;
 
-        if(!(target instanceof SVGPathElement)) {
+        if(!(target instanceof SVGElement)) {
             setGeoObject(undefined);
             return;
         }
 
         const id = target.id.toLowerCase();
 
-        if(id) {               
-            const item = geoObjects.find(pr => pr.id === id);
+        if(!id) {
+            setGeoObject(undefined);
+            return;
+        }           
+            
+        const item = geoObjects.find(pr => pr.id === id);
 
-            if(item) {
-                setGeoObject(item);
-            }
-            else {
-                setGeoObject(undefined);
-            }
+        if(!item) {
+            setGeoObject(undefined);
+            return;
         }
+        
+        setGeoObject(item);
 
     }, [geoObjects]);
 
-    const onMouseEnter = useCallback((event: React.MouseEvent<SVGElement>) => {
+    const onMouseEnter = useCallback(() => {
         setEntered(true);
     }, []);
 
     const onMouseLeave = useCallback(() => {
         setEntered(false);
+    }, []);
+
+   
+
+    useEffect(() => {
+        (async () => {
+            const svg = await getWorldSvg();
+            setSvg(svg);
+            setLoading(false);
+        })();
     }, []);
 
     useEffect(() => {
@@ -117,6 +131,12 @@ const WorldPage: FunctionComponent = () => {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         /> */}
+        {isLoading ? null : <SvgMap
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onMouseMove={onMouseMove}
+            svg={svg}
+        />}
         {geoObject && geoObject.type === "country" && selected?.item?.id !== geoObject.id ? 
             <CountryTooltip
                 hasEntered={hasEntered}
