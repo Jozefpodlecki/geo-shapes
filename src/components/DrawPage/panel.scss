@@ -1,3 +1,28 @@
+.draw-page {
+    
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 200px;
+    }
+
+    &__toolbox {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__tool {
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid white;
+        margin-left: 1px;
+
+        &.selected {
+            color: gray;
+        }
+    }
+}
+
 .payload {
     display: flex;
 
@@ -21,44 +46,3 @@
         }
     }
 }
-
-.appMap {
-    display: flex;
-    flex: 1;
-
-    &__panel {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 200px;
-    }
-
-    &__toolbox {
-        display: flex;
-        align-items: flex-start;
-    }
-
-    &__tool {
-        padding: 10px;
-        cursor: pointer;
-        border: 1px solid white;
-        margin-left: 1px;
-
-        &.selected {
-            color: gray;
-        }
-    }
-
-    &__map {
-        flex: 1;
-        height: 100%;
-    }
-}
-
-.content { 
-    flex: 1;
-}
-
-.container {
-    display: flex;
-}
-

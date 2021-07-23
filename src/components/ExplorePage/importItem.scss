@@ -1,42 +1,8 @@
 .explore-page {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-
-    &__map {
-        width: 100%;
-        height: 100%;
-    }
-
-    &__panel {
-        flex: 0 0 300px;
-    }
-
-    &__dropOverlay {
-        position: absolute;
-        z-index: 100000;
-        width: 100%;
-        height: 94.8%;
-        color: white;
-        background: #000000AA;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__dropModal {
-        padding: 10px;
-        text-align: center;
-    }
-
-    &__dropModalText {
-        margin-top: 10px;
-    }
-
     .uploaded-item {
         transition: color .3s ease-in, border-color .3s ease-in;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         cursor: pointer;
         padding: 10px;
         border: 1px solid transparent;
@@ -55,6 +21,15 @@
             display: flex;
             flex: 1;
         }
+
+        &__title {
+            font-size: 15px;
+        }
+
+        &__detail {
+            font-size: 10px;
+        }
+
 
         &__delete {
             transition: color .3s ease-in;

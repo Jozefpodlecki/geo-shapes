@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import MapHandler from './DrawHandler';
 import Panel from './Panel';
 import { DrawOption, ExportType } from './types';
-import './drawPage.scss';
+import './index.scss';
 
 const DrawPage: FunctionComponent = ({
 }) => {
@@ -34,7 +34,7 @@ const DrawPage: FunctionComponent = ({
 
     }
 
-    return <div className="appMap">
+    return <div className="draw-page">
         <Panel
             drawOption={drawOption}
             exportType={exportType}
@@ -46,7 +46,7 @@ const DrawPage: FunctionComponent = ({
             zoom={4}
             center={[51.505, -0.09]}
             scrollWheelZoom={true}
-            className="appMap__map">
+            className="draw-page__map">
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

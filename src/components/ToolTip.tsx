@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { animated, useSpring } from 'react-spring';
 import './tooltip.scss';
 
 type Props = {
@@ -13,16 +14,18 @@ const ToolTip: FunctionComponent<Props> = ({
     show,
     children
 }) => {
+    const styles = useSpring({
+        opacity: show ? 1 : 0,
+    })
 
-    const style = {
-        display: show ? "block" : "none",
+    return <animated.div className="tooltip" style={{
+        ...styles,
         top: `${y - 60}px`,
         left: `${x - 90}px`,
-    }
-
-    return <div className="tooltip" style={style}>
+        display: styles.opacity.to(pr => pr === 0 ? "none" : "block")
+    }}>
         {children}
-    </div>;
+    </animated.div>;
 }
 
 export default ToolTip;

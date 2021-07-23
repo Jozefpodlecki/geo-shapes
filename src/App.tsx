@@ -3,7 +3,7 @@ import CountryPage from 'components/CountryPage';
 import Toolbar from 'components/Toolbar';
 import { Route, Switch } from 'react-router-dom';
 import SearchGeoObjectsDialog from 'components/SearchGeoObjectsDialog';
-import DrawPage from 'components/DrawPage/DrawPage';
+import DrawPage from 'components/DrawPage';
 import ExplorePage from 'components/ExplorePage';
 import { NotificationContainer } from 'react-notifications';
 

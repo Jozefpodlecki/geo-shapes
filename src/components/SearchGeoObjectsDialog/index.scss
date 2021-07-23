@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
+    display: none;
 
     &.hide {
         display: none;
@@ -38,6 +39,7 @@
 
     &__close {
         margin-left: auto;
+        padding: 10px;
     }
 }
 

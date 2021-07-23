@@ -1,10 +1,10 @@
 import { FunctionComponent, useCallback, useEffect, useState } from 'react';
-import { GeoObject } from 'models/GeoObject';
+import { Country, GeoObject } from 'models/GeoObject';
 import { getWorldSvg, searchGeoObjects } from 'api';
 import Popup from './Popup';
-import './index.scss';
 import CountryTooltip from './CountryTooltip';
 import SvgMap from './SvgMap';
+import './index.scss';
 
 const WorldPage: FunctionComponent = () => {
     
@@ -20,8 +20,8 @@ const WorldPage: FunctionComponent = () => {
     const [svg, setSvg] = useState<string>("");
     const [hasEntered, setEntered] = useState(false);
     const [isLoading, setLoading] = useState(true);
-    const [geoObject, setGeoObject] = useState<GeoObject>()
-    const [geoObjects, setGeoObjects] = useState<GeoObject[]>([])
+    const [geoObject, setGeoObject] = useState<Country>()
+    const [geoObjects, setGeoObjects] = useState<Country[]>([])
 
     const onClick = useCallback(async (event: React.MouseEvent<SVGElement>) => {
         const target = event.target;
@@ -120,31 +120,23 @@ const WorldPage: FunctionComponent = () => {
                 phrase: "",
                 pageSize: 200,
             });
-            setGeoObjects(geoObjects);
+            setGeoObjects(geoObjects as Country[]);
         })();
         
     }, [])
     
     return <div className="world-page">
-        {/* <World className="svg"
-            onClick={onClick}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-        /> */}
         {isLoading ? null : <SvgMap
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onMouseMove={onMouseMove}
             svg={svg}
         />}
-        {geoObject && geoObject.type === "country" && selected?.item?.id !== geoObject.id ? 
-            <CountryTooltip
-                hasEntered={hasEntered}
-                capital={geoObject.capital}
-                x={x}
-                y={y}
-                flagUrl={geoObject.flagUrl}
-                fullName={geoObject.fullName}/> : null}
+        <CountryTooltip
+            hasEntered={geoObject && hasEntered || false}
+            country={geoObject}
+            x={x}
+            y={y}/>
         {selected && selected.item.type === "country" ? <Popup onExport={onExport} {...selected.item}/> : null}
     </div>;
 }

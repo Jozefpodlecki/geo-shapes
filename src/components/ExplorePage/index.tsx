@@ -1,7 +1,6 @@
 import React, { FunctionComponent, MouseEvent, useCallback } from 'react';
 import { GeoJSON, MapContainer, TileLayer } from 'react-leaflet';
 import { useDropzone } from 'react-dropzone';
-import './explorePage.scss';
 import { faDownload, faFileUpload, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
@@ -13,6 +12,9 @@ import { Feature } from 'geojson';
 import { NotificationManager } from 'react-notifications';
 import { parse, stringify } from "wkt";
 import { LeafletEvent } from 'leaflet';
+import './index.scss';
+import ImportItem from './ImportItem';
+import DragOverlay from './DragOverlay';
 
 type EnhancedGeoJsonObject = {
     id: string;
@@ -26,6 +28,7 @@ type EnhancedGeoJsonObject = {
 const ExplorePage: FunctionComponent = () => {
     const [geojsonObjects, setGeojsonObjects] = useState<EnhancedGeoJsonObject[]>([]);
     const [isUploading, setUploading] = useState(false);
+
     const onDrop = useCallback((acceptedFiles: File[]) => {
         if(!acceptedFiles.length) {
             return;
@@ -186,12 +189,7 @@ const ExplorePage: FunctionComponent = () => {
     }
 
     return <div className="explore-page" {...getRootProps()}>
-        {isDragActive ? <div className="explore-page__dropOverlay">
-            <div className="explore-page__dropModal">
-                <div><FontAwesomeIcon size="5x" icon={faFileUpload}/></div>
-                <div className="explore-page__dropModalText">Drop geojson</div>
-            </div>
-        </div> : null}
+        <DragOverlay isShowing={isDragActive}/>
         <MapContainer
             zoom={4}
             center={[51.505, -0.09]}
@@ -213,21 +211,12 @@ const ExplorePage: FunctionComponent = () => {
         </MapContainer>
         <div className="explore-page__panel">
             {isUploading ? <DotLoader color="white" /> : null}
-            {geojsonObjects.map(pr => <div className={`uploaded-item ${pr.isSelected ? "selected" : ""}`} key={pr.id}>
-                <div className="uploaded-item__topBar">
-                    <div data-id={pr.id} onClick={onToggle}>
-                        <div>{pr.fileName}</div>
-                        <div>Loaded at: {new Date(pr.loadedAt).toLocaleString()}</div>
-                    </div>
-                    <div data-id={pr.id} className="uploaded-item__delete" onClick={onDeleteUploaded}><FontAwesomeIcon icon={faTimes}/></div>
-                </div>
-                <div className="uploaded-item__body">
-                    <div>Features: {pr.featuresCount}</div>
-                    <div className="popup__iconButton" onClick={onExport}>
-                        <FontAwesomeIcon icon={faDownload}/>
-                    </div>
-                </div>
-            </div>)}
+            {geojsonObjects.map(pr => <ImportItem
+                key={pr.id}
+                onDeleteUploaded={onDeleteUploaded}
+                onExport={onExport}
+                onToggle={onToggle}
+                {...pr} />)}
         </div>
     </div>;
 }

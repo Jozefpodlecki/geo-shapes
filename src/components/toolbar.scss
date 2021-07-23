@@ -11,6 +11,13 @@
         font-size: 35px;
         padding: 5px;
         display: flex;
+        text-decoration: none;
+        color: white;
+        transition: opacity .3s ease-in;
+        
+        &:hover {
+            opacity: .6;
+        }
     }
 
     &__logoIcon {

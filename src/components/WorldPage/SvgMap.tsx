@@ -34,12 +34,25 @@ const SvgMap: FunctionComponent<Props> = ({
         const shape = svg.querySelector("g")!;
 
         const { x, y, width, height } = shape.getBoundingClientRect();
-        console.log(x, y, width, height)
         shape.style.transform = `translate(-${x/2}px, 0)`;
+
+        // const onScroll = (event: any) => {
+        //     const viewBox = svg.getAttribute('viewBox')?.split(" ");
+
+        //     if(event.wheelDelta > 0) {
+        //         svg.setAttribute("viewBox", "0 0 400 400");
+        //     }
+        //     else {
+        //         svg.setAttribute("viewBox", "0 0 800 800");
+        //     }
+
+        // }
+        // svg.addEventListener("wheel", onScroll);
 
         svg.addEventListener("mousemove", onMouseMove);
         svg.addEventListener("mouseenter", onMouseEnter);
         svg.addEventListener("mouseleave", onMouseLeave);
+        
 
         return () => {
             svg.removeEventListener("mousemove", onMouseMove);

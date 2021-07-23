@@ -2,13 +2,12 @@ import React, { FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import GridLoader from 'react-spinners/GridLoader';
-import { useState } from 'react';
-import { useCallback } from 'react';
-import { useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { searchGeoObjects } from 'api';
 import { GeoObject } from 'models/GeoObject';
 import useDebounce from 'use-debounce/lib/useDebounce';
 import ListItem from './ListItem';
+import { useSpring, animated } from 'react-spring';
 import SearchBox from './SearchBox';
 
 import './index.scss';
@@ -38,6 +37,9 @@ const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
     });
     const [_value, setValue] = useState("");
     const [value] = useDebounce(_value, 1000);
+    const styles = useSpring({
+        opacity: isShowing ? 1 : 0,
+    })
 
     const onClear = useCallback(() => {
         setValue("");
@@ -70,7 +72,10 @@ const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
 
     }, [value]);
 
-    return <div className={`searchDialog ${isShowing ? "" : "hide"}`}>
+    return <animated.div style={{
+            ...styles,
+            display: styles.opacity.to(pr => pr === 0 ? "none" : "flex")
+        }} className={`searchDialog ${isShowing ? "" : ""}`}>
         <div className="searchDialog__navbar">
             <div onClick={onHide} className="searchDialog__close"><FontAwesomeIcon icon={faTimes}/></div>
         </div>
@@ -85,7 +90,8 @@ const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
                     items.map(pr => pr.type === "country" && <ListItem onClick={onClick} key={pr.id} {...pr} />)}
             </div>
         </div>
-    </div>
+    </animated.div>
 }
 
 export default SearchGeoObjectsDialog;
+

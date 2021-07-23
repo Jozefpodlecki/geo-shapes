@@ -2,7 +2,7 @@ import React, { FunctionComponent, memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faEye, faGlobe, faHome, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
 import './toolbar.scss';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 type Props = {
     onSearch(): void;
@@ -13,14 +13,12 @@ const Toolbar: FunctionComponent<Props> = ({
 }) => {
 
     return <div className="toolbar">
-        <div className="toolbar__logo">
-            <div className="toolbar__logoText">
-                Geo-shapes
-            </div>
+        <Link className="toolbar__logo" to={`/`}>
+            <div className="toolbar__logoText">Geo-shapes</div>
             <div className="toolbar__logoIcon">
                 <FontAwesomeIcon icon={faGlobe}/>
             </div>
-        </div>
+        </Link>
         <div className="toolbar__menu">
             <NavLink activeClassName="toolbar__iconButton--selected" className="toolbar__iconButton" exact to={`/`}>
                 <FontAwesomeIcon icon={faHome}/>

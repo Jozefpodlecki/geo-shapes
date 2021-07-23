@@ -3,6 +3,7 @@ import { faCircle, faClipboard, faDownload, faDrawPolygon, faEye, faPencilAlt } 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Highlight from "react-highlight";
 import { DrawOption, ExportType } from './types';
+import Icon from 'components/Icon';
 import './panel.scss';
 
 type Props = {
@@ -40,11 +41,11 @@ const Panel: FunctionComponent<Props> = ({
         })
     }
 
-    return <div className="appMap__panel">
-        <div className="appMap__toolbox">
-            <div data-drawoption="polygon" onClick={onDrawOptionChange} className={`appMap__tool ${drawOption === "polygon" ? "selected" : ""}`}><FontAwesomeIcon icon={faDrawPolygon}/></div>
-            <div data-drawoption="lineString" onClick={onDrawOptionChange} className={`appMap__tool ${drawOption === "lineString" ? "selected" : ""}`}><FontAwesomeIcon icon={faPencilAlt}/></div>
-            <div data-drawoption="circle" onClick={onDrawOptionChange} className={`appMap__tool ${drawOption === "circle" ? "selected" : ""}`}><FontAwesomeIcon icon={faCircle}/></div>
+    return <div className="draw-page__panel">
+        <div className="draw-page__toolbox">
+            <Icon data-id="polygon" onClick={onDrawOptionChange} className={`draw-page__tool ${drawOption === "polygon" ? "selected" : ""}`} icon={faDrawPolygon}/>
+            <Icon data-id="lineString" onClick={onDrawOptionChange} className={`draw-page__tool ${drawOption === "lineString" ? "selected" : ""}`} icon={faPencilAlt}/>
+            <Icon data-id="circle" onClick={onDrawOptionChange} className={`draw-page__tool ${drawOption === "circle" ? "selected" : ""}`} icon={faCircle}/>
         </div>
         <div>
             <div>Export</div>
@@ -60,9 +61,11 @@ const Panel: FunctionComponent<Props> = ({
                 </Highlight> : null}
             </div>
             <div className="payload">
-                <div onClick={onExport} className="payload__option"><FontAwesomeIcon icon={faEye}/></div>
-                <div onClick={onExport} className="payload__option"><FontAwesomeIcon icon={faClipboard}/></div>
-                <div onClick={onExport} className="payload__option"><FontAwesomeIcon icon={faDownload}/></div>
+                <Icon onClick={onExport} className="payload__option" icon={faEye}/>
+                <Icon onClick={onExport} className="payload__option" icon={faClipboard}/>
+                <Icon onClick={onExport} className="payload__option" icon={faDownload}/>
+                {/* <div onClick={onExport} className="payload__option"><FontAwesomeIcon icon={faClipboard}/></div>
+                <div onClick={onExport} className="payload__option"><FontAwesomeIcon icon={faDownload}/></div> */}
             </div>
         </div>
     </div>
