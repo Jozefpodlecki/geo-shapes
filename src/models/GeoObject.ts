@@ -9,6 +9,11 @@ export type Country = {
     flagUrl: string;
     search: string;
     center: [number, number];
+    zoom: number;
+    area: number;
+    regions: number;
+    neigboursCount: number;
+    tags: string[];
 }
 
 export type Continent = {

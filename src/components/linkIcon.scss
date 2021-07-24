@@ -1,8 +1,11 @@
-.icon {
+.link-icon {
     transition: opacity .3s ease-in;
     cursor: pointer;
     padding: 10px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &:hover {
         opacity: 0.6;
     }

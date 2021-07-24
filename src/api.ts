@@ -41,6 +41,10 @@ export const getCountrySvg = (countryCode: string) => {
         .then(pr => pr.text());
 }
 
+export const getCountryGeojsonLink = (countryCode: string): string => {
+    return `${baseUrl}/assets/geojson/${countryCode}.geojson`;
+}
+
 export const getCountryGeojson = (countryCode: string): Promise<GeoJsonObject | undefined> => {
     return fetch(`${baseUrl}/assets/geojson/${countryCode}.geojson`)
         .then(pr => pr.json());

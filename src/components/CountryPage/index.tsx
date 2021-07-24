@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useCallback } from 'react';
 import { Region } from 'models/Region';
 import { getCountry, getCountryGeojson, getCountrySvg, getRegions } from 'api';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { baseUrl } from 'appConstants';
 import { useParams } from 'react-router-dom';
 import { Country, GeoObject } from "models/GeoObject";
@@ -48,7 +48,7 @@ const CountryPage: FunctionComponent = () => {
     });
     const [region, setRegion] = useState<Region>();
     const [hasEntered, setEntered] = useState(false);
-    const [mapType, setMapType] = useState<MapType>("svg");
+    const [mapType, setMapType] = useState<MapType>("leaflet");
     const [geojson, setGeojson] = useState<GeoJsonObject>();
     const [svg, setSvg] = useState<string>("");
     const { countryCode } = useParams<{ countryCode: string }>();
@@ -64,7 +64,7 @@ const CountryPage: FunctionComponent = () => {
                 const country = await getCountry(countryCode);
                 const regions = await getRegions(countryCode);
 
-                if(!country || !regions.length) {
+                if(!country) {
                     setState({
                         hasError: true,
                         isLoading: false,
@@ -168,16 +168,34 @@ const CountryPage: FunctionComponent = () => {
                     onMouseMove={onMouseMove}
                     svg={svg}
                 /> :
-                <MapContainer zoom={4} center={state.country.center} scrollWheelZoom={false} className="country-page__leafletMap">
+                <MapContainer
+                    zoom={state.country.zoom}
+                    center={state.country.center}
+                    scrollWheelZoom={true}
+                    className="country-page__leafletMap">
                     <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     {geojson ? <GeoJSON data={geojson}/> : null}
+                    <DevInfo/>
                 </MapContainer>}
+            </div>
+            <div className="country-page__footer">
+                
             </div>
         </>}
     </div>;
+}
+
+const DevInfo = () => {
+    const map = useMapEvents({
+        click(event) {
+            console.log(map.getCenter(), map.getZoom(), event.latlng)
+        }
+    })
+
+    return null;
 }
 
 export default CountryPage;

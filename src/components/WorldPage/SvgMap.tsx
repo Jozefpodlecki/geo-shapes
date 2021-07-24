@@ -7,6 +7,7 @@ type Props = {
     onMouseMove(event: MouseEvent): void;
     onMouseEnter(): void;
     onMouseLeave(): void;
+    onClick(event: MouseEvent): void;
     svg: string;
 }
 
@@ -14,13 +15,14 @@ const SvgMap: FunctionComponent<Props> = ({
     onMouseEnter,
     onMouseLeave,
     onMouseMove,
+    onClick,
     svg,
 }) => {
     const svgWrapperRef = useRef<HTMLDivElement>(null);
     
     useEffect(() => {
         const element = svgWrapperRef.current;
- 
+       
         if(!element) {
             return;
         }
@@ -49,15 +51,22 @@ const SvgMap: FunctionComponent<Props> = ({
         // }
         // svg.addEventListener("wheel", onScroll);
 
+        const onContextMenu = (event: MouseEvent) => {
+            event.preventDefault();
+        };
+
         svg.addEventListener("mousemove", onMouseMove);
         svg.addEventListener("mouseenter", onMouseEnter);
         svg.addEventListener("mouseleave", onMouseLeave);
-        
+        svg.addEventListener("click", onClick);
+        svg.addEventListener("contextmenu", onContextMenu);
 
         return () => {
             svg.removeEventListener("mousemove", onMouseMove);
-            svg.addEventListener("mouseenter", onMouseEnter);
-            svg.addEventListener("mouseleave", onMouseLeave);
+            svg.removeEventListener("mouseenter", onMouseEnter);
+            svg.removeEventListener("mouseleave", onMouseLeave);
+            svg.removeEventListener("click", onClick);
+            svg.removeEventListener("contextmenu", onContextMenu);
         }
 
     }, [svgWrapperRef])

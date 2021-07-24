@@ -9,7 +9,7 @@ import useDebounce from 'use-debounce/lib/useDebounce';
 import ListItem from './ListItem';
 import { useSpring, animated } from 'react-spring';
 import SearchBox from './SearchBox';
-
+import Icon from 'components/Icon';
 import './index.scss';
 
 type Props = {
@@ -53,40 +53,47 @@ const SearchGeoObjectsDialog: FunctionComponent<Props> = ({
     }, [_value]);
 
     useEffect(() => {
-        // if(!value) {
-        //     return;
-        // }
 
-        (async () => {
-            const result = await searchGeoObjects({
-                pageSize: 5,
-                phrase: value,
-            });
-
+        if(isShowing) {
+            (async () => {
+                const result = await searchGeoObjects({
+                    pageSize: 10,
+                    phrase: value,
+                });
+    
+                setResults({
+                    isLoading: false,
+                    items: result,
+                });
+            })()
+        }
+        else {
             setResults({
-                isLoading: false,
-                items: result,
+                isLoading: true,
+                items: [],
             });
-        })()
-        
+            setValue("");
+        }
 
-    }, [value]);
+    }, [isShowing, value]);
 
     return <animated.div style={{
             ...styles,
             display: styles.opacity.to(pr => pr === 0 ? "none" : "flex")
         }} className={`searchDialog ${isShowing ? "" : ""}`}>
         <div className="searchDialog__navbar">
-            <div onClick={onHide} className="searchDialog__close"><FontAwesomeIcon icon={faTimes}/></div>
+            <Icon onClick={onHide} className="searchDialog__close" icon={faTimes}/>
         </div>
         <div className="searchDialog__body">
-            <SearchBox
-                onChange={setValue}
-                onClear={onClear}
-                value={_value}
-            />
+            <div className="searchDialog__top">
+                <SearchBox
+                    onChange={setValue}
+                    onClear={onClear}
+                    value={_value}
+                />
+            </div>
             <div className={`searchDialog__list ${isLoading ? "searchDialog__list--center": ""}`}>
-                {isLoading ? <GridLoader color="white" size={12} /> : 
+                {isLoading ? <GridLoader color="white" size={15} /> : 
                     items.map(pr => pr.type === "country" && <ListItem onClick={onClick} key={pr.id} {...pr} />)}
             </div>
         </div>

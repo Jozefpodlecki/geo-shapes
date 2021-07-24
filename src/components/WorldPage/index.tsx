@@ -1,10 +1,13 @@
 import { FunctionComponent, useCallback, useEffect, useState } from 'react';
 import { Country, GeoObject } from 'models/GeoObject';
-import { getWorldSvg, searchGeoObjects } from 'api';
+import { getCountryGeojson, getCountryGeojsonLink, getWorldSvg, searchGeoObjects } from 'api';
 import Popup from './Popup';
 import CountryTooltip from './CountryTooltip';
 import SvgMap from './SvgMap';
 import './index.scss';
+import { GridLoader } from 'react-spinners';
+import { NotificationManager } from 'react-notifications';
+import { download } from 'appUtils';
 
 const WorldPage: FunctionComponent = () => {
     
@@ -13,8 +16,8 @@ const WorldPage: FunctionComponent = () => {
         y: -1,
     });
     const [selected, setSelected] = useState<{
-        element: SVGPathElement;
-        item: GeoObject;
+        element: SVGElement;
+        item?: GeoObject;
         center: [number, number];
     }>();
     const [svg, setSvg] = useState<string>("");
@@ -23,10 +26,10 @@ const WorldPage: FunctionComponent = () => {
     const [geoObject, setGeoObject] = useState<Country>()
     const [geoObjects, setGeoObjects] = useState<Country[]>([])
 
-    const onClick = useCallback(async (event: React.MouseEvent<SVGElement>) => {
+    const onClick = useCallback((event: MouseEvent) => {
         const target = event.target;
 
-        if(!(target instanceof SVGPathElement)) {
+        if(!(target instanceof SVGElement)) {
             return;
         }
 
@@ -42,16 +45,17 @@ const WorldPage: FunctionComponent = () => {
         }
         
         item = geoObjects.find(pr => pr.id === id)!;
+
         target.classList.toggle("selected");
         const { x, y, width, height } = target.getBoundingClientRect();
-
+        console.log(event.clientX)
 
         setSelected({
             element: target,
             item,
-            center: [x + width / 2, y + height / 2],
+            center: [event.clientX - 100, event.clientY - 100],
         });
-    }, [selected]);
+    }, [geoObjects, selected]);
 
     const onMouseMove = useCallback((event: MouseEvent) => {
         setPosition({
@@ -74,7 +78,7 @@ const WorldPage: FunctionComponent = () => {
         }           
             
         const item = geoObjects.find(pr => pr.id === id);
-
+      
         if(!item) {
             setGeoObject(undefined);
             return;
@@ -92,8 +96,6 @@ const WorldPage: FunctionComponent = () => {
         setEntered(false);
     }, []);
 
-   
-
     useEffect(() => {
         (async () => {
             const svg = await getWorldSvg();
@@ -102,16 +104,18 @@ const WorldPage: FunctionComponent = () => {
         })();
     }, []);
 
-    useEffect(() => {
-        window.addEventListener("mousemove", onMouseMove);
-
-        return () => {
-            window.removeEventListener("mousemove", onMouseMove);
-        }
-    }, [geoObjects])
-
     const onExport = () => {
+        (async () => {
 
+            try {
+                const item = selected!.item as Country;
+                const geojsonLink = await getCountryGeojsonLink(item.countryCode);
+                download(geojsonLink, `${item.countryCode}.json`);
+            } catch (error) {
+                NotificationManager.error("We could not find geojson for country", "Download error.");
+            }
+            
+        })();
     }
 
     useEffect(() => {
@@ -124,44 +128,26 @@ const WorldPage: FunctionComponent = () => {
         })();
         
     }, [])
-    
-    return <div className="world-page">
-        {isLoading ? null : <SvgMap
+
+    return <div className={`world-page ${isLoading ? "center" : ""}`}>
+        {isLoading ? <div className="world-page__loader"><GridLoader color="white" size={15} /></div> : <SvgMap
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onMouseMove={onMouseMove}
+            onClick={onClick}
             svg={svg}
         />}
         <CountryTooltip
-            hasEntered={geoObject && hasEntered || false}
+            hasEntered={geoObject && hasEntered && selected?.item?.id !== geoObject.id || false}
             country={geoObject}
             x={x}
             y={y}/>
-        {selected && selected.item.type === "country" ? <Popup onExport={onExport} {...selected.item}/> : null}
+        {selected?.item?.type === "country" ? <Popup
+                onExport={onExport}
+                {...selected.item}
+                center={selected.center}/>
+                : null}
     </div>;
 }
 
 export default WorldPage;
-
-{/* <div className="popup" style={{
-            top: selected.center[1],
-            left: selected.center[0],
-        }}>
-            <div className="popup__body">
-                <div>
-                    <img className="popup__image" src={baseUrl + selected.item.flagUrl}/>
-                </div>
-                <div className="popup__info">
-                    <div>Country: {selected.item.fullName}</div>
-                    <div>Capital: {selected.item.capital}</div>
-                </div>
-            </div>
-            <div className="popup__footer">
-                <div className="popup__iconButton" onClick={onExport}>
-                    <FontAwesomeIcon icon={faDownload}/>
-                </div>
-                <Link className="popup__iconButton" to={`/country/${selected.item.code}`}>
-                    <FontAwesomeIcon icon={faInfo}/>
-                </Link>
-            </div>
-        </div> : null} */}

@@ -34,7 +34,7 @@ const SvgMap: FunctionComponent<Props> = ({
         const shape = svg.querySelector("g")!;
 
         const { y, width, height } = shape.getBoundingClientRect();
-        shape.style.transform = `translate(calc(50% - ${width / 2}px), calc(50% - ${(y + height)}px))`;
+        //shape.style.transform = `translate(calc(50% - ${width / 2}px), calc(50% - ${(y + height)}px))`;
 
         svg.addEventListener("mousemove", onMouseMove);
         svg.addEventListener("mouseenter", onMouseEnter);

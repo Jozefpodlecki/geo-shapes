@@ -20,8 +20,8 @@ const SearchBox: FunctionComponent<Props> = ({
         onChange(value);
     }, []);
 
-    return <div className="searchbox">
-    <div className="searchbox__icon"><FontAwesomeIcon icon={faSearch}/></div>
+    return <div className={`searchbox ${value ? "searchbox--typed": ""}`}>
+    <div className={`searchbox__icon ${value ? "searchbox__icon--active": ""}`}><FontAwesomeIcon icon={faSearch}/></div>
         <input
             type="text"
             value={value}

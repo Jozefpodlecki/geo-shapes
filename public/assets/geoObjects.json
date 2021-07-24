@@ -9,7 +9,12 @@
         "thumbnailUrl": "/assets/images/af.jfif",
         "flagUrl": "/assets/flags/af.png",
         "search": "country af Afghanistan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 652230,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cz",
@@ -21,7 +26,12 @@
         "thumbnailUrl": "/assets/images/cz.jfif",
         "flagUrl": "/assets/flags/cz.png",
         "search": "country cz Czech Republic Czechia",
-        "center": [50, 20]
+        "center": [49.8369130156875, 15.336914062500002],
+        "zoom": 8,
+        "area": 78865,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "hr",
@@ -33,7 +43,12 @@
         "thumbnailUrl": "/assets/images/hr.jfif",
         "flagUrl": "/assets/flags/hr.jpg",
         "search": "country hr Croatia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 56594,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ru",
@@ -45,7 +60,12 @@
         "thumbnailUrl": "/assets/images/ru.jfif",
         "flagUrl": "/assets/flags/ru.png",
         "search": "country ru Russian Federation",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 17098246,
+        "regions": 85,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "kz",
@@ -57,7 +77,12 @@
         "thumbnailUrl": "/assets/images/kz.jfif",
         "flagUrl": "/assets/flags/kz.png",
         "search": "country kz Republic of Kazakhstan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 2724900,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": ["landlocked"]
     },
     {
         "id": "mn",
@@ -69,7 +94,12 @@
         "thumbnailUrl": "/assets/images/mn.jfif",
         "flagUrl": "/assets/flags/mn.png",
         "search": "country mn Mongolia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cn",
@@ -81,7 +111,12 @@
         "thumbnailUrl": "/assets/images/cn.jfif",
         "flagUrl": "/assets/flags/cn.png",
         "search": "country cn China",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "kg",
@@ -93,7 +128,12 @@
         "thumbnailUrl": "/assets/images/kg.jfif",
         "flagUrl": "/assets/flags/kg.png",
         "search": "country kg Kyrgyzstan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "pl",
@@ -105,7 +145,12 @@
         "thumbnailUrl": "/assets/images/mn.jfif",
         "flagUrl": "/assets/flags/pl.png",
         "search": "country pl Poland",
-        "center": [50, 20]
+        "center": [52.0114457711425, 19.81005859375004],
+        "zoom": 7,
+        "area": 312696,
+        "regions": 20,
+        "neigboursCount": 7,
+        "tags": []
     },
     {
         "id": "al",
@@ -117,7 +162,12 @@
         "thumbnailUrl": "/assets/images/al.jfif",
         "flagUrl": "/assets/flags/al.png",
         "search": "country al Albania",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ie",
@@ -129,7 +179,12 @@
         "thumbnailUrl": "/assets/images/ie.jfif",
         "flagUrl": "/assets/flags/ie.png",
         "search": "country ie Ireland",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "it",
@@ -141,7 +196,12 @@
         "thumbnailUrl": "/assets/images/it.jfif",
         "flagUrl": "/assets/flags/it.png",
         "search": "country it Italy",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "mm",
@@ -153,7 +213,12 @@
         "thumbnailUrl": "/assets/images/mm.jfif",
         "flagUrl": "/assets/flags/mm.png",
         "search": "country mm Myanmar",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "pk",
@@ -165,7 +230,12 @@
         "thumbnailUrl": "/assets/images/pk.jfif",
         "flagUrl": "/assets/flags/pk.png",
         "search": "country pk Pakistan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "pg",
@@ -177,7 +247,12 @@
         "thumbnailUrl": "/assets/images/pg.jfif",
         "flagUrl": "/assets/flags/pg.png",
         "search": "country pg Papua New Guinea",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ne",
@@ -189,7 +264,12 @@
         "thumbnailUrl": "/assets/images/ne.jfif",
         "flagUrl": "/assets/flags/ne.png",
         "search": "country ne Niger",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "tm",
@@ -201,31 +281,63 @@
         "thumbnailUrl": "/assets/images/tm.jfif",
         "flagUrl": "/assets/flags/tm.png",
         "search": "country tm Turkmenistan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
+    },
+    {
+        "id": "tj",
+        "type": "country",
+        "fullName": "Tajikistan",
+        "shortName": "Tajikistan",
+        "capital": "Dushanbe", 
+        "countryCode": "tm",
+        "thumbnailUrl": "/assets/images/tj.jfif",
+        "flagUrl": "/assets/flags/tj.png",
+        "search": "country tj Tajikistan",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "us",
         "type": "country",
         "fullName": "United States of America",
         "shortName": "United States of America",
-        "capital": "United States of America", 
+        "capital": "Washington D.C.", 
         "countryCode": "us",
         "thumbnailUrl": "/assets/images/us.jfif",
         "flagUrl": "/assets/flags/us.png",
         "search": "country us United States of America",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 50,
+        "neigboursCount": 2,
+        "tags": []
     },
     {
         "id": "ch",
         "type": "country",
         "fullName": "Switzerland",
         "shortName": "Switzerland",
-        "capital": "Switzerland", 
+        "capital": "Bern", 
         "countryCode": "ch",
         "thumbnailUrl": "/assets/images/ch.jfif",
         "flagUrl": "/assets/flags/ch.png",
         "search": "country ch Switzerland",
-        "center": [50, 20]
+        "center": [46.90051671740099, 8.382568359375002],
+        "zoom": 8,
+        "area": 41284,
+        "regions": 26,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "sn",
@@ -237,7 +349,12 @@
         "thumbnailUrl": "/assets/images/sn.jfif",
         "flagUrl": "/assets/flags/sn.png",
         "search": "country sn Senegal",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 196722,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "za",
@@ -249,7 +366,12 @@
         "thumbnailUrl": "/assets/images/za.jfif",
         "flagUrl": "/assets/flags/za.png",
         "search": "country za South Africa",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "nz",
@@ -261,7 +383,12 @@
         "thumbnailUrl": "/assets/images/nz.jfif",
         "flagUrl": "/assets/flags/nz.png",
         "search": "country nz New Zealand",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "nl",
@@ -273,7 +400,12 @@
         "thumbnailUrl": "/assets/images/nz.jfif",
         "flagUrl": "/assets/flags/nz.png",
         "search": "country nl Netherlands",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ga",
@@ -285,7 +417,12 @@
         "thumbnailUrl": "/assets/images/ga.jfif",
         "flagUrl": "/assets/flags/ga.png",
         "search": "country ga Gabon",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "lt",
@@ -297,7 +434,12 @@
         "thumbnailUrl": "/assets/images/lt.jfif",
         "flagUrl": "/assets/flags/lt.png",
         "search": "country lt Lithuania",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "gb",
@@ -309,19 +451,29 @@
         "thumbnailUrl": "/assets/images/gb.jfif",
         "flagUrl": "/assets/flags/gb.png",
         "search": "country gb United Kingdom",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ye",
         "type": "country",
         "fullName": "Yemen",
         "shortName": "Yemen",
-        "capital": "Yemen", 
+        "capital": "Sana'a", 
         "countryCode": "ye",
         "thumbnailUrl": "/assets/images/ye.jfif",
         "flagUrl": "/assets/flags/ye.png",
         "search": "country ye Yemen",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "fr",
@@ -333,7 +485,12 @@
         "thumbnailUrl": "/assets/images/fr.jfif",
         "flagUrl": "/assets/flags/fr.png",
         "search": "country fr France",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "dk",
@@ -345,7 +502,12 @@
         "thumbnailUrl": "/assets/images/dk.jfif",
         "flagUrl": "/assets/flags/dk.png",
         "search": "country dk Denmark",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ke",
@@ -357,7 +519,12 @@
         "thumbnailUrl": "/assets/images/ke.jfif",
         "flagUrl": "/assets/flags/ke.png",
         "search": "country ke Kenya",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "kr",
@@ -369,7 +536,12 @@
         "thumbnailUrl": "/assets/images/kr.jfif",
         "flagUrl": "/assets/flags/kr.png",
         "search": "country kr Korea (South)",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "kp",
@@ -381,7 +553,12 @@
         "thumbnailUrl": "/assets/images/kp.jfif",
         "flagUrl": "/assets/flags/kp.png",
         "search": "country kp Korea (North)",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "au",
@@ -393,7 +570,12 @@
         "thumbnailUrl": "/assets/images/au.jfif",
         "flagUrl": "/assets/flags/au.png",
         "search": "country au Australia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ao",
@@ -405,7 +587,12 @@
         "thumbnailUrl": "/assets/images/ao.jfif",
         "flagUrl": "/assets/flags/ao.png",
         "search": "country ao Angola",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ao",
@@ -417,7 +604,12 @@
         "thumbnailUrl": "/assets/images/ao.jfif",
         "flagUrl": "/assets/flags/ao.png",
         "search": "country ao Angola",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "az",
@@ -429,7 +621,12 @@
         "thumbnailUrl": "/assets/images/az.jfif",
         "flagUrl": "/assets/flags/az.png",
         "search": "country az Azerbaijan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "at",
@@ -441,7 +638,12 @@
         "thumbnailUrl": "/assets/images/at.jfif",
         "flagUrl": "/assets/flags/at.png",
         "search": "country at Austria",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "bd",
@@ -453,7 +655,12 @@
         "thumbnailUrl": "/assets/images/bd.jfif",
         "flagUrl": "/assets/flags/bd.png",
         "search": "country bd Bangladesh",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ca",
@@ -465,7 +672,12 @@
         "thumbnailUrl": "/assets/images/ca.jfif",
         "flagUrl": "/assets/flags/ca.png",
         "search": "country ca Canada",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "bo",
@@ -477,7 +689,12 @@
         "thumbnailUrl": "/assets/images/bo.jfif",
         "flagUrl": "/assets/flags/bo.png",
         "search": "country bo Bolivia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cn",
@@ -489,7 +706,12 @@
         "thumbnailUrl": "/assets/images/cn.jfif",
         "flagUrl": "/assets/flags/cn.png",
         "search": "country cn China",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "gm",
@@ -501,7 +723,12 @@
         "thumbnailUrl": "/assets/images/gm.jfif",
         "flagUrl": "/assets/flags/gm.png",
         "search": "country gm Gambia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "hn",
@@ -513,7 +740,12 @@
         "thumbnailUrl": "/assets/images/hn.jfif",
         "flagUrl": "/assets/flags/hn.png",
         "search": "country hn Honduras",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "hu",
@@ -525,7 +757,12 @@
         "thumbnailUrl": "/assets/images/hu.jfif",
         "flagUrl": "/assets/flags/hu.png",
         "search": "country hu Hungary",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "in",
@@ -537,7 +774,12 @@
         "thumbnailUrl": "/assets/images/in.jfif",
         "flagUrl": "/assets/flags/in.png",
         "search": "country in India",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "jp",
@@ -549,7 +791,12 @@
         "thumbnailUrl": "/assets/images/jp.jfif",
         "flagUrl": "/assets/flags/jp.png",
         "search": "country jp Japan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "mx",
@@ -561,7 +808,12 @@
         "thumbnailUrl": "/assets/images/mx.jfif",
         "flagUrl": "/assets/flags/mx.png",
         "search": "country mx Mexico",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "gh",
@@ -573,19 +825,29 @@
         "thumbnailUrl": "/assets/images/gh.jfif",
         "flagUrl": "/assets/flags/gh.png",
         "search": "country gh Ghana",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ge",
         "type": "country",
         "fullName": "Georgia",
         "shortName": "Georgia",
-        "capital": "Georgia", 
+        "capital": "Tbilisi", 
         "countryCode": "ge",
         "thumbnailUrl": "/assets/images/ge.jfif",
         "flagUrl": "/assets/flags/ge.png",
         "search": "country ge Georgia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 4,
+        "tags": []
     },
     {
         "id": "er",
@@ -597,7 +859,12 @@
         "thumbnailUrl": "/assets/images/er.jfif",
         "flagUrl": "/assets/flags/er.png",
         "search": "country er Eritrea",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ee",
@@ -609,7 +876,12 @@
         "thumbnailUrl": "/assets/images/ee.jfif",
         "flagUrl": "/assets/flags/ee.png",
         "search": "country ee Estonia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "sv",
@@ -621,7 +893,12 @@
         "thumbnailUrl": "/assets/images/sv.jfif",
         "flagUrl": "/assets/flags/sv.png",
         "search": "country sv El Salvador",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "et",
@@ -633,7 +910,12 @@
         "thumbnailUrl": "/assets/images/et.jfif",
         "flagUrl": "/assets/flags/et.png",
         "search": "country et Ethiopia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "eg",
@@ -645,7 +927,12 @@
         "thumbnailUrl": "/assets/images/eg.jfif",
         "flagUrl": "/assets/flags/eg.png",
         "search": "country eg Egypt",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ec",
@@ -657,7 +944,12 @@
         "thumbnailUrl": "/assets/images/ec.jfif",
         "flagUrl": "/assets/flags/ec.png",
         "search": "country ec Ecuador",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "fi",
@@ -669,7 +961,12 @@
         "thumbnailUrl": "/assets/images/fi.jfif",
         "flagUrl": "/assets/flags/fi.png",
         "search": "country fi Finland",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "gt",
@@ -681,7 +978,12 @@
         "thumbnailUrl": "/assets/images/gt.jfif",
         "flagUrl": "/assets/flags/gt.png",
         "search": "country gt Guatemala",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "pa",
@@ -693,7 +995,12 @@
         "thumbnailUrl": "/assets/images/pa.jfif",
         "flagUrl": "/assets/flags/pa.png",
         "search": "country pa Panama",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "my",
@@ -705,7 +1012,12 @@
         "thumbnailUrl": "/assets/images/my.jfif",
         "flagUrl": "/assets/flags/my.png",
         "search": "country my Malaysia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "py",
@@ -717,7 +1029,12 @@
         "thumbnailUrl": "/assets/images/py.jfif",
         "flagUrl": "/assets/flags/py.png",
         "search": "country py Paraguay",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "om",
@@ -729,19 +1046,63 @@
         "thumbnailUrl": "/assets/images/om.jfif",
         "flagUrl": "/assets/flags/om.png",
         "search": "country om Oman",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "gr",
         "type": "country",
         "fullName": "Greece",
         "shortName": "Greece",
-        "capital": "Greece", 
+        "capital": "Athens", 
         "countryCode": "gr",
         "thumbnailUrl": "/assets/images/gr.jfif",
         "flagUrl": "/assets/flags/gr.png",
         "search": "country gr Greece",
-        "center": [50, 20]
+        "center": [38.19334075285183, 24.290771484375004],
+        "zoom": 7,
+        "area": 131957,
+        "regions": 20,
+        "neigboursCount": 4,
+        "tags": []
+    },
+    {
+        "id": "sl",
+        "type": "country",
+        "fullName": "Sierra Leone",
+        "shortName": "Sierra Leone",
+        "capital": "Sierra Leone", 
+        "countryCode": "sl",
+        "thumbnailUrl": "/assets/images/sl.jfif",
+        "flagUrl": "/assets/flags/sl.png",
+        "search": "country sl Sierra Leone",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 4,
+        "tags": []
+    },
+    {
+        "id": "sb",
+        "type": "country",
+        "fullName": "Solomon Islands",
+        "shortName": "Solomon Islands",
+        "capital": "Solomon Islands", 
+        "countryCode": "sl",
+        "thumbnailUrl": "/assets/images/sb.jfif",
+        "flagUrl": "/assets/flags/sb.png",
+        "search": "country sb Solomon Islands",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 4,
+        "tags": []
     },
     {
         "id": "mz",
@@ -753,7 +1114,12 @@
         "thumbnailUrl": "/assets/images/mz.jfif",
         "flagUrl": "/assets/flags/mz.png",
         "search": "country mz Mozambique",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ng",
@@ -765,7 +1131,12 @@
         "thumbnailUrl": "/assets/images/ng.jfif",
         "flagUrl": "/assets/flags/ng.png",
         "search": "country ng Nigeria",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "pe",
@@ -777,7 +1148,12 @@
         "thumbnailUrl": "/assets/images/pe.jfif",
         "flagUrl": "/assets/flags/pe.png",
         "search": "country pe Peru",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ro",
@@ -789,67 +1165,131 @@
         "thumbnailUrl": "/assets/images/ro.jfif",
         "flagUrl": "/assets/flags/ro.png",
         "search": "country ro Romania",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "so",
         "type": "country",
         "fullName": "Somalia",
         "shortName": "Somalia",
-        "capital": "Somalia", 
+        "capital": "Mogadishu", 
         "countryCode": "so",
         "thumbnailUrl": "/assets/images/so.jfif",
         "flagUrl": "/assets/flags/so.png",
         "search": "country so Somalia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 637657,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "tr",
         "type": "country",
         "fullName": "Turkey",
         "shortName": "Turkey",
-        "capital": "Turkey", 
+        "capital": "Ankara", 
         "countryCode": "tr",
         "thumbnailUrl": "/assets/images/tr.jfif",
         "flagUrl": "/assets/flags/tr.png",
         "search": "country tr Turkey",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "uy",
         "type": "country",
         "fullName": "Uruguay",
         "shortName": "Uruguay",
-        "capital": "Uruguay", 
+        "capital": "Montevideo", 
         "countryCode": "uy",
         "thumbnailUrl": "/assets/images/uy.jfif",
         "flagUrl": "/assets/flags/uy.png",
         "search": "country uy Uruguay",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "uz",
         "type": "country",
         "fullName": "Uzbekistan",
         "shortName": "Uzbekistan",
-        "capital": "Uzbekistan", 
+        "capital": "Tashkent", 
         "countryCode": "uz",
         "thumbnailUrl": "/assets/images/uz.jfif",
         "flagUrl": "/assets/flags/uz.png",
         "search": "country uz Uzbekistan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
+    },
+    {
+        "id": "si",
+        "type": "country",
+        "fullName": "Slovenia",
+        "shortName": "Slovenia",
+        "capital": "Ljubljana", 
+        "countryCode": "si",
+        "thumbnailUrl": "/assets/images/si.jfif",
+        "flagUrl": "/assets/flags/si.png",
+        "search": "country si Slovenia",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
+    },
+    {
+        "id": "sk",
+        "type": "country",
+        "fullName": "Slovakia",
+        "shortName": "Slovakia",
+        "capital": "Bratislava", 
+        "countryCode": "sk",
+        "thumbnailUrl": "/assets/images/sk.jfif",
+        "flagUrl": "/assets/flags/sk.png",
+        "search": "country sk Slovakia",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "zw",
         "type": "country",
         "fullName": "Zimbabwe",
         "shortName": "Zimbabwe",
-        "capital": "Zimbabwe", 
+        "capital": "Harare", 
         "countryCode": "zw",
         "thumbnailUrl": "/assets/images/zw.jfif",
         "flagUrl": "/assets/flags/zw.png",
         "search": "country zw Zimbabwe",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "tg",
@@ -861,31 +1301,46 @@
         "thumbnailUrl": "/assets/images/tg.jfif",
         "flagUrl": "/assets/flags/tg.png",
         "search": "country tg Togo",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "es",
         "type": "country",
         "fullName": "Spain",
         "shortName": "Spain",
-        "capital": "Spain", 
+        "capital": "Madrid", 
         "countryCode": "es",
         "thumbnailUrl": "/assets/images/es.jfif",
         "flagUrl": "/assets/flags/es.png",
         "search": "country es Togo",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "sd",
         "type": "country",
         "fullName": "Sudan",
         "shortName": "Sudan",
-        "capital": "Sudan", 
+        "capital": "Khartoum", 
         "countryCode": "sd",
         "thumbnailUrl": "/assets/images/sd.jfif",
         "flagUrl": "/assets/flags/sd.png",
         "search": "country sd Sudan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ug",
@@ -897,7 +1352,12 @@
         "thumbnailUrl": "/assets/images/ug.jfif",
         "flagUrl": "/assets/flags/ug.png",
         "search": "country ug Uganda",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "zm",
@@ -909,7 +1369,12 @@
         "thumbnailUrl": "/assets/images/zm.jfif",
         "flagUrl": "/assets/flags/zm.png",
         "search": "country zm Zambia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "rs",
@@ -921,7 +1386,12 @@
         "thumbnailUrl": "/assets/images/rs.jfif",
         "flagUrl": "/assets/flags/rs.png",
         "search": "country rs Serbia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ph",
@@ -933,7 +1403,12 @@
         "thumbnailUrl": "/assets/images/ph.jfif",
         "flagUrl": "/assets/flags/ph.png",
         "search": "country ph Philippines",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "td",
@@ -945,7 +1420,12 @@
         "thumbnailUrl": "/assets/images/td.jfif",
         "flagUrl": "/assets/flags/td.png",
         "search": "country td Chad",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "co",
@@ -957,7 +1437,12 @@
         "thumbnailUrl": "/assets/images/co.jfif",
         "flagUrl": "/assets/flags/co.png",
         "search": "country co Colombia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "by",
@@ -969,7 +1454,12 @@
         "thumbnailUrl": "/assets/images/by.jfif",
         "flagUrl": "/assets/flags/by.png",
         "search": "country by Belarus",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "bw",
@@ -981,7 +1471,12 @@
         "thumbnailUrl": "/assets/images/bw.jfif",
         "flagUrl": "/assets/flags/bw.png",
         "search": "country bw Botswana",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "id",
@@ -993,7 +1488,12 @@
         "thumbnailUrl": "/assets/images/id.jfif",
         "flagUrl": "/assets/flags/id.png",
         "search": "country id Indonesia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "il",
@@ -1005,7 +1505,12 @@
         "thumbnailUrl": "/assets/images/il.jfif",
         "flagUrl": "/assets/flags/il.png",
         "search": "country il Israel",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "gl",
@@ -1017,7 +1522,12 @@
         "thumbnailUrl": "/assets/images/gl.jfif",
         "flagUrl": "/assets/flags/gl.png",
         "search": "country gl Greenland",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "id",
@@ -1029,7 +1539,12 @@
         "thumbnailUrl": "/assets/images/id.jfif",
         "flagUrl": "/assets/flags/id.png",
         "search": "country id Indonesia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "br",
@@ -1041,7 +1556,12 @@
         "thumbnailUrl": "/assets/images/br.jfif",
         "flagUrl": "/assets/flags/br.png",
         "search": "country br Brazil",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ar",
@@ -1053,7 +1573,12 @@
         "thumbnailUrl": "/assets/images/ar.jfif",
         "flagUrl": "/assets/flags/ar.png",
         "search": "country ar Argentina",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cm",
@@ -1065,7 +1590,12 @@
         "thumbnailUrl": "/assets/images/cm.jfif",
         "flagUrl": "/assets/flags/cm.png",
         "search": "country cm Cameroon",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cl",
@@ -1077,7 +1607,12 @@
         "thumbnailUrl": "/assets/images/cl.jfif",
         "flagUrl": "/assets/flags/cl.png",
         "search": "country cl Chile",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "rw",
@@ -1089,7 +1624,12 @@
         "thumbnailUrl": "/assets/images/rw.jfif",
         "flagUrl": "/assets/flags/rw.png",
         "search": "country rw Rwanda",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "st",
@@ -1101,7 +1641,12 @@
         "thumbnailUrl": "/assets/images/st.jfif",
         "flagUrl": "/assets/flags/st.png",
         "search": "country st Sao Tome and Principe",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "sa",
@@ -1113,19 +1658,29 @@
         "thumbnailUrl": "/assets/images/sa.jfif",
         "flagUrl": "/assets/flags/sa.png",
         "search": "country sa Saudi Arabia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "se",
         "type": "country",
         "fullName": "Sweden",
         "shortName": "Sweden",
-        "capital": "Sweden", 
+        "capital": "Stockholm", 
         "countryCode": "se",
         "thumbnailUrl": "/assets/images/se.jfif",
         "flagUrl": "/assets/flags/se.png",
         "search": "country se Sudan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 2,
+        "tags": []
     },
     {
         "id": "th",
@@ -1137,7 +1692,12 @@
         "thumbnailUrl": "/assets/images/th.jfif",
         "flagUrl": "/assets/flags/th.png",
         "search": "country th Thailand",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "jo",
@@ -1149,7 +1709,12 @@
         "thumbnailUrl": "/assets/images/jo.jfif",
         "flagUrl": "/assets/flags/jo.png",
         "search": "country jo Jordan",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "is",
@@ -1161,19 +1726,29 @@
         "thumbnailUrl": "/assets/images/is.jfif",
         "flagUrl": "/assets/flags/is.png",
         "search": "country is Iceland",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "pt",
         "type": "country",
-        "fullName": "Portugal",
+        "fullName": "Portuguese Republic",
         "shortName": "Portugal",
-        "capital": "Portugal", 
+        "capital": "Lisbon", 
         "countryCode": "pt",
         "thumbnailUrl": "/assets/images/pt.jfif",
         "flagUrl": "/assets/flags/pt.png",
         "search": "country pt Portugal",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 92090,
+        "regions": 20,
+        "neigboursCount": 1,
+        "tags": []
     },
     {
         "id": "ua",
@@ -1185,7 +1760,46 @@
         "thumbnailUrl": "/assets/images/ua.jfif",
         "flagUrl": "/assets/flags/ua.png",
         "search": "country ua Ukraine",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
+    },
+    {
+        "id": "lv",
+        "type": "country",
+        "fullName": "Latvia",
+        "shortName": "Latvia",
+        "capital": "Latvia", 
+        "countryCode": "lv",
+        "thumbnailUrl": "/assets/images/lv.jfif",
+        "flagUrl": "/assets/flags/lv.png",
+        "search": "country lv Latvia",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
+    },
+    {
+        "id": "lb",
+        "type": "country",
+        "fullName": "Lebanon",
+        "shortName": "Lebanon",
+        "capital": "Lebanon", 
+        "countryCode": "lb",
+        "thumbnailUrl": "/assets/images/lb.jfif",
+        "flagUrl": "/assets/flags/lb.png",
+        "search": "country lb Lebanon",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "no",
@@ -1197,7 +1811,12 @@
         "thumbnailUrl": "/assets/images/no.jfif",
         "flagUrl": "/assets/flags/no.png",
         "search": "country no Norway",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "dz",
@@ -1209,7 +1828,12 @@
         "thumbnailUrl": "/assets/images/dz.jfif",
         "flagUrl": "/assets/flags/dz.png",
         "search": "country dz Algeria",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ir",
@@ -1221,7 +1845,12 @@
         "thumbnailUrl": "/assets/images/ir.jfif",
         "flagUrl": "/assets/flags/ir.png",
         "search": "country ir Iran",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "iq",
@@ -1233,7 +1862,12 @@
         "thumbnailUrl": "/assets/images/iq.jfif",
         "flagUrl": "/assets/flags/iq.png",
         "search": "country iq Iraq",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "mg",
@@ -1245,7 +1879,12 @@
         "thumbnailUrl": "/assets/images/mg.jfif",
         "flagUrl": "/assets/flags/mg.png",
         "search": "country mg Madagascar",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ml",
@@ -1257,7 +1896,12 @@
         "thumbnailUrl": "/assets/images/ml.jfif",
         "flagUrl": "/assets/flags/ml.png",
         "search": "country ml Mali",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cy",
@@ -1269,7 +1913,12 @@
         "thumbnailUrl": "/assets/images/cy.jfif",
         "flagUrl": "/assets/flags/cy.png",
         "search": "country cy Cyprus",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cu",
@@ -1281,7 +1930,12 @@
         "thumbnailUrl": "/assets/images/cu.jfif",
         "flagUrl": "/assets/flags/cu.png",
         "search": "country cu Cuba",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "bf",
@@ -1293,7 +1947,12 @@
         "thumbnailUrl": "/assets/images/bf.jfif",
         "flagUrl": "/assets/flags/bf.png",
         "search": "country bf Burkina Faso",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "bg",
@@ -1305,7 +1964,12 @@
         "thumbnailUrl": "/assets/images/bg.jfif",
         "flagUrl": "/assets/flags/bg.png",
         "search": "country bg Bulgaria",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "mr",
@@ -1317,7 +1981,12 @@
         "thumbnailUrl": "/assets/images/mr.jfif",
         "flagUrl": "/assets/flags/mr.png",
         "search": "country mr Mauritania",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ve",
@@ -1329,7 +1998,12 @@
         "thumbnailUrl": "/assets/images/ve.jfif",
         "flagUrl": "/assets/flags/ve.png",
         "search": "country ve Venezuela",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "sj",
@@ -1341,7 +2015,12 @@
         "thumbnailUrl": "/assets/images/sj.jfif",
         "flagUrl": "/assets/flags/sj.png",
         "search": "country sj Svalbard",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "la",
@@ -1353,7 +2032,12 @@
         "thumbnailUrl": "/assets/images/la.jfif",
         "flagUrl": "/assets/flags/la.png",
         "search": "country la Laos",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "vn",
@@ -1365,7 +2049,12 @@
         "thumbnailUrl": "/assets/images/vn.jfif",
         "flagUrl": "/assets/flags/vn.png",
         "search": "country vn Vietnam",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "na",
@@ -1377,7 +2066,12 @@
         "thumbnailUrl": "/assets/images/na.jfif",
         "flagUrl": "/assets/flags/na.png",
         "search": "country na Namibia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "ly",
@@ -1389,7 +2083,12 @@
         "thumbnailUrl": "/assets/images/ly.jfif",
         "flagUrl": "/assets/flags/ly.png",
         "search": "country ly Libya",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "kh",
@@ -1401,7 +2100,12 @@
         "thumbnailUrl": "/assets/images/kh.jfif",
         "flagUrl": "/assets/flags/kh.png",
         "search": "country kh Cambodia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cg",
@@ -1413,7 +2117,12 @@
         "thumbnailUrl": "/assets/images/cg.jfif",
         "flagUrl": "/assets/flags/cg.png",
         "search": "country cg Congo (Brazzaville)",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "cd",
@@ -1425,7 +2134,12 @@
         "thumbnailUrl": "/assets/images/cd.jfif",
         "flagUrl": "/assets/flags/cd.png",
         "search": "country cd Congo, (Kinshasa)",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "tn",
@@ -1437,30 +2151,113 @@
         "thumbnailUrl": "/assets/images/tn.jfif",
         "flagUrl": "/assets/flags/tn.png",
         "search": "country tn Tunisia",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 100,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
     },
     {
         "id": "de",
         "type": "country",
         "fullName": "Germany",
         "shortName": "Germany",
-        "capital": "Germany", 
+        "capital": "Berlin", 
         "countryCode": "de",
         "thumbnailUrl": "/assets/images/de.jfif",
         "flagUrl": "/assets/flags/de.png",
         "search": "country de Germany",
-        "center": [50, 20]
+        "center": [51.412480103656456, 9.030761718750002],
+        "zoom": 6,
+        "area": 357114,
+        "regions": 20,
+        "neigboursCount": 9,
+        "tags": []
     },
     {
         "id": "sy",
         "type": "country",
         "fullName": "Syrian Arab Republic",
         "shortName": "Syria",
-        "capital": "Syria", 
+        "capital": "Damascus", 
         "countryCode": "sy",
         "thumbnailUrl": "/assets/images/sy.jfif",
         "flagUrl": "/assets/flags/sy.png",
         "search": "country sy Syrian Arab Republic Syria",
-        "center": [50, 20]
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 185180,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": []
+    },
+    {
+        "id": "lk",
+        "type": "country",
+        "fullName": "Sri Lanka",
+        "shortName": "Sri Lanka",
+        "capital": "Colombo", 
+        "countryCode": "lk",
+        "thumbnailUrl": "/assets/images/lk.jfif",
+        "flagUrl": "/assets/flags/lk.png",
+        "search": "country lk Sri Lanka",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 185180,
+        "regions": 20,
+        "neigboursCount": 0,
+        "tags": []
+    },
+    {
+        "id": "st",
+        "type": "country",
+        "fullName": "Sao Tome and Principe",
+        "shortName": "Sao Tome and Principe",
+        "capital": "Sao Tome and Principe", 
+        "countryCode": "st",
+        "thumbnailUrl": "/assets/images/st.jfif",
+        "flagUrl": "/assets/flags/st.png",
+        "search": "country st Sao Tome and Principe",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 185180,
+        "regions": 20,
+        "neigboursCount": 0,
+        "tags": []
+    },
+    {
+        "id": "lc",
+        "type": "country",
+        "fullName": "Saint Lucia",
+        "shortName": "Saint Lucia",
+        "capital": "Saint Lucia", 
+        "countryCode": "lc",
+        "thumbnailUrl": "/assets/images/lc.jfif",
+        "flagUrl": "/assets/flags/lc.png",
+        "search": "country lc Saint Lucia",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 606,
+        "regions": 20,
+        "neigboursCount": 0,
+        "tags": []
+    },
+    {
+        "id": "sg",
+        "type": "country",
+        "fullName": "Singapore",
+        "shortName": "Singapore",
+        "capital": "Singapore", 
+        "countryCode": "lc",
+        "thumbnailUrl": "/assets/images/sg.jfif",
+        "flagUrl": "/assets/flags/sg.png",
+        "search": "country sg Singapore",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 606,
+        "regions": 20,
+        "neigboursCount": 0,
+        "tags": []
     }
 ]

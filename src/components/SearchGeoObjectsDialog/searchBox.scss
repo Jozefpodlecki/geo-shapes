@@ -1,22 +1,35 @@
 .searchbox {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    flex: 0 1 600px;
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease-in;
+
+    &--typed {
+        border-bottom-color: gray;
+    }
 
     &__icon {
         padding: 10px 0 10px 10px;
-        border: 1px solid gray;
         border-radius: none;
         color: gray;
         border-right: none;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        transition: color .3s ease-in;
+
+        &--active {
+            color: white;
+        }
     }
 
     &__clearIcon {
         cursor: pointer;
-        position: absolute;
-        margin-left: 170px;
-        margin-top: 1px;
         padding: 10px;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
 
         &:hover {
             opacity: 0.8;
@@ -25,13 +38,14 @@
 
     &__input {
         padding: 10px;
-        width: 300px;
+        flex: 1;
         background-color: transparent;
-        border: 1px solid gray;
-        border-left: none;
+        border: none;
         caret-color: white;
         color: white;
-    
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+
         &:focus {
             outline: none;
         }

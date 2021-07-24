@@ -15,9 +15,12 @@ Web app which allows user to explore & create geographic features
 | I can export geojson/wkt of any country/continent                                             |      🚧      |
 | I can search any country/continent in the website via search or interactive map               |      🚧      |
 
+
+
 # Tribute
 
 ## Details
+[geographyfieldwork - capital cities](https://geographyfieldwork.com/WorldCapitalCities.htm)
 [wikipedia - details about the countries/regions/continents](https://en.wikipedia.org/)
 [oec.world - images](https://oec.world/)
 ## Svg

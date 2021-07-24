@@ -1,8 +1,12 @@
-.icon {
+.text-icon {
     transition: opacity .3s ease-in;
     cursor: pointer;
     padding: 10px;
-    
+
+    &__text {
+        margin-right: 10px;
+    }
+
     &:hover {
         opacity: 0.6;
     }

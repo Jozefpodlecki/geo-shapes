@@ -1,12 +1,9 @@
-import { FunctionComponent, memo, useCallback, useEffect, useState } from 'react';
-import ToolTip from 'components/ToolTip';
+import { FunctionComponent, memo } from 'react';
 import { baseUrl } from 'appConstants';
-import { GeoObject } from 'models/GeoObject';
-import { searchGeoObjects } from 'api';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faInfo } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import './popup.scss';
+import LinkIcon from 'components/LinkIcon';
+import TextIcon from 'components/TextIcon';
 
 type Props = {
     fullName: string;
@@ -14,6 +11,10 @@ type Props = {
     flagUrl: string;
     countryCode: string;
     center: [number, number];
+    area: number;
+    regions: number;
+    neigboursCount: number;
+    tags: string[];
     onExport(): void;
 }
 
@@ -23,29 +24,50 @@ const Popup: FunctionComponent<Props> = ({
     fullName,
     countryCode,
     center,
+    area,
+    regions,
+    neigboursCount,
+    tags,
     onExport
 }) => {
 
     return <div className="popup" style={{
-            top: center[1],
-            left: center[0],
+            top: `${center[1]}px`,
+            left: `${center[0]}px`,
         }}>
         <div className="popup__body">
             <div>
                 <img className="popup__image" src={baseUrl + flagUrl}/>
             </div>
             <div className="popup__info">
-                <div>Country: {fullName}</div>
-                <div>Capital: {capital}</div>
+                <div className="popup__field">
+                    <div className="popup__fieldLabel">Country:</div>
+                    <div className="popup__fieldValue">{fullName}</div>
+                </div>
+                <div className="popup__field">
+                    <div className="popup__fieldLabel">Capital:</div>
+                    <div className="popup__fieldValue">{capital}</div>
+                </div>
+                <div className="popup__field">
+                    <div className="popup__fieldLabel">Area:</div>
+                    <div className="popup__fieldValue">{area} km2</div>
+                </div>
+                <div className="popup__field">
+                    <div className="popup__fieldLabel">Number of regions:</div>
+                    <div className="popup__fieldValue">{regions}</div>
+                </div>
+                <div className="popup__field">
+                    <div className="popup__fieldLabel">Number of neigbours:</div>
+                    <div className="popup__fieldValue">{neigboursCount}</div>
+                </div>
+                <div className="popup__badges">
+                    {tags.map(pr => <div className="popup__badge" key={pr}>{pr}</div>)}
+                </div>
             </div>
         </div>
         <div className="popup__footer">
-            <div className="popup__iconButton" onClick={onExport}>
-                <FontAwesomeIcon icon={faDownload}/>
-            </div>
-            <Link className="popup__iconButton" to={`/country/${countryCode}`}>
-                <FontAwesomeIcon icon={faInfo}/>
-            </Link>
+            <TextIcon text="Geojson" className="popup__" onClick={onExport} icon={faDownload} />
+            <LinkIcon className="popup__iconButton" to={`/country/${countryCode}`} icon={faInfo}/>
         </div>
     </div>;
 }
