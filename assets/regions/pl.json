@@ -1,0 +1,99 @@
+
+[
+    {
+        "id": "PL-DS",
+        "region": "Dolnośląskie",
+        "capital": "Wrocław",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-KP",
+        "region": "Kujawsko-Pomorskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-LD",
+        "region": "Łódzkie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-LU",
+        "region": "Lubelskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-LB",
+        "region": "Lubuskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-MA",
+        "region": "Małopolskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-MZ",
+        "region": "Mazowieckie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-OP",
+        "region": "Opolskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-PK",
+        "region": "Podkarpackie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-PD",
+        "region": "Podlaskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-PM",
+        "region": "Pomorskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-SL",
+        "region": "Śląskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-SK",
+        "region": "Świętokrzyskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-WN",
+        "region": "Warmińsko-Mazurskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-WP",
+        "region": "Wielkopolskie",
+         "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    },
+    {
+        "id": "PL-ZP",
+        "region": "Zachodniopomorskie",
+        "capital": "Jihlava",
+        "flagUrl": "/assets/flags/pl/PL-DS.png"
+    }
+]
