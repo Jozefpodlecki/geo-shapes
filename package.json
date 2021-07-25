@@ -1,7 +1,7 @@
 {
   "name": "country-shapes",
   "version": "0.1.0",
-  "homepage1": "http://Jozefpodlecki.github.io/geo-shapes",
+  "homepage": "https://Jozefpodlecki.github.io/geo-shapes",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
