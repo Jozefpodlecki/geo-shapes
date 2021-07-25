@@ -48,7 +48,6 @@ const WorldPage: FunctionComponent = () => {
 
         target.classList.toggle("selected");
         const { x, y, width, height } = target.getBoundingClientRect();
-        console.log(event.clientX)
 
         setSelected({
             element: target,

@@ -14,7 +14,7 @@ export const searchGeoObjects = async (options: Options): Promise<GeoObject[]> =
         .then<GeoObject[]>(pr => pr.json());
 
     return geoObjects
-        .filter(pr => pr.search.includes(options.phrase))
+        .filter(pr => pr.search.toLowerCase().includes(options.phrase))
         .slice(0, options.pageSize);
 }
 

@@ -3,6 +3,7 @@
     height: 200px;
     max-width: 300px;
     margin: 5px;
+    letter-spacing: 1px;
 
     &__link {
         transition: border-color .3s ease-in;
@@ -72,17 +73,3 @@
         }
     }
 }
-
-
-
-// .geoObject {
-//     display: flex;
-
-//     &__image {
-//         width: 50px;
-//     }
-
-//     &__info {
-//         padding-left: 10px;
-//     }
-// }

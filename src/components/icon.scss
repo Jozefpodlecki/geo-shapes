@@ -2,6 +2,11 @@
     transition: opacity .3s ease-in;
     padding: 10px;
 
+    &--disabled {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
     &--interactive {
         cursor: pointer;
 

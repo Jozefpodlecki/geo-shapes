@@ -14,6 +14,11 @@ type Props = {
     drawOption: DrawOption;
 }
 
+const emptyPolygon = {
+    type: "Polygon" as const,
+    coordinates: [[]]
+};
+
 const DrawHandler: FunctionComponent<Props> = ({
     drawOption,
     geoObjects,
@@ -27,10 +32,7 @@ const DrawHandler: FunctionComponent<Props> = ({
     const [created, setCreated] = useState(false);
     const [completed, setCompleted] = useState(false);
     const [radius, setRadius] = useState(10);
-    const [data, setData] = useState<State>({
-        type: "Polygon",
-        coordinates: []
-    });
+    const [data, setData] = useState<State>(emptyPolygon);
     const map = useMapEvents({
         click: (event) => {
             if(!created && drawOption === "circle") {
@@ -48,7 +50,7 @@ const DrawHandler: FunctionComponent<Props> = ({
                 const item = [lng, lat];
                 setData(state => {
                     const coordinates = [...state.coordinates[0] as number[][], item];
-
+                    
                     return {
                         ...state,
                         coordinates: [coordinates],
@@ -60,7 +62,7 @@ const DrawHandler: FunctionComponent<Props> = ({
                 const item = [lng, lat];
                 setData(state => {
                     const coordinates = [...state.coordinates as number[][], item];
-
+                   
                     return {
                         ...state,
                         coordinates,
@@ -80,7 +82,27 @@ const DrawHandler: FunctionComponent<Props> = ({
     });
 
     useEffect(() => {
-        if(completed) {
+        if(completed && drawOption === "lineString") {
+            
+            onChange({
+                id: newId(),
+                data,
+            });
+            setData(emptyPolygon);
+            setCompleted(false);
+        }
+
+        if(completed && drawOption === "polygon") {
+            
+            onChange({
+                id: newId(),
+                data,
+            });
+            setData(emptyPolygon);
+            setCompleted(false);
+        }
+
+        if(completed && drawOption === "circle") {
             const data = circleToPolygon([center.lng, center.lat], radius);
             
             setCreated(false);
@@ -90,7 +112,7 @@ const DrawHandler: FunctionComponent<Props> = ({
                 data,
             });
         }
-    }, [completed]);
+    }, [drawOption, completed]);
 
     useEffect(() => {
 
@@ -108,15 +130,19 @@ const DrawHandler: FunctionComponent<Props> = ({
             let type: "LineString" | "Polygon" = "LineString";
             let coordinates: number[][] | number[][][] = [];
 
-            if(drawOption === "circle" || drawOption === "polygon") {
-                type = "Polygon";
+            if(drawOption === "lineString") {
+                type = "LineString";
+                coordinates = [];
+            }
 
-                if(data.type === "LineString") {
-                    coordinates = [data.coordinates as number[][]];
-                }
-                else {
-                    coordinates = [[]];
-                }
+            if(drawOption === "circle") {
+                type = "Polygon";
+                coordinates = [[]];
+            }
+
+            if(drawOption === "polygon") {
+                type = "Polygon";
+                coordinates = [[]];
             }
 
             return {
@@ -126,10 +152,26 @@ const DrawHandler: FunctionComponent<Props> = ({
         });
     }, [data, drawOption]);
 
+    const onEnter = (event: KeyboardEvent) => {
+        if(event.key === "Enter") {
+            setCompleted(true);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("keydown", onEnter);
+
+        return () => {
+            window.removeEventListener("keydown", onEnter);
+        }
+    }, []);
 
     return <>
-        {!completed && drawOption === "circle" ? <div className="draw-page__popup">To place a circle, click on the map, move mouse to set radius and click to finish</div> : null}
+        {!completed && drawOption === "circle" ? <div className="draw-page__popup">To draw a circle, click on the map, move mouse to set radius and click to finish</div> : null}
+        {!completed && drawOption === "lineString" ? <div className="draw-page__popup">To draw a line string, click on the map and press enter to finish</div> : null}
+        {!completed && drawOption === "polygon" ? <div className="draw-page__popup">To draw a polygon, click on the map and press enter to finish</div> : null}
         {geoObjects.map(pr => <GeoJSON key={pr.id} data={pr.data}/>)}
+        <GeoJSON key={Math.random()} data={data}/>
         {created ? <Circle eventHandlers={{
             mousemove: (event) => {
                 if(isDragging) {

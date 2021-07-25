@@ -30,6 +30,8 @@ const DrawPage: FunctionComponent = ({
 
     }
 
+    const onRemoveShapes = () => setGeoObjects([]);
+
     const onHide = () => setPreviewShow(false);
 
     const onPreview = () => {
@@ -37,11 +39,23 @@ const DrawPage: FunctionComponent = ({
         if(exportType === "wkt") {
 
             if(geoObjects.length === 1) {
-                const wkt = stringify(geoObjects[0].data as any);
+                let wkt = stringify(geoObjects[0].data as any);
+                wkt = wkt.replace(/,/g, ",\n")
                 setData(wkt);
                 setPreviewShow(true);
                 return;
             }
+
+            let result = "";
+
+            for(const geoObject of geoObjects) {
+                let wkt = stringify(geoObject.data as any);
+                wkt = wkt.replace(/,/g, ",\n");
+                result += "\n" + wkt;
+            }
+            
+            setData(result);
+            setPreviewShow(true);
 
             return;
         }
@@ -80,7 +94,9 @@ const DrawPage: FunctionComponent = ({
             onExport={onExport}
             onPreview={onPreview}
             onHide={onHide}
+            onRemoveShapes={onRemoveShapes}
             data={data}
+            dataAvailable={!!geoObjects.length}
             isPreviewShowing={isPreviewShowing}
         />
         <MapContainer

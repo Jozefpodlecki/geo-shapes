@@ -29,7 +29,8 @@ const PreviewDialog: FunctionComponent<Props> = ({
     const styles = useSpring({
         opacity: isShowing ? 1 : 0,
     })
-    const text = exportType === "geojson" ? stringify(data) : data ? data.replace(/,/g, ",\n") : data;
+
+    const text = exportType === "geojson" ? stringify(data) : data;
 
     const _onExport = () => onExport(id!);
 
