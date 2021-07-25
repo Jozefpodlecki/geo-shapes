@@ -1,0 +1,50 @@
+.preview-dialog {
+    flex: 0 1 600px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+
+    &__overlay {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background: #000000AA;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__close {
+        margin-left: auto;
+    }
+
+    &__right, &__topBar {
+        display: flex;
+    }
+
+    &__body {
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+        > pre {
+            margin: 0;
+        }
+    }
+}

@@ -3,7 +3,8 @@
     &__panel {
         display: flex;
         flex-direction: column;
-        flex: 0 0 200px;
+        flex: 0 0 250px;
+        padding: 10px;
     }
 
     &__toolbox {
@@ -32,6 +33,14 @@
     }
 }
 
+.export-section {
+    margin-top: 50px;
+
+    &__title {
+        margin-bottom: 5px;
+    }
+}
+
 .export {
     display: flex;
     font-size: 10px;
@@ -41,8 +50,9 @@
         padding: 10px;
         border: 1px solid white;
 
-        &.selected {
-
+        &--selected {
+            background: white;
+            color: black;
         }
     }
 }

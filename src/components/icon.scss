@@ -1,9 +1,12 @@
 .icon {
     transition: opacity .3s ease-in;
-    cursor: pointer;
     padding: 10px;
-    
-    &:hover {
-        opacity: 0.6;
+
+    &--interactive {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }

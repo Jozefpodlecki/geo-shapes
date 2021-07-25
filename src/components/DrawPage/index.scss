@@ -3,6 +3,16 @@
     flex: 1;
     font-family: 'Roboto', sans-serif;
     
+    &__popup {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 5px);
+        padding: 10px;
+        background: #000000AA;
+        z-index: 1000;
+    }
+
     &__map {
         flex: 1;
         height: 100%;

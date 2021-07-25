@@ -30,6 +30,9 @@
             font-size: 10px;
         }
 
+        &__body {
+            display: flex;
+        }
 
         &__delete {
             transition: color .3s ease-in;

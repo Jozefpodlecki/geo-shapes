@@ -5,7 +5,7 @@ import './icon.scss';
 
 type Props = {
     className: string;
-    onClick(event: MouseEvent<HTMLDivElement>): void
+    onClick?(event: MouseEvent<HTMLDivElement>): void
     icon: IconProp;
 }
 
@@ -15,7 +15,7 @@ const Icon: FunctionComponent<Props> = ({
     icon,
     ...rest
 }) => {
-    return <div {...rest} onClick={onClick} className={`icon ${className}`}><FontAwesomeIcon icon={icon}/></div>
+    return <div {...rest} onClick={onClick} className={`icon ${onClick ? "icon--interactive" : ""} ${className}`}><FontAwesomeIcon icon={icon}/></div>
 }
 
 export default memo(Icon);

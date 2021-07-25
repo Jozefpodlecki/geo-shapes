@@ -1,33 +1,61 @@
-import React, { FunctionComponent, MouseEvent, useCallback } from 'react';
+import { FunctionComponent, MouseEvent, useCallback, useMemo } from 'react';
 import { GeoJSON, MapContainer, TileLayer } from 'react-leaflet';
 import { useDropzone } from 'react-dropzone';
-import { faDownload, faFileUpload, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { GeoJsonObject } from 'geojson';
+import { GeoJsonObject, Feature } from 'geojson';
 import { useEffect } from 'react';
-import { newId } from 'appUtils';
-import { DotLoader } from 'react-spinners';
-import { Feature } from 'geojson';
+import { download, extractGeoObjectFromText, getGeojsonFriendlyName, getTextFromBlob, newId, toBase64DataUri, trySaveToLocalStorage } from 'appUtils';
+import { BarLoader, DotLoader } from 'react-spinners';
 import { NotificationManager } from 'react-notifications';
 import { parse, stringify } from "wkt";
-import { LeafletEvent } from 'leaflet';
-import './index.scss';
+import { geoJSON, LeafletEvent } from 'leaflet';
 import ImportItem from './ImportItem';
 import DragOverlay from './DragOverlay';
+import './index.scss';
+import MapHandler from './MapHandler';
+import PreviewDialog from './PreviewDialog';
+import WarningDialog from './WarningDialog';
 
-type EnhancedGeoJsonObject = {
+type GeoObject = {
     id: string;
-    fileName: string;
+    name: string;
+    fileName?: string;
     loadedAt: Date;
-    data: GeoJsonObject;
     isSelected: boolean;
     featuresCount: number;
-}
+    area: number;
+    points: number;
+    warning?: string;
+} & ({
+    data: GeoJsonObject;
+    invalid: false;
+} | {
+    data: unknown;
+    invalid: true;
+})
+
+type PageMode = "show-preview" | "show-warning" | undefined;
 
 const ExplorePage: FunctionComponent = () => {
-    const [geojsonObjects, setGeojsonObjects] = useState<EnhancedGeoJsonObject[]>([]);
-    const [isUploading, setUploading] = useState(false);
+    const [geojsonObjects, setGeojsonObjects] = useState<GeoObject[]>([]);
+    const [isUploading, setUploading] = useState(true);
+    const [{
+        id,
+        warning,
+        data,
+    }, setData] = useState<{
+        id: string;
+        warning: string | undefined;
+        data: GeoJsonObject;
+    }>({
+        id: "",
+        warning: "",
+        data: {
+            type: "Point"
+        },
+    });
+    const [pageMode, setPageMode] = useState<PageMode>();
+    const [center, setCenter] = useState<[number, number]>([51.505, -0.09]);
 
     const onDrop = useCallback((acceptedFiles: File[]) => {
         if(!acceptedFiles.length) {
@@ -35,48 +63,38 @@ const ExplorePage: FunctionComponent = () => {
         }
   
         setUploading(true);
-        const reader = new FileReader();
+        
 
         (async () => {
-            let newState = new Array<EnhancedGeoJsonObject>();
+            let newState = new Array<GeoObject>();
 
             for(const file of acceptedFiles) {
 
-                const geojsonObject = await new Promise<EnhancedGeoJsonObject>((resolve) => {
-                    reader.onload = function() {
-                        const text = reader.result as string;
-                        let data;
-                        let featuresCount = 0;
+                const text = await getTextFromBlob(file);
+                const data = extractGeoObjectFromText(text);
+                let featuresCount = 0;
 
-                        try {
-                            data = JSON.parse(text) as GeoJsonObject;
-                        }
-                        catch(error) {
-                            data = parse(text);
-                        }
-                        
-            
-                        const geojsonObject = {
-                            id: newId(),
-                            fileName: file.name,
-                            loadedAt: new Date(),
-                            isSelected: false,
-                            featuresCount,
-                            data
-                        };
-                        
-                        resolve(geojsonObject);
-                    };
+                const geoObject = {
+                    id: newId(),
+                    name: file.name,
+                    fileName: file.name,
+                    loadedAt: new Date(),
+                    isSelected: false,
+                    featuresCount,
+                    data,
+                    invalid: !data,
+                } as GeoObject;
 
-                    reader.readAsText(file);
-                })
+                newState.push(geoObject);
 
-                newState.push(geojsonObject);
+                if(!trySaveToLocalStorage(newState)) {
+                    geoObject.warning = "We could not save geo-object to local storage. The file size is too big.";
+                }
             }
 
-            newState = newState.concat(geojsonObjects)
+            newState = newState.concat(geojsonObjects);
             setGeojsonObjects(newState)
-            localStorage.setItem("saved", JSON.stringify(newState));
+            
             setUploading(false);
         })();
 
@@ -91,6 +109,7 @@ const ExplorePage: FunctionComponent = () => {
             new Promise(() => {
                 const data = JSON.parse(savedObjects);
                 setGeojsonObjects(data);
+                setUploading(false);
             });
         }
 
@@ -109,6 +128,45 @@ const ExplorePage: FunctionComponent = () => {
         }
 
         setTimeout(checkClipboard, 2000);
+    }, []);
+
+    const onPaste = (_event: Event) => {
+        const event = _event as ClipboardEvent;
+        const text = event.clipboardData?.getData("text");
+
+        if(!text) {
+            return;
+        }
+
+        const data = extractGeoObjectFromText(text);
+
+        if(!data) {
+            return;
+        }
+
+        let featuresCount = 0;
+
+        const name = getGeojsonFriendlyName(data);
+
+        const geojsonObject = {
+            id: newId(),
+            name,
+            loadedAt: new Date(),
+            isSelected: false,
+            featuresCount: 0,
+            data,
+            invalid: !data,
+        }  as GeoObject;
+
+        setGeojsonObjects(state => [...state, geojsonObject]);
+    }
+
+    useEffect(() => {
+        window.addEventListener("paste", onPaste);
+
+        return () => {
+            window.removeEventListener("paste", onPaste);
+        }
     }, []);
 
     const onToggle = (event: MouseEvent<HTMLDivElement>) => {
@@ -136,11 +194,11 @@ const ExplorePage: FunctionComponent = () => {
         });
     }
 
-    const onDeleteUploaded = (event: MouseEvent<HTMLDivElement>) => {
+    const onDelete = (event: MouseEvent<HTMLDivElement>) => {
         const { id } = event.currentTarget.dataset;
 
         setGeojsonObjects((state) => {
-            const newState = state.filter(pr => pr.id !== id);
+            const newState = state.filter(pr => pr.id !== id && !pr.warning);
             localStorage.setItem("saved", JSON.stringify(newState));
 
             return newState;
@@ -148,75 +206,98 @@ const ExplorePage: FunctionComponent = () => {
         
     }
 
-    const eventHandlers = {
-        click(event: LeafletEvent) {
-            const target = event.sourceTarget;
+    const onShowOnMap = (id: string) => {
+        const geojsonObject = geojsonObjects.find(pr => pr.id === id)!;
 
-            if("feature" in target) {
-                const id = target.feature.id;
-
-                setGeojsonObjects((state) => {
-                    const newState = [...state];
-
-                    if(!newState.some(pr => pr.id === id)) {
-                        return state;
-                    }
-
-                    for (const item of newState) {
-                        
-                        if(item.isSelected) {
-                            item.isSelected = !item.isSelected;
-                        }
-
-                        if(item.id === id) {
-                            item.isSelected = !item.isSelected;
-                        }
-                    }
-
-                    return newState;
-                });
-                
-            }
+        if(geojsonObject.invalid) {
+            return;
         }
-    };
+        
+        const { lat,lng } = geoJSON(geojsonObject.data).getBounds().getCenter();
 
-    const onEachFeature = (id: string) => (feature: Feature) => {
-        feature.id = id;
+        setCenter([lat, lng]);
     }
 
-    const onExport = () => {
-        
+    const onShowWarning = (id: string) => {
+        const geojsonObject = geojsonObjects.find(pr => pr.id === id)!;
+
+        setPageMode("show-warning");
+        setData(state => ({
+            ...state,
+            warning: geojsonObject.warning,
+        }));
+    }
+
+    const onHide = () => setPageMode(undefined);
+
+    const onShowGeojson = (id: string) => {
+        const geojsonObject = geojsonObjects.find(pr => pr.id === id)!;
+
+        if(geojsonObject.invalid) {
+            return;
+        }
+
+        setPageMode("show-preview");
+        setData(state => ({
+            ...state,
+            id: geojsonObject.id,
+            data: geojsonObject.data,
+        }));
+    }
+
+    const onExport = (id: string) => {
+        const geojsonObject = geojsonObjects.find(pr => pr.id === id)!;
+        const text = toBase64DataUri(JSON.stringify(geojsonObject?.data));
+        const fileName = geojsonObject.fileName ? geojsonObject.fileName : `${geojsonObject.name}.geojson`;
+
+        download(text, fileName);
     }
 
     return <div className="explore-page" {...getRootProps()}>
         <DragOverlay isShowing={isDragActive}/>
         <MapContainer
             zoom={4}
-            center={[51.505, -0.09]}
+            center={center}
             scrollWheelZoom={true}
             className="explore-page__map">
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {geojsonObjects.map(pr => <GeoJSON
-            key={pr.id}
-            data={pr.data}
-            data-id={pr.id}
-            style={{
-                color: pr.isSelected ? "blue" : "gray"
-            }}
-            eventHandlers={eventHandlers}
-            onEachFeature={onEachFeature(pr.id)} />)}
+         <MapHandler
+            geojsonObjects={geojsonObjects}
+            center={center}
+         />
         </MapContainer>
+        <PreviewDialog
+            id={id}
+            onHide={onHide}
+            onExport={onExport}
+            isShowing={pageMode === "show-preview"}
+            data={data}
+            />
+        <WarningDialog
+            isShowing={pageMode === "show-warning"}
+            warning={warning}
+            onHide={onHide}
+        />
         <div className="explore-page__panel">
-            {isUploading ? <DotLoader color="white" /> : null}
-            {geojsonObjects.map(pr => <ImportItem
-                key={pr.id}
-                onDeleteUploaded={onDeleteUploaded}
-                onExport={onExport}
-                onToggle={onToggle}
-                {...pr} />)}
+            <div className="explore-page__loader">
+                <BarLoader speedMultiplier={.5} color={isUploading ? "white" : "transparent"} width="100%"/>
+            </div>
+            <div className="explore-page__toolbar"></div>
+            <div className="explore-page__list">
+                {geojsonObjects.map(pr => <ImportItem
+                    key={pr.id}
+                    onDelete={onDelete}
+                    onExport={onExport}
+                    onToggle={onToggle}
+                    onShowWarning={onShowWarning}
+                    onShowOnMap={onShowOnMap}
+                    onShowGeojson={onShowGeojson}
+                    {...pr} />)}
+            </div>
+            
         </div>
     </div>;
 }

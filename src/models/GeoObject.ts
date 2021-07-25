@@ -5,6 +5,7 @@ export type Country = {
     capital: string;
     shortName: string;
     countryCode: string;
+    iso3166a3: string;
     thumbnailUrl: string;
     flagUrl: string;
     search: string;

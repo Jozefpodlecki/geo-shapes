@@ -1,7 +1,8 @@
 import { baseUrl } from "./appConstants";
 import { Country, GeoObject } from "models/GeoObject";
 import { Region } from "./models/Region";
-import { GeoJsonObject } from "geojson";
+import { GeoJsonObject, FeatureCollection } from "geojson";
+import PolygonLookup from "polygon-lookup";
 
 type Options = {
     phrase: string;
@@ -43,6 +44,35 @@ export const getCountrySvg = (countryCode: string) => {
 
 export const getCountryGeojsonLink = (countryCode: string): string => {
     return `${baseUrl}/assets/geojson/${countryCode}.geojson`;
+}
+
+let lookup: PolygonLookup;
+
+export const getCountryFromLatLng = async (lat: number, lng: number): Promise<string | undefined> => {
+    
+    if(!lookup) {
+        const countries = await fetch(`${baseUrl}/assets/geojson/countries.geojson`)
+            .then<FeatureCollection>(pr => pr.json());
+        lookup = new PolygonLookup(countries);
+    }
+
+    const polygon = lookup.search(lat, lng);
+    
+    if(polygon) {
+        console.log(polygon);
+        debugger;
+        return (polygon as any).properties.ISO_A3;
+    }
+}
+
+export const getCountryGeojsonByIso3166a3 = async (iso3166a3: string): Promise<GeoJsonObject | undefined> => {
+    const countries = await fetch(`${baseUrl}/assets/geoObjects.json`)
+        .then<Country[]>(pr => pr.json());
+
+    const country = countries.find(pr => pr.iso3166a3 === iso3166a3);
+    
+    return fetch(`${baseUrl}/assets/geojson/${country?.countryCode}.geojson`)
+        .then(pr => pr.json());
 }
 
 export const getCountryGeojson = (countryCode: string): Promise<GeoJsonObject | undefined> => {

@@ -1,0 +1,44 @@
+.warning-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__overlay {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background: #000000AA;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__body {
+        margin: 0 30px;
+        flex: 0 0 150px;
+        background: black;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__closeIcon {
+        margin-left: auto;
+    }
+
+    &__warningIcon {
+        font-size: 60px;
+        position: absolute;
+        margin-top: -50px;
+        color: orange;
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+    }
+}
