@@ -60,4 +60,4 @@ const WarningDialog: FunctionComponent<Props> = ({
     </animated.div>
 }
 
-export default WarningDialog;
+export default memo(WarningDialog);

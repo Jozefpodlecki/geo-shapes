@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useRef } from 'react';
+import { FunctionComponent, memo, memo, useEffect, useMemo, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { GeoJsonObject } from 'geojson';
 import stringify from "json-stringify-pretty-compact"
@@ -26,7 +26,7 @@ const PreviewDialog: FunctionComponent<Props> = ({
     const styles = useSpring({
         opacity: isShowing ? 1 : 0,
     })
-    const text = stringify(data);
+    const text = useMemo(() => stringify(data), [data]);
 
     const _onExport = () => onExport(id);
 
@@ -79,4 +79,4 @@ const PreviewDialog: FunctionComponent<Props> = ({
     </animated.div>;
 }
 
-export default PreviewDialog;
+export default memo(PreviewDialog);
