@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useRef } from 'react';
+import { FunctionComponent, useEffect, memo, useRef } from 'react';
 import { faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Icon from 'components/Icon';
 import { useSpring, animated } from 'react-spring';

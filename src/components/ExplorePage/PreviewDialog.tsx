@@ -1,4 +1,4 @@
-import { FunctionComponent, memo, memo, useEffect, useMemo, useRef } from 'react';
+import { FunctionComponent, memo, useEffect, useMemo, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { GeoJsonObject } from 'geojson';
 import stringify from "json-stringify-pretty-compact"

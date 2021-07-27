@@ -8,13 +8,16 @@ import { download, extractGeoObjectFromText, getGeojsonFriendlyName, getTextFrom
 import { BarLoader, DotLoader } from 'react-spinners';
 import { NotificationManager } from 'react-notifications';
 import { parse, stringify } from "wkt";
-import { geoJSON, LeafletEvent } from 'leaflet';
+import { geoJSON, LatLngLiteral, LeafletEvent } from 'leaflet';
 import ImportItem from './ImportItem';
 import DragOverlay from './DragOverlay';
 import './index.scss';
 import MapHandler from './MapHandler';
 import PreviewDialog from './PreviewDialog';
 import WarningDialog from './WarningDialog';
+import { Actions } from './Menu';
+import { getCountryFromLatLng, getCountryGeojsonByIso3166a3 } from 'api';
+import moment from 'moment';
 
 type GeoObject = {
     id: string;
@@ -253,6 +256,57 @@ const ExplorePage: FunctionComponent = () => {
         download(text, fileName);
     }
 
+    const onAction = (action: Actions, latlng: LatLngLiteral) => {
+        setUploading(true);
+        if(action === "nearby-country") {
+            const { lat, lng } = latlng;
+
+            (async () => {
+                try {
+                    const iso3166a3 = await getCountryFromLatLng(lng, lat);
+
+                    if(!iso3166a3) {
+                        return;
+                    }
+    
+                    const geojson = await getCountryGeojsonByIso3166a3(iso3166a3);
+                    const suffix = moment().format("_YYYYMMDDHHmmss");
+                    
+                    if(!geojson) {
+                        return;
+                    }
+
+                    setGeojsonObjects(state => {
+                        const newState = [...state, {
+                            id: newId(),
+                            data: geojson,
+                            name: `${iso3166a3}${suffix}`,
+                            area: 0,
+                            featuresCount: 0,
+                            invalid: false,
+                            isSelected: false,
+                            loadedAt: new Date(),
+                            points: 0,
+                        }];
+                        localStorage.setItem("saved", JSON.stringify(newState));
+    
+                        return newState;
+                    });
+                            
+                    setTimeout(() => {
+                        setUploading(false);
+                    }, 1000);
+                } catch (error) {
+                    setUploading(false);
+                }
+
+            })();
+            
+        }
+
+        onHide();
+    }
+
     return <div className="explore-page" {...getRootProps()}>
         <DragOverlay isShowing={isDragActive}/>
         <MapContainer
@@ -265,6 +319,7 @@ const ExplorePage: FunctionComponent = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
          <MapHandler
+            onAction={onAction}
             geojsonObjects={geojsonObjects}
             center={center}
          />

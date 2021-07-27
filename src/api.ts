@@ -1,7 +1,7 @@
 import { baseUrl } from "./appConstants";
 import { Country, GeoObject } from "models/GeoObject";
 import { Region } from "./models/Region";
-import { GeoJsonObject, FeatureCollection } from "geojson";
+import { GeoJsonObject, FeatureCollection, Feature, Polygon, MultiPolygon } from "geojson";
 import PolygonLookup from "polygon-lookup";
 
 type Options = {
@@ -9,9 +9,11 @@ type Options = {
     pageSize: number;
 }
 
-export const searchGeoObjects = async (options: Options): Promise<GeoObject[]> => {
-    const geoObjects = await fetch(`${baseUrl}/assets/geoObjects.json`)
+const geoObjectsPromise = fetch(`${baseUrl}/assets/geoObjects.json`)
         .then<GeoObject[]>(pr => pr.json());
+
+export const searchGeoObjects = async (options: Options): Promise<GeoObject[]> => {
+    const geoObjects = await geoObjectsPromise;
 
     return geoObjects
         .filter(pr => pr.search.toLowerCase().includes(options.phrase))
@@ -25,8 +27,8 @@ export const getRegions = (countryCode: string): Promise<Region[]> => {
 }
 
 export const getCountry = async (countryCode: string): Promise<Country | undefined> => {
-    const countries = await fetch(`${baseUrl}/assets/geoObjects.json`)
-        .then<Country[]>(pr => pr.json());
+    const geoObjects = await geoObjectsPromise;
+    const countries = geoObjects.filter(pr => pr.type === "country") as Country[];
 
     return countries
         .find(pr => pr.countryCode.includes(countryCode));
@@ -56,18 +58,16 @@ export const getCountryFromLatLng = async (lat: number, lng: number): Promise<st
         lookup = new PolygonLookup(countries);
     }
 
-    const polygon = lookup.search(lat, lng);
+    const polygon = lookup.search(lat, lng) as Feature<Polygon | MultiPolygon, { ISO_A3: string }> | undefined;
     
     if(polygon) {
-        console.log(polygon);
-        debugger;
-        return (polygon as any).properties.ISO_A3;
+        return polygon.properties.ISO_A3.toLowerCase();
     }
 }
 
 export const getCountryGeojsonByIso3166a3 = async (iso3166a3: string): Promise<GeoJsonObject | undefined> => {
-    const countries = await fetch(`${baseUrl}/assets/geoObjects.json`)
-        .then<Country[]>(pr => pr.json());
+    const geoObjects = await geoObjectsPromise;
+    const countries = geoObjects.filter(pr => pr.type === "country") as Country[];
 
     const country = countries.find(pr => pr.iso3166a3 === iso3166a3);
     

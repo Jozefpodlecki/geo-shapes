@@ -1,4 +1,5 @@
 import { GeoJsonObject, Feature, FeatureCollection } from 'geojson';
+import { Base64 } from 'js-base64';
 import moment from 'moment';
 import { parse } from 'wkt';
 export * from "./circleToPolygon";
@@ -8,7 +9,7 @@ export const newId = () => {
 };
 
 export const toBase64DataUri = (text: string) => {
-    const payload = btoa(text);
+    const payload = Base64.encode(text);
     const dataUri = `data:text/plain;base64,${payload}`;
     return dataUri;
 }
