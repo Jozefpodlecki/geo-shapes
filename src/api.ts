@@ -48,20 +48,37 @@ export const getCountryGeojsonLink = (countryCode: string): string => {
     return `${baseUrl}/assets/geojson/${countryCode}.geojson`;
 }
 
-let lookup: PolygonLookup;
+let countryLookup: PolygonLookup;
 
 export const getCountryFromLatLng = async (lat: number, lng: number): Promise<string | undefined> => {
     
-    if(!lookup) {
+    if(!countryLookup) {
         const countries = await fetch(`${baseUrl}/assets/geojson/countries.geojson`)
             .then<FeatureCollection>(pr => pr.json());
-        lookup = new PolygonLookup(countries);
+            countryLookup = new PolygonLookup(countries);
     }
 
-    const polygon = lookup.search(lat, lng) as Feature<Polygon | MultiPolygon, { ISO_A3: string }> | undefined;
+    const polygon = countryLookup.search(lat, lng) as Feature<Polygon | MultiPolygon, { ISO_A3: string }> | undefined;
     
     if(polygon) {
         return polygon.properties.ISO_A3.toLowerCase();
+    }
+}
+
+let continentLookup: PolygonLookup;
+
+export const getContinentFromLatLng = async (lat: number, lng: number): Promise<string | undefined> => {
+    
+    if(!continentLookup) {
+        const countries = await fetch(`${baseUrl}/assets/geojson/continents.geojson`)
+            .then<FeatureCollection>(pr => pr.json());
+            continentLookup = new PolygonLookup(countries);
+    }
+
+    const polygon = continentLookup.search(lat, lng) as Feature<Polygon | MultiPolygon, { continent: string }> | undefined;
+    
+    if(polygon) {
+        return polygon.properties.continent.toLowerCase();
     }
 }
 
@@ -72,6 +89,11 @@ export const getCountryGeojsonByIso3166a3 = async (iso3166a3: string): Promise<G
     const country = countries.find(pr => pr.iso3166a3 === iso3166a3);
     
     return fetch(`${baseUrl}/assets/geojson/${country?.countryCode}.geojson`)
+        .then(pr => pr.json());
+}
+
+export const getContinentGeojson = async (continent: string): Promise<GeoJsonObject | undefined> => {
+    return fetch(`${baseUrl}/assets/geojson/${continent}.geojson`)
         .then(pr => pr.json());
 }
 

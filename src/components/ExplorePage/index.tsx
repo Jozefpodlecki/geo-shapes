@@ -16,7 +16,7 @@ import MapHandler from './MapHandler';
 import PreviewDialog from './PreviewDialog';
 import WarningDialog from './WarningDialog';
 import { Actions } from './Menu';
-import { getCountryFromLatLng, getCountryGeojsonByIso3166a3 } from 'api';
+import { getContinentFromLatLng, getContinentGeojson, getCountryFromLatLng, getCountryGeojsonByIso3166a3 } from 'api';
 import moment from 'moment';
 
 type GeoObject = {
@@ -257,15 +257,62 @@ const ExplorePage: FunctionComponent = () => {
     }
 
     const onAction = (action: Actions, latlng: LatLngLiteral) => {
+        const { lat, lng } = latlng;
         setUploading(true);
+
+        if(action == "nearby-continent") {
+            (async () => {
+
+                try {
+
+                    const continent = await getContinentFromLatLng(lng, lat);
+
+                    if(!continent) {
+                        setUploading(false);
+                        return;
+                    }
+
+                    const geojson = await getContinentGeojson(continent);
+
+                    if(!geojson) {
+                        setUploading(false);
+                        return;
+                    }
+
+                    const suffix = moment().format("_YYYYMMDDHHmmss");
+
+                    setGeojsonObjects(state => {
+                        const newState = [...state, {
+                            id: newId(),
+                            data: geojson,
+                            name: `${continent}${suffix}`,
+                            area: 0,
+                            featuresCount: 0,
+                            invalid: false,
+                            isSelected: false,
+                            loadedAt: new Date(),
+                            points: 0,
+                        }];
+    
+                        return newState;
+                    });
+
+                    setUploading(true);
+                }
+                catch(error) {
+                    setUploading(true);
+                }
+            })();
+        }
+
         if(action === "nearby-country") {
-            const { lat, lng } = latlng;
 
             (async () => {
                 try {
                     const iso3166a3 = await getCountryFromLatLng(lng, lat);
 
                     if(!iso3166a3) {
+                        setUploading(false);
                         return;
                     }
     
@@ -273,6 +320,7 @@ const ExplorePage: FunctionComponent = () => {
                     const suffix = moment().format("_YYYYMMDDHHmmss");
                     
                     if(!geojson) {
+                        setUploading(false);
                         return;
                     }
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useCallback } from 'react';
 import { Region } from 'models/Region';
 import { getCountry, getCountryGeojson, getCountrySvg, getRegions } from 'api';
-import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents, Marker, Popup } from 'react-leaflet';
 import { baseUrl } from 'appConstants';
 import { useParams } from 'react-router-dom';
 import { Country, GeoObject } from "models/GeoObject";
@@ -170,7 +170,7 @@ const CountryPage: FunctionComponent = () => {
                 /> :
                 <MapContainer
                     zoom={state.country.zoom}
-                    center={state.country.center}
+                    center={state.country.countryCenter}
                     scrollWheelZoom={true}
                     className="country-page__leafletMap">
                     <TileLayer
@@ -178,6 +178,11 @@ const CountryPage: FunctionComponent = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     {geojson ? <GeoJSON data={geojson}/> : null}
+                    {state.country.capitalCenter ? <Marker position={state.country.capitalCenter}>
+                        <Popup>
+                            {state.country.capital}
+                        </Popup>
+                    </Marker> : null}
                     <DevInfo/>
                 </MapContainer>}
             </div>
