@@ -6,4 +6,5 @@ export type ExportType = "geojson" | "csv" | "wkt" | "wkb";
 export type GeoObject = {
     id: string;
     data: GeoJsonObject;
+    selected: boolean;
 }

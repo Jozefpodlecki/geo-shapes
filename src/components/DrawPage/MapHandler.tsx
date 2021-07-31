@@ -86,6 +86,7 @@ const DrawHandler: FunctionComponent<Props> = ({
             
             onChange({
                 id: newId(),
+                selected: false,
                 data,
             });
             setData(emptyPolygon);
@@ -96,6 +97,7 @@ const DrawHandler: FunctionComponent<Props> = ({
             
             onChange({
                 id: newId(),
+                selected: false,
                 data,
             });
             setData(emptyPolygon);
@@ -109,6 +111,7 @@ const DrawHandler: FunctionComponent<Props> = ({
             setCompleted(false);
             onChange({
                 id: newId(),
+                selected: false,
                 data,
             });
         }
@@ -170,7 +173,9 @@ const DrawHandler: FunctionComponent<Props> = ({
         {!completed && drawOption === "circle" ? <div className="draw-page__popup">To draw a circle, click on the map, move mouse to set radius and click to finish</div> : null}
         {!completed && drawOption === "lineString" ? <div className="draw-page__popup">To draw a line string, click on the map and press enter to finish</div> : null}
         {!completed && drawOption === "polygon" ? <div className="draw-page__popup">To draw a polygon, click on the map and press enter to finish</div> : null}
-        {geoObjects.map(pr => <GeoJSON key={pr.id} data={pr.data}/>)}
+        {geoObjects.map(pr => <GeoJSON key={pr.id} data={pr.data} style={{
+            color: pr.selected ? "blue" : "gray",
+        }}/>)}
         <GeoJSON key={Math.random()} data={data}/>
         {created ? <Circle eventHandlers={{
             mousemove: (event) => {

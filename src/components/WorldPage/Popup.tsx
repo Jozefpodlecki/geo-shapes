@@ -9,7 +9,7 @@ type Props = {
     fullName: string;
     capital: string;
     flagUrl: string;
-    countryCode: string;
+    iso3166a2: string;
     center: [number, number];
     area: number;
     regions: number;
@@ -22,7 +22,7 @@ const Popup: FunctionComponent<Props> = ({
     capital,
     flagUrl,
     fullName,
-    countryCode,
+    iso3166a2,
     center,
     area,
     regions,
@@ -67,7 +67,7 @@ const Popup: FunctionComponent<Props> = ({
         </div>
         <div className="popup__footer">
             <TextIcon text="Geojson" className="popup__" onClick={onExport} icon={faDownload} />
-            <LinkIcon className="popup__iconButton" to={`/country/${countryCode}`} icon={faInfo}/>
+            <LinkIcon className="popup__iconButton" to={`/country/${iso3166a2}`} icon={faInfo}/>
         </div>
     </div>;
 }

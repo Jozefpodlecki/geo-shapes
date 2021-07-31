@@ -9,13 +9,9 @@ declare module "react-notifications" {
 }
 
 declare module "wkt" {
-    type Geojson = {
-        type: "Point" | "LineString" | "Polygon";
-        coordinates: number[] | number[][] | number[][][];
-    }
 
     function parse(wkt: string): Geojson;
-    function stringify(geojson: Geojson): string;
+    function stringify(geojson: any): string;
 
     export {
         parse,

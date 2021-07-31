@@ -30,6 +30,28 @@
     }
 }
 
+.items-section {
+    margin-top: 20px;
+
+    &__header {
+        display: flex;  
+    }
+
+    &__title {
+        margin-bottom: 5px;
+    }
+
+    &__item {
+        display: flex;
+        padding: 5px;
+        cursor: pointer;
+
+        & + & {
+            padding-top: 0;
+        }
+    }
+}
+
 .payload {
     display: flex;
 

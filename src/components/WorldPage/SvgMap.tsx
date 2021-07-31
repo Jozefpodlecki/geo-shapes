@@ -12,9 +12,7 @@ type Props = {
 }
 
 const SvgMap: FunctionComponent<Props> = ({
-    onMouseEnter,
-    onMouseLeave,
-    onMouseMove,
+  
     onClick,
     svg,
 }) => {
@@ -29,42 +27,89 @@ const SvgMap: FunctionComponent<Props> = ({
 
         const svg = element.firstChild;
        
-        if(!(svg instanceof SVGElement)) {
+        if(!(svg instanceof SVGSVGElement)) {
             return;
         }
         
-        const shape = svg.querySelector("g")!;
+        const svgGroup = svg.querySelector("g")!;
 
-        const { x, y, width, height } = shape.getBoundingClientRect();
-        shape.style.transform = `translate(-${x/2}px, 0)`;
+        const { x, y, width, height, left, top } = svgGroup.getBoundingClientRect();
+        const transformMatrix = [1, 0, 0, 1, 0, 0];
+    
 
-        // const onScroll = (event: any) => {
-        //     const viewBox = svg.getAttribute('viewBox')?.split(" ");
+        const onMouseWheel = (event: WheelEvent) => {
+            let scale = 1;
 
-        //     if(event.wheelDelta > 0) {
-        //         svg.setAttribute("viewBox", "0 0 400 400");
-        //     }
-        //     else {
-        //         svg.setAttribute("viewBox", "0 0 800 800");
-        //     }
+            if(event.deltaY < 0) {
+                scale = 1.1;
+            }
+            else {
+                scale = 0.9;
+            }
 
-        // }
-        // svg.addEventListener("wheel", onScroll);
+            for (let i = 0; i < 4; i++) {
+                transformMatrix[i] *= scale;
+            }
+
+            const { clientX, clientY } = event;
+            transformMatrix[4] += (1 - scale) * clientX;
+            transformMatrix[5] += (1 - scale) * clientY;
+
+            const newMatrix = `matrix(${transformMatrix.join(' ')})`;
+            svgGroup.setAttributeNS(null, "transform", newMatrix);
+        };
+
+        let isDragging = false;
+        const point = svg.createSVGPoint();
+        const matrix = svg.getScreenCTM()?.inverse();
+        let center = [-1, -1];
+
+        const onMouseMove = (event: MouseEvent) => {
+            const { clientX, clientY } = event;
+
+            if(!isDragging) {
+                return;
+            }
+
+            point.x = clientX - center[0];
+            point.y = clientY - center[1];
+            const cursorPoint =  point.matrixTransform(matrix);
+            transformMatrix[4] = cursorPoint.x;
+            transformMatrix[5] = cursorPoint.y;
+            const newMatrix = `matrix(${transformMatrix.join(' ')})`;
+            svgGroup.setAttributeNS(null, "transform", newMatrix);
+        }
+
+        const onMouseDown = (event: MouseEvent) => {
+            const { clientX, clientY } = event;
+            center = [clientX, clientY];
+            isDragging = true;
+        }
+
+        const onMouseUp = () => {
+            isDragging = false;
+        }
 
         const onContextMenu = (event: MouseEvent) => {
             event.preventDefault();
         };
 
+        svg.addEventListener("wheel", onMouseWheel);
         svg.addEventListener("mousemove", onMouseMove);
-        svg.addEventListener("mouseenter", onMouseEnter);
-        svg.addEventListener("mouseleave", onMouseLeave);
+        svg.addEventListener("mousedown", onMouseDown);
+        svg.addEventListener("mouseup", onMouseUp);
+        // svg.addEventListener("mouseenter", onMouseEnter);
+        // svg.addEventListener("mouseleave", onMouseLeave);
         svg.addEventListener("click", onClick);
         svg.addEventListener("contextmenu", onContextMenu);
 
         return () => {
+            svg.removeEventListener("wheel", onMouseMove);
             svg.removeEventListener("mousemove", onMouseMove);
-            svg.removeEventListener("mouseenter", onMouseEnter);
-            svg.removeEventListener("mouseleave", onMouseLeave);
+            svg.addEventListener("mousedown", onMouseDown);
+            svg.addEventListener("mouseup", onMouseUp);
+            // svg.removeEventListener("mouseenter", onMouseEnter);
+            // svg.removeEventListener("mouseleave", onMouseLeave);
             svg.removeEventListener("click", onClick);
             svg.removeEventListener("contextmenu", onContextMenu);
         }

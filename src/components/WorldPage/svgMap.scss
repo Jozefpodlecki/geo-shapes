@@ -8,6 +8,10 @@
             height: inherit;
             fill: white;
 
+            g {
+                transition: all .3s ease-in;
+            }
+
             path {
                 cursor: pointer;
                 

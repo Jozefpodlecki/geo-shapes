@@ -10,7 +10,7 @@ type Props = Country & {
 
 const ListItem: FunctionComponent<Props> = ({
     capital,
-    countryCode,
+    iso3166a2,
     flagUrl,
     fullName,
     id,
@@ -37,7 +37,7 @@ const ListItem: FunctionComponent<Props> = ({
             background: imageUrl ? `url(${imageUrl}) center center / cover` : "gray"
         }}></div>
         </div>
-        <Link className="geoObject__link" onClick={onClick} to={`/country/${countryCode}`}>
+        <Link className="geoObject__link" onClick={onClick} to={`/country/${iso3166a2}`}>
             <div>
                 <div className="geoObject__name">{fullName}</div>
                 <div className="geoObject__type">{capital}</div>

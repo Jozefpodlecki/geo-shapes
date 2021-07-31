@@ -51,18 +51,18 @@ const CountryPage: FunctionComponent = () => {
     const [mapType, setMapType] = useState<MapType>("leaflet");
     const [geojson, setGeojson] = useState<GeoJsonObject>();
     const [svg, setSvg] = useState<string>("");
-    const { countryCode } = useParams<{ countryCode: string }>();
+    const { iso3166a2 } = useParams<{ iso3166a2: string }>();
 
     useEffect(() => {
 
-        if(!countryCode || !state.isLoading) {
+        if(!iso3166a2 || !state.isLoading) {
             return;
         }
 
         (async () => {
             try {
-                const country = await getCountry(countryCode);
-                const regions = await getRegions(countryCode);
+                const country = await getCountry(iso3166a2);
+                const regions = await getRegions(iso3166a2);
 
                 if(!country) {
                     setState({
@@ -87,7 +87,7 @@ const CountryPage: FunctionComponent = () => {
             }
         })();
         
-    }, [state, countryCode])
+    }, [state, iso3166a2])
 
     const onMouseMove = useCallback((event: MouseEvent) => {
         if(state.isLoading || state.hasError) {
@@ -129,11 +129,11 @@ const CountryPage: FunctionComponent = () => {
 
             try {
                 if(mapType === "svg") {
-                    const svg = await getCountrySvg(countryCode);
+                    const svg = await getCountrySvg(iso3166a2);
                     setSvg(svg);
                 }
                 else {
-                    const geojson = await getCountryGeojson(countryCode);
+                    const geojson = await getCountryGeojson(iso3166a2);
                     setGeojson(geojson);
                 }
             } catch (error) {

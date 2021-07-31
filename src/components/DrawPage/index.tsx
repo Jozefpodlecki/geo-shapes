@@ -3,14 +3,25 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import MapHandler from './MapHandler';
 import Panel, { PanelChangeOptions } from './Panel';
 import { DrawOption, ExportType, GeoObject } from './types';
-import { GeoJsonObject, FeatureCollection, Feature } from "geojson";
+import { GeoJsonObject, Geometry, GeometryCollection, Feature } from "geojson";
 import './index.scss';
 import { stringify } from 'wkt';
+import { download, toBase64DataUri } from 'appUtils';
 
+type State = {
+    geoObjects: GeoObject[];
+    selectedCount: number;
+}
 
 const DrawPage: FunctionComponent = ({
 }) => {
-    const [geoObjects, setGeoObjects] = useState<GeoObject[]>([]);
+    const [{
+        geoObjects,
+        selectedCount
+    }, setGeoObjects] = useState<State>({
+        geoObjects: [],
+        selectedCount: 0,
+    });
     const [isPreviewShowing, setPreviewShow] = useState(false);
     const [drawOption, setDrawOption] = useState<DrawOption>("none");
     const [exportType, setExportType] = useState<ExportType>("geojson");
@@ -19,75 +30,90 @@ const DrawPage: FunctionComponent = ({
     const onPanelChange = (options: PanelChangeOptions) => {
         setDrawOption(options.drawOption);
         setExportType(options.exportType);
+        setData("");
     }
 
     const onDrawChange = (data: GeoObject) => {
-        setGeoObjects(state => [...state, data]);
-        setDrawOption("none")
+        setGeoObjects(state => ({
+            ...state,
+            geoObjects: [...state.geoObjects, data],
+        }));
+        setDrawOption("none");
     }
 
-    const onExport = () => {
-
-    }
-
-    const onRemoveShapes = () => setGeoObjects([]);
+    const onRemoveShapes = () => setGeoObjects({
+        geoObjects: [],
+        selectedCount: 0,
+    });
 
     const onHide = () => setPreviewShow(false);
 
     const onPreview = () => {
 
-        if(exportType === "wkt") {
-
-            if(geoObjects.length === 1) {
-                let wkt = stringify(geoObjects[0].data as any);
-                wkt = wkt.replace(/,/g, ",\n")
-                setData(wkt);
-                setPreviewShow(true);
-                return;
-            }
-
-            let result = "";
-
-            for(const geoObject of geoObjects) {
-                let wkt = stringify(geoObject.data as any);
-                wkt = wkt.replace(/,/g, ",\n");
-                result += "\n" + wkt;
-            }
-            
-            setData(result);
-            setPreviewShow(true);
-
-            return;
-        }
-
-        if(!geoObjects.length) {
-            setData("");
-            setPreviewShow(true);
-            return;
-        }
+        let geometry: Geometry;
 
         if(geoObjects.length === 1) {
-            setData(geoObjects[0].data);
-            setPreviewShow(true);
-            return;
+            geometry = geoObjects[0].data as any;
         }
-        
-        const features: FeatureCollection = {
-            type: "FeatureCollection",
-            features: [...geoObjects.map<Feature>(pr => ({
-                type: "Feature",
-                geometry: pr.data as any,
-                properties: {},
-            }))]
+        else {
+            geometry = {
+                type: "GeometryCollection",
+                geometries: [...geoObjects.map<Geometry>(pr => pr.data as any)]
+            }
         }
 
-        setData(features);
+        if(exportType === "wkt") {
+            let wkt = stringify(geometry);
+            wkt = wkt.replace(/,/g, ",\n")
+            setData(wkt);
+            setPreviewShow(true);
+
+            return;
+        }
+
+        setData(geometry);
         setPreviewShow(true);
     }
 
+    const onExport = () => {
+        const text = toBase64DataUri(JSON.stringify(data));
+        const fileName = exportType === "geojson" ?  "data.geojson" : "wkt.txt";
+
+        download(text, fileName);
+    }
+
+    const onAllItemsSelect = () => {
+        setGeoObjects(state => {
+            const selected = state.geoObjects.some(pr => pr.selected === false) ? true : false;
+            const geoObjects = [...state.geoObjects.map(pr => ({...pr, selected}))];
+            const selectedCount = selected ? geoObjects.length : 0;
+
+            return {
+                geoObjects,
+                selectedCount
+            };
+        })
+    }
+
+    const onItemClick = (id: string) => {
+        
+        setGeoObjects(state => {
+            const geoObjects = [...state.geoObjects.map(pr => ({...pr}))];
+            let item = geoObjects.find(pr => pr.id === id)!;
+            item.selected = !item.selected;
+            let selectedCount = state.selectedCount;
+            selectedCount = item.selected ? selectedCount + 1 : selectedCount - 1;
+            
+            return {
+                geoObjects,
+                selectedCount
+            };
+        })
+    }
 
     return <div className="draw-page">
         <Panel
+            geoObjects={geoObjects}
             drawOption={drawOption}
             exportType={exportType}
             onChange={onPanelChange}
@@ -95,7 +121,10 @@ const DrawPage: FunctionComponent = ({
             onPreview={onPreview}
             onHide={onHide}
             onRemoveShapes={onRemoveShapes}
+            onItemClick={onItemClick}
+            onAllItemsSelect={onAllItemsSelect}
             data={data}
+            selectedCount={selectedCount}
             dataAvailable={!!geoObjects.length}
             isPreviewShowing={isPreviewShowing}
         />

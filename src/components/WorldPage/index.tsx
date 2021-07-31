@@ -108,8 +108,8 @@ const WorldPage: FunctionComponent = () => {
 
             try {
                 const item = selected!.item as Country;
-                const geojsonLink = await getCountryGeojsonLink(item.countryCode);
-                download(geojsonLink, `${item.countryCode}.json`);
+                const geojsonLink = await getCountryGeojsonLink(item.iso3166a2);
+                download(geojsonLink, `${item.iso3166a2}.json`);
             } catch (error) {
                 NotificationManager.error("We could not find geojson for country", "Download error.");
             }
@@ -121,7 +121,7 @@ const WorldPage: FunctionComponent = () => {
         (async () => {
             const geoObjects = await searchGeoObjects({
                 phrase: "",
-                pageSize: 200,
+                pageSize: 300,
             });
             setGeoObjects(geoObjects as Country[]);
         })();

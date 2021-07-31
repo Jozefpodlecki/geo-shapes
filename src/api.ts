@@ -20,18 +20,18 @@ export const searchGeoObjects = async (options: Options): Promise<GeoObject[]> =
         .slice(0, options.pageSize);
 }
 
-export const getRegions = (countryCode: string): Promise<Region[]> => {
+export const getRegions = (iso3166a2: string): Promise<Region[]> => {
     
-    return fetch(`${baseUrl}/assets/regions/${countryCode}.json`)
+    return fetch(`${baseUrl}/assets/regions/${iso3166a2}.json`)
         .then(pr => pr.json());
 }
 
-export const getCountry = async (countryCode: string): Promise<Country | undefined> => {
+export const getCountry = async (iso3166a2: string): Promise<Country | undefined> => {
     const geoObjects = await geoObjectsPromise;
     const countries = geoObjects.filter(pr => pr.type === "country") as Country[];
 
     return countries
-        .find(pr => pr.countryCode.includes(countryCode));
+        .find(pr => pr.iso3166a2.includes(iso3166a2));
 }
 
 export const getWorldSvg = () => {
@@ -39,13 +39,13 @@ export const getWorldSvg = () => {
         .then(pr => pr.text());
 }
 
-export const getCountrySvg = (countryCode: string) => {
-    return fetch(`${baseUrl}/assets/shapes/${countryCode}/first-level.svg`)
+export const getCountrySvg = (iso3166a2: string) => {
+    return fetch(`${baseUrl}/assets/shapes/${iso3166a2}/first-level.svg`)
         .then(pr => pr.text());
 }
 
-export const getCountryGeojsonLink = (countryCode: string): string => {
-    return `${baseUrl}/assets/geojson/${countryCode}.geojson`;
+export const getCountryGeojsonLink = (iso3166a2: string): string => {
+    return `${baseUrl}/assets/geojson/${iso3166a2}.geojson`;
 }
 
 let countryLookup: PolygonLookup;
@@ -88,7 +88,7 @@ export const getCountryGeojsonByIso3166a3 = async (iso3166a3: string): Promise<G
 
     const country = countries.find(pr => pr.iso3166a3 === iso3166a3);
     
-    return fetch(`${baseUrl}/assets/geojson/${country?.countryCode}.geojson`)
+    return fetch(`${baseUrl}/assets/geojson/${country?.iso3166a2}.geojson`)
         .then(pr => pr.json());
 }
 
@@ -97,7 +97,7 @@ export const getContinentGeojson = async (continent: string): Promise<GeoJsonObj
         .then(pr => pr.json());
 }
 
-export const getCountryGeojson = (countryCode: string): Promise<GeoJsonObject | undefined> => {
-    return fetch(`${baseUrl}/assets/geojson/${countryCode}.geojson`)
+export const getCountryGeojson = (iso3166a2: string): Promise<GeoJsonObject | undefined> => {
+    return fetch(`${baseUrl}/assets/geojson/${iso3166a2}.geojson`)
         .then(pr => pr.json());
 }
