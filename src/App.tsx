@@ -25,7 +25,7 @@ const App: FunctionComponent = () => {
             <Route exact path="/" component={WorldPage}/>
             <Route exact path="/explore" component={ExplorePage}/>
             <Route exact path="/draw" component={DrawPage}/>
-            <Route exact path="/country/:countryCode" component={CountryPage}/>
+            <Route exact path="/country/:iso3166a2" component={CountryPage}/>
         </Switch>
         <NotificationContainer/>
     </div>;
