@@ -1,0 +1,9 @@
+.country-item {
+    display: flex;
+    font-size: 25px;
+    padding: 10px;
+
+    div + div {
+        margin: 0 10px;
+    }
+}

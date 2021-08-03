@@ -2,6 +2,7 @@
 
     &__navbar {
         display: flex;
+        align-items: center;
         padding: 10px;
     }
 
@@ -9,8 +10,12 @@
         display: flex;
     }
 
+    &__navbarChevron {
+        margin: 0 10px;
+    }
+
     &__navbarCountryFlag {
-        width: 50px;
+        width: 45px;
         height: 30px;
     }
 

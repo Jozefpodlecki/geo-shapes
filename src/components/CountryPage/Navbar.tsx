@@ -3,6 +3,9 @@ import { baseUrl } from 'appConstants';
 
 import './navbar.scss';
 import { MapType } from './types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 type Props = {
     flagUrl: string;
@@ -28,6 +31,12 @@ const Navbar: FunctionComponent<Props> = ({
     }
 
     return <div className="country-page__navbar">
+        <Link className="country-page__navbarCountryTitle" to="/countries">
+            Countries
+        </Link>
+        <div className="country-page__navbarChevron">
+            <FontAwesomeIcon icon={faChevronRight}/>
+        </div>
         <div className="country-page__navbarCountry">
             <div className="country-page__navbarCountryFlag" style={backgroundImageUrl(baseUrl + flagUrl)}></div>
             <div className="country-page__navbarCountryTitle">{fullName}</div>

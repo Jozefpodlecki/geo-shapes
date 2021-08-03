@@ -1,3 +1,5 @@
+@import "constants";
+
 html, 
 body {
     height: 100%;
@@ -5,15 +7,20 @@ body {
 }
 
 body {
-  margin: 0;
-  background-color: black;
-  color: white;
+    margin: 0;
+    background-color: black;
+    color: $text-color;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
 }
 
 #root {
-  height: inherit;
+    height: inherit;
 }

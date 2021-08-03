@@ -1,5 +1,6 @@
 import { FunctionComponent, useState } from 'react';
 import CountryPage from 'components/CountryPage';
+import Countries from 'components/Countries';
 import Toolbar from 'components/Toolbar';
 import { Route, Switch } from 'react-router-dom';
 import SearchGeoObjectsDialog from 'components/SearchGeoObjectsDialog';
@@ -26,6 +27,7 @@ const App: FunctionComponent = () => {
             <Route exact path="/explore" component={ExplorePage}/>
             <Route exact path="/draw" component={DrawPage}/>
             <Route exact path="/country/:iso3166a2" component={CountryPage}/>
+            <Route exact path="/countries" component={Countries}/>
         </Switch>
         <NotificationContainer/>
     </div>;
