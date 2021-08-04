@@ -1,0 +1,30 @@
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(1px) brightness(0.8);
+}
+
+.home {
+    text-align: center;
+}
+
+.header {
+    font-size: 50px;
+    margin: 20px;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    font-size: 30px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    margin: 0 10px;
+}

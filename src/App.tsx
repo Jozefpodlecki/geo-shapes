@@ -10,6 +10,7 @@ import { NotificationContainer } from 'react-notifications';
 
 import './app.scss';
 import WorldPage from 'components/WorldPage';
+import Home from 'components/Home';
 
 const App: FunctionComponent = () => {
     const [isShowing, setShow] = useState(false);
@@ -23,7 +24,7 @@ const App: FunctionComponent = () => {
             onClick={onHide}
             isShowing={isShowing}/>
         <Switch>
-            <Route exact path="/" component={WorldPage}/>
+            <Route exact path="/" component={Home}/>
             <Route exact path="/explore" component={ExplorePage}/>
             <Route exact path="/draw" component={DrawPage}/>
             <Route exact path="/country/:iso3166a2" component={CountryPage}/>

@@ -196,7 +196,9 @@ const CountryPage: FunctionComponent = () => {
 const DevInfo = () => {
     const map = useMapEvents({
         click(event) {
-            console.log(map.getCenter(), map.getZoom(), event.latlng)
+            const { lat, lng } = map.getCenter();
+            
+            console.log([lat, lng], map.getZoom());
         }
     })
 
