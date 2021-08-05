@@ -1,9 +1,80 @@
-.country-item {
+.breadcrumbs {
     display: flex;
-    font-size: 25px;
-    padding: 10px;
 
-    div + div {
-        margin: 0 10px;
+    &__separator {
+        display: flex;
+        align-items: center;
+    }
+
+    &__node {
+        font-size: 25px;
+        padding: 10px;
+
+        &--active {
+            color: gray;
+            pointer-events: none;
+        }
+    }
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-bottom: 1px solid gray;
+
+    &__icon {
+        padding: 10px;
+    }
+
+    &__input {
+        padding: 10px;
+        background: transparent;
+        border: none;
+        caret-color: white;
+        color: white;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.countries-page {
+    letter-spacing: 1px;
+
+    &__headers {
+        display: flex;
+        font-size: 25px;
+        padding: 5px 10px;
+        background: gray;
+        font-weight: bold;
+    }
+
+    &__header {
+        &:nth-child(1) {
+            flex-basis: 250px;
+        }
+
+        &:nth-child(2) {
+            flex-basis: 200px;
+        }
+
+        &:nth-child(3) {
+            flex-basis: 130px;
+            text-align: center;
+        }
+
+        &:nth-child(4) {
+            flex-basis: 150px;
+            
+        }
+
+        &:nth-child(5) {
+            flex-basis: 100px;
+            
+        }
     }
 }

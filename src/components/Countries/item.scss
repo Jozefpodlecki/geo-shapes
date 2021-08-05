@@ -1,0 +1,66 @@
+
+.country-item {
+
+    &__details {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: opacity 0.3s ease-in;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &:nth-child(even) {
+        background: black;
+    }
+
+    &:nth-child(odd) {
+        background: gray;
+    }
+
+    &__column {
+        
+        &:nth-child(1) {
+            flex-basis: 250px;
+        }
+
+        &:nth-child(2) {
+            flex-basis: 200px;
+        }
+
+        &:nth-child(3) {
+            flex-basis: 130px;
+            display: flex;
+            justify-content: center;
+        }
+
+        &:nth-child(4) {
+            flex-basis: 150px;
+            padding-left: 30px;
+        }
+
+        &:nth-child(5) {
+            flex-basis: 100px;
+            padding-left: 30px;
+        }
+    }
+
+
+    &__flag {
+        width: 50px;
+        height: 28px;
+    }
+
+    & + & {
+        
+    }
+}

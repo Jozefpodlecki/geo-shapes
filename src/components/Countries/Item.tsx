@@ -1,18 +1,42 @@
-import { FunctionComponent } from 'react';
-import { Country, GeoObject } from "models/GeoObject";
-import './index.scss';
+import { FunctionComponent, MouseEvent } from 'react';
+import { Country } from "models/GeoObject";
+import { baseUrl } from 'appConstants';
+import './item.scss';
 
-type Props = Country;
+type Props = Country & {
+    onClick(event: MouseEvent<HTMLDivElement>): void;
+    toggled: boolean;
+};
 
 const Item: FunctionComponent<Props> = ({
+    id,
     fullName,
-    iso3166a2
+    capital,
+    iso3166a2,
+    iso3166a3,
+    flagUrl,
+    neigboursCount,
+    area,
+    onClick,
+    toggled,
 }) => {
    
-
-    return <div className={`country-item`}>
-        <div>{fullName}</div>
-        <div>{iso3166a2}</div>
+    return <div data-id={id} className={`country-item`} onClick={onClick}>
+        <div className="country-item__row">
+            <div className="country-item__column">{fullName}</div>
+            <div className="country-item__column">{capital}</div>
+            <div className="country-item__column">
+            <div className="country-item__flag" style={{
+                    background: `url(${baseUrl + flagUrl}) center center / cover`
+                }}/>
+            </div>
+            <div className="country-item__column">{iso3166a2}</div>
+            <div className="country-item__column">{iso3166a3}</div>
+        </div>
+        {toggled ? <div className="country-item__details">
+            <div className="country-item__field">Neighbours: {neigboursCount}</div>
+            <div className="country-item__field">Area: {area} km2</div>
+        </div> : null}
     </div>;
 }
 

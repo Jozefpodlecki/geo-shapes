@@ -26,11 +26,16 @@ export const getRegions = (iso3166a2: string): Promise<Region[]> => {
         .then(pr => pr.json());
 }
 
-export const getCountries = async (): Promise<Country[]> => {
+export const getCountries = async ({
+    pageSize,
+    phrase
+}: Options): Promise<Country[]> => {
     const geoObjects = await geoObjectsPromise;
-    const countries = geoObjects.filter(pr => pr.type === "country") as Country[];
+    const countries = geoObjects
+    .filter(pr => pr.type === "country"
+        && pr.search.includes(phrase)) as Country[];
 
-    return countries;
+    return countries.slice(0, pageSize);
 }
 
 export const getCountry = async (iso3166a2: string): Promise<Country | undefined> => {
