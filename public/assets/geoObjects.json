@@ -147,7 +147,7 @@
     {
         "id": "pl",
         "type": "country",
-        "fullName": "Poland",
+        "fullName": "The Republic of Poland",
         "shortName": "Poland",
         "capital": "Warsaw",
         "iso3166a2": "pl",
@@ -165,7 +165,7 @@
     {
         "id": "al",
         "type": "country",
-        "fullName": "Albania",
+        "fullName": "The Republic of Albania",
         "shortName": "Albania",
         "capital": "Albania",
         "iso3166a2": "al",
@@ -328,7 +328,7 @@
         "id": "us",
         "type": "country",
         "fullName": "United States of America",
-        "shortName": "United States of America",
+        "shortName": "USA",
         "capital": "Washington D.C.", 
         "iso3166a2": "us",
         "iso3166a3": "usa",
@@ -345,7 +345,7 @@
     {
         "id": "ch",
         "type": "country",
-        "fullName": "Switzerland",
+        "fullName": "The Swiss Confederation",
         "shortName": "Switzerland",
         "capital": "Bern", 
         "iso3166a2": "ch",
@@ -363,7 +363,7 @@
     {
         "id": "sn",
         "type": "country",
-        "fullName": "Senegal",
+        "fullName": "The Republic of Senegal",
         "shortName": "Senegal",
         "capital": "Dakar", 
         "iso3166a2": "sn",
@@ -633,7 +633,7 @@
     {
         "id": "ao",
         "type": "country",
-        "fullName": "Angola",
+        "fullName": "The Republic of Angola",
         "shortName": "Angola",
         "capital": "Luanda", 
         "iso3166a2": "ao",
@@ -813,7 +813,7 @@
     {
         "id": "in",
         "type": "country",
-        "fullName": "India",
+        "fullName": "The Republic of India",
         "shortName": "India",
         "capital": "New Delhi", 
         "iso3166a2": "in",
@@ -903,7 +903,7 @@
     {
         "id": "er",
         "type": "country",
-        "fullName": "Eritrea",
+        "fullName": "The State of Eritrea",
         "shortName": "Eritrea",
         "capital": "Asmara", 
         "iso3166a2": "er",
@@ -1029,7 +1029,7 @@
     {
         "id": "gt",
         "type": "country",
-        "fullName": "Guatemala",
+        "fullName": "The Republic of Guatemala",
         "shortName": "Guatemala",
         "capital": "Guatemala City", 
         "iso3166a2": "gt",
@@ -1173,7 +1173,7 @@
     {
         "id": "mz",
         "type": "country",
-        "fullName": "Mozambique",
+        "fullName": "The Republic of Mozambique",
         "shortName": "Mozambique",
         "capital": "Maputo", 
         "iso3166a2": "mz",
@@ -1191,7 +1191,7 @@
     {
         "id": "ng",
         "type": "country",
-        "fullName": "Nigeria",
+        "fullName": "The Federal Republic of Nigeria",
         "shortName": "Nigeria",
         "capital": "Abuja", 
         "iso3166a2": "ng",
@@ -1263,7 +1263,7 @@
     {
         "id": "tr",
         "type": "country",
-        "fullName": "Turkey",
+        "fullName": "The Republic of Turkey",
         "shortName": "Turkey",
         "capital": "Ankara", 
         "iso3166a2": "tr",
@@ -1407,7 +1407,7 @@
     {
         "id": "sd",
         "type": "country",
-        "fullName": "Sudan",
+        "fullName": "The Republic of the Sudan",
         "shortName": "Sudan",
         "capital": "Khartoum", 
         "iso3166a2": "sd",
@@ -1461,7 +1461,7 @@
     {
         "id": "rs",
         "type": "country",
-        "fullName": "Serbia",
+        "fullName": "The Republic of Serbia",
         "shortName": "Serbia",
         "capital": "Belgrade", 
         "iso3166a2": "rs",
@@ -1479,7 +1479,7 @@
     {
         "id": "ph",
         "type": "country",
-        "fullName": "Philippines",
+        "fullName": "The Republic of the Philippines",
         "shortName": "Philippines",
         "capital": "Manila", 
         "iso3166a2": "ph",
@@ -1569,7 +1569,7 @@
     {
         "id": "id",
         "type": "country",
-        "fullName": "Indonesia",
+        "fullName": "The Republic of Indonesia",
         "shortName": "Indonesia",
         "capital": "Jakarta", 
         "iso3166a2": "id",
@@ -1587,7 +1587,7 @@
     {
         "id": "il",
         "type": "country",
-        "fullName": "Israel",
+        "fullName": "The State of Israel",
         "shortName": "Israel",
         "capital": "Jerusalem", 
         "iso3166a2": "il",
@@ -1659,7 +1659,7 @@
     {
         "id": "ar",
         "type": "country",
-        "fullName": "Argentina",
+        "fullName": "The Argentine Republic",
         "shortName": "Argentina",
         "capital": "Buenos Aires", 
         "iso3166a2": "ar",
@@ -1677,7 +1677,7 @@
     {
         "id": "cm",
         "type": "country",
-        "fullName": "Cameroon",
+        "fullName": "The Republic of Cameroon",
         "shortName": "Cameroon",
         "capital": "Yaounde", 
         "iso3166a2": "cm",
@@ -1929,7 +1929,7 @@
     {
         "id": "dz",
         "type": "country",
-        "fullName": "Algeria",
+        "fullName": "The People's Democratic Republic of Algeria",
         "shortName": "Algeria",
         "capital": "Algiers", 
         "iso3166a2": "dz",
@@ -2109,7 +2109,7 @@
     {
         "id": "ve",
         "type": "country",
-        "fullName": "Venezuela (Bolivarian Republic)",
+        "fullName": "The Bolivarian Republic of Venezuela",
         "shortName": "Venezuela",
         "capital": "Caracas", 
         "iso3166a2": "ve",
@@ -2271,7 +2271,7 @@
     {
         "id": "tn",
         "type": "country",
-        "fullName": "Tunisia",
+        "fullName": "The Republic of Tunisia",
         "shortName": "Tunisia",
         "capital": "Tunis", 
         "iso3166a2": "tn",
@@ -2397,7 +2397,7 @@
     {
         "id": "ad",
         "type": "country",
-        "fullName": "Andorra",
+        "fullName": "The Principality of Andorra",
         "shortName": "Andorra",
         "capital": "Andorra", 
         "iso3166a2": "ad",
@@ -2487,7 +2487,7 @@
     {
         "id": "ss",
         "type": "country",
-        "fullName": "South Sudan",
+        "fullName": "The Republic of South Sudan",
         "shortName": "South Sudan",
         "capital": "Juba", 
         "iso3166a2": "ss",
@@ -2505,7 +2505,7 @@
     {
         "id": "bj",
         "type": "country",
-        "fullName": "Benin",
+        "fullName": "The Republic of Benin",
         "shortName": "Benin",
         "capital": "Juba", 
         "iso3166a2": "bj",
@@ -4029,5 +4029,59 @@
         "regions": 5,
         "neigboursCount": 0,
         "tags": []
+    },
+    {
+        "id": "sz",
+        "type": "australia-external-territory",
+        "fullName": "The Kingdom of Eswatini",
+        "shortName": "Eswatini",
+        "capital": "Eswatini", 
+        "iso3166a2": "sz",
+        "iso3166a3": "swz",
+        "thumbnailUrl": "/assets/images/sz.jfif",
+        "flagUrl": "/assets/flags/sz.png",
+        "search": "country sz swz Eswatini",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["landlocked"]
+    },
+    {
+        "id": "sr",
+        "type": "country",
+        "fullName": "The Republic of Suriname",
+        "shortName": "Suriname",
+        "capital": "Suriname", 
+        "iso3166a2": "sr",
+        "iso3166a3": "sur",
+        "thumbnailUrl": "/assets/images/sr.jfif",
+        "flagUrl": "/assets/flags/sr.png",
+        "search": "country sr sur Suriname",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["south-america"]
+    },
+    {
+        "id": "eh",
+        "type": "country",
+        "fullName": "The Sahrawi Arab Democratic Republic",
+        "shortName": "Western Sahara",
+        "capital": "Western Sahara", 
+        "iso3166a2": "eh",
+        "iso3166a3": "sur",
+        "thumbnailUrl": "/assets/images/eh.jfif",
+        "flagUrl": "/assets/flags/eh.png",
+        "search": "country eh esh Western Sahara",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["north-west-africa"]
     }
 ]
