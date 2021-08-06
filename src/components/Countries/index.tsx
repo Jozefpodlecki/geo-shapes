@@ -33,7 +33,7 @@ const Countries: FunctionComponent = () => {
             try {
                 const countries = await getCountries({
                     pageSize: 25,
-                    phrase: value,
+                    phrase: value.toLowerCase(),
                 });
 
                 setState({

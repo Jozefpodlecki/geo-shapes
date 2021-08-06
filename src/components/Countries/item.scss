@@ -54,13 +54,16 @@
         }
     }
 
-
     &__flag {
         width: 50px;
         height: 28px;
     }
 
-    & + & {
-        
+    &__link:hover {
+        opacity: 0.6;
+    }
+
+    &__bottom {
+        margin-top: 10px;
     }
 }

@@ -33,7 +33,7 @@ export const getCountries = async ({
     const geoObjects = await geoObjectsPromise;
     const countries = geoObjects
     .filter(pr => pr.type === "country"
-        && pr.search.includes(phrase)) as Country[];
+        && pr.search.toLowerCase().includes(phrase)) as Country[];
 
     return countries.slice(0, pageSize);
 }

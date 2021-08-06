@@ -2,6 +2,9 @@ import { FunctionComponent, MouseEvent } from 'react';
 import { Country } from "models/GeoObject";
 import { baseUrl } from 'appConstants';
 import './item.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMap } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 type Props = Country & {
     onClick(event: MouseEvent<HTMLDivElement>): void;
@@ -36,6 +39,9 @@ const Item: FunctionComponent<Props> = ({
         {toggled ? <div className="country-item__details">
             <div className="country-item__field">Neighbours: {neigboursCount}</div>
             <div className="country-item__field">Area: {area} km2</div>
+            <div className="country-item__bottom">
+                <Link className="country-item__link" to={`/country/${iso3166a2}`}><FontAwesomeIcon icon={faMap}/></Link>
+            </div>
         </div> : null}
     </div>;
 }
