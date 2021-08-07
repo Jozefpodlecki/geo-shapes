@@ -61,7 +61,6 @@ const ExplorePage: FunctionComponent = () => {
     });
     const [toggled, setToggled] = useState(false);
     const [clipboardData, setCliboardData] = useState("");
-    const [text, setText] = useState<string>();
     const [bounds, setBounds] = useState<LatLngBoundsExpression>();
     const [pageMode, setPageMode] = useState<PageMode>();
     const [center, setCenter] = useState<[number, number]>([51.505, -0.09]);
@@ -251,8 +250,6 @@ const ExplorePage: FunctionComponent = () => {
             id: geojsonObject.id,
             data: geojsonObject.data,
         }));
-        const text = stringify(geojsonObject.data);
-        setText(text);
     }
 
     const onExport = (id: string) => {
@@ -447,7 +444,7 @@ const ExplorePage: FunctionComponent = () => {
             onHide={onHide}
             onExport={onExport}
             isShowing={pageMode === "show-preview"}
-            text={text}
+            data={data}
             />
         <WarningDialog
             isShowing={pageMode === "show-warning"}

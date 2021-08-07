@@ -1,8 +1,9 @@
-import { FunctionComponent, memo, useEffect, useRef } from 'react';
+import { FunctionComponent, memo, useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import Highlight from 'react-highlight';
 import Icon from 'components/Icon';
 import { faClipboard, faDownload, faTimes } from '@fortawesome/free-solid-svg-icons';
+import stringify from 'json-stringify-pretty-compact';
 import './previewDialog.scss';
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
     isShowing: boolean;
     onHide(): void;
     onExport(id: string): void;
-    text?: string;
+    data?: any;
 }
 
 const PreviewDialog: FunctionComponent<Props> = ({
@@ -18,7 +19,7 @@ const PreviewDialog: FunctionComponent<Props> = ({
     isShowing,
     onHide,
     onExport,
-    text,
+    data,
 }) => {
     const ref = useRef<HTMLDivElement>(null);
     const styles = useSpring({
@@ -54,6 +55,8 @@ const PreviewDialog: FunctionComponent<Props> = ({
             window.removeEventListener("click", onOutsideClick);
         }
     }, [ref, onHide, isShowing])
+
+    const text = isShowing ? stringify(data) : "";
 
     return <animated.div ref={ref} style={{
         ...styles,
