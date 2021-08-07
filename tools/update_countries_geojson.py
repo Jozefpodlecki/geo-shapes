@@ -31,6 +31,11 @@ for country in countries_geojson["features"]:
     name = country["properties"]["ADMIN"]
 
     if isoA3 == "-99":
+        
+        del country["properties"]["ADMIN"]
+        del country["properties"]["ISO_A3"]
+        country["properties"]["name"] = name
+
         continue
 
     country_metadata = search(countries_metadata, isoA3)
@@ -60,7 +65,7 @@ for country in countries_geojson["features"]:
         with open(region_output_path, 'w') as file_descriptor:
             json.dump([], file_descriptor)
 
-countries_geojson["features"] = features
+#countries_geojson["features"] = features
 
 with open(countries_geojson_path, 'w') as file_descriptor:
     json.dump(countries_geojson, file_descriptor, indent=2)

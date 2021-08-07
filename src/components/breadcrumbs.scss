@@ -1,0 +1,35 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    font-family: 'Zen Loop', cursive;
+
+    &__separator {
+        display: flex;
+        align-items: center;
+    }
+
+    &__node {
+        font-size: 25px;
+        padding: 10px;
+
+        &--active {
+            color: gray;
+            pointer-events: none;
+        }
+    }  
+}
+
+.countryNode {
+    display: flex;
+    margin-left: 10px;
+
+    &__flag {
+        width: 45px;
+        height: 30px;
+    }
+    
+    &__title {
+        font-size: 25px;
+        margin-left: 5px;
+    }
+}

@@ -1,7 +1,5 @@
-import { FunctionComponent, memo, useEffect, useMemo, useRef } from 'react';
+import { FunctionComponent, memo, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { GeoJsonObject } from 'geojson';
-import stringify from "json-stringify-pretty-compact"
 import Highlight from 'react-highlight';
 import Icon from 'components/Icon';
 import { faClipboard, faDownload, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +10,7 @@ type Props = {
     isShowing: boolean;
     onHide(): void;
     onExport(id: string): void;
-    data?: GeoJsonObject
+    text?: string;
 }
 
 const PreviewDialog: FunctionComponent<Props> = ({
@@ -20,18 +18,17 @@ const PreviewDialog: FunctionComponent<Props> = ({
     isShowing,
     onHide,
     onExport,
-    data,
+    text,
 }) => {
     const ref = useRef<HTMLDivElement>(null);
     const styles = useSpring({
         opacity: isShowing ? 1 : 0,
     })
-    const text = useMemo(() => stringify(data), [data]);
 
     const _onExport = () => onExport(id);
 
     const onCopy = () => {
-        navigator.clipboard.writeText(text);
+        //navigator.clipboard.writeText(text);
     }
 
     useEffect(() => {
@@ -56,7 +53,7 @@ const PreviewDialog: FunctionComponent<Props> = ({
         return () => {
             window.removeEventListener("click", onOutsideClick);
         }
-    }, [ref, isShowing])
+    }, [ref, onHide, isShowing])
 
     return <animated.div ref={ref} style={{
         ...styles,
@@ -71,7 +68,7 @@ const PreviewDialog: FunctionComponent<Props> = ({
                 <Icon onClick={onHide} className="preview-dialog__close" icon={faTimes}/>
             </div>
             <div className="preview-dialog__body">
-                {data ? <Highlight className="json">
+                {text ? <Highlight className="json">
                     {text}
                 </Highlight> : null}
             </div>

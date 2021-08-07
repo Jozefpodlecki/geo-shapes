@@ -3,6 +3,7 @@ import { Country, GeoObject } from "models/GeoObject";
 import { Region } from "./models/Region";
 import { GeoJsonObject, FeatureCollection, Feature, Polygon, MultiPolygon } from "geojson";
 import PolygonLookup from "polygon-lookup";
+import { Neighbour } from "models/Neighbour";
 
 type Options = {
     phrase: string;
@@ -11,6 +12,9 @@ type Options = {
 
 const geoObjectsPromise = fetch(`${baseUrl}/assets/geoObjects.json`)
         .then<GeoObject[]>(pr => pr.json());
+
+const neighboursPromise = fetch(`${baseUrl}/assets/neighbours.json`)
+        .then<Neighbour[]>(pr => pr.json());
 
 export const searchGeoObjects = async (options: Options): Promise<GeoObject[]> => {
     const geoObjects = await geoObjectsPromise;
@@ -92,6 +96,13 @@ export const getContinentFromLatLng = async (lat: number, lng: number): Promise<
     if(polygon) {
         return polygon.properties.continent.toLowerCase();
     }
+}
+
+export const getNeighbours = async (iso3166a2: string): Promise<Neighbour | undefined> => {
+    const neighbours = await neighboursPromise;
+    const item = neighbours.find(pr => pr.iso3166a2 === iso3166a2);
+
+    return item;
 }
 
 export const getCountryGeojsonByIso3166a3 = async (iso3166a3: string): Promise<GeoJsonObject | undefined> => {

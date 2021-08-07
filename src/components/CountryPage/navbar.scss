@@ -3,25 +3,7 @@
     &__navbar {
         display: flex;
         align-items: center;
-        padding: 10px;
-    }
-
-    &__navbarCountry {
-        display: flex;
-    }
-
-    &__navbarChevron {
-        margin: 0 10px;
-    }
-
-    &__navbarCountryFlag {
-        width: 45px;
-        height: 30px;
-    }
-
-    &__navbarCountryTitle {
-        font-size: 25px;
-        margin-left: 5px;
+        padding: 0 10px;
     }
 
     &__navbarMapSwitch {

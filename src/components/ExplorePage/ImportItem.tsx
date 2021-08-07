@@ -1,6 +1,5 @@
-import React, { FunctionComponent, MouseEvent, useCallback } from 'react';
-import { faCode, faCrosshairs, faDownload, faExclamationTriangle, faFileUpload, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FunctionComponent, MouseEvent } from 'react';
+import { faCode, faCrosshairs, faDownload, faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Icon from 'components/Icon';
 import './importItem.scss';
 
@@ -11,6 +10,7 @@ type Props = {
     isSelected: boolean;
     featuresCount: number;
     warning?: string;
+    invalid: boolean;
     onToggle(event: MouseEvent<HTMLDivElement>): void;
     onDelete(event: MouseEvent<HTMLDivElement>): void;
     onExport(id: string): void;
@@ -26,6 +26,7 @@ const ImportItem: FunctionComponent<Props> = ({
     name,
     featuresCount,
     warning,
+    invalid,
     onDelete,
     onShowOnMap,
     onShowGeojson,
@@ -47,13 +48,15 @@ const ImportItem: FunctionComponent<Props> = ({
             </div>
             <Icon data-id={id} className="uploaded-item__delete" onClick={onDelete} icon={faTimes}/>
         </div>
-        <div className="uploaded-item__body">
+        {invalid ? <div className="uploaded-item__body">
+            {warning ? <Icon className="popup__iconButton" onClick={_onShowWarning} icon={faExclamationTriangle}/> : null}
+        </div> : <div className="uploaded-item__body">
             <Icon className="popup__iconButton" onClick={_onShowOnMap} icon={faCrosshairs}/>
             {featuresCount ? <div className="uploaded-item__detail">Features: {featuresCount}</div> : null}
             <Icon className="popup__iconButton" onClick={_onExport} icon={faDownload}/>
             <Icon className="popup__iconButton" onClick={_onShowGeojson} icon={faCode}/>
             {warning ? <Icon className="popup__iconButton" onClick={_onShowWarning} icon={faExclamationTriangle}/> : null}
-        </div>
+        </div>}
     </div>;
 }
 

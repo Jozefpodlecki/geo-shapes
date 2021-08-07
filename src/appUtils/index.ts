@@ -94,12 +94,24 @@ export const getGeojsonFriendlyName = (data: GeoJsonObject): string => {
                         name += `_${numberOfPoints}`;
                     }
                 }
+                if(feature.geometry.type === "MultiPolygon") {
+                    name += "_multipolygon";
+                    const coordinates = feature.geometry.coordinates;
+
+                    if(coordinates.length && coordinates[0].length) {
+                        const numberOfPolygons = coordinates[0].length;
+                        name += `_${numberOfPolygons}`;
+                    }
+                }
             break;
             case "Point":
-                name += "point";
+                name += "_point";
             break;
             case "Polygon":
-                name += "point";
+                name += "_polygon";
+            break;
+            case "MultiPolygon":
+                name += "_multipolygon";
             break;
             case "LineString":
                 name += "linestring";
@@ -124,3 +136,37 @@ export const trySaveToLocalStorage = (data: any): boolean => {
         return false;
     }
 }
+
+export const openFileDialog = () => new Promise<File | null>((resolve, reject) => {
+    const input = document.createElement("input")
+    input.type = "file";
+    let resolved = false;
+
+    const onFocus = () => {
+        window.removeEventListener("focus", onFocus)
+        setTimeout(() => {
+            if(!resolved) {
+                resolve(null);
+            }
+            input.remove();
+        }, 100);
+    }
+
+    window.addEventListener("focus", onFocus)
+
+    input.onchange = (event) => {
+        if (!(event.target instanceof HTMLInputElement)) {
+            return;
+        }
+
+        resolved = true;
+        const [file] = Array.from(event.target.files!);
+        resolve(file);
+    }
+
+    input.click();
+})
+
+export const backgroundImageUrl = (url: string) => ({
+    background: `url(${url}) center center / contain no-repeat`
+})

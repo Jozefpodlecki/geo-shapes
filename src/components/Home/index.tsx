@@ -2,7 +2,7 @@ import { faEye } from '@fortawesome/free-regular-svg-icons';
 import { faList, faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { baseUrl } from 'appConstants';
-import React, { FunctionComponent, MouseEvent, memo } from 'react';
+import { FunctionComponent, memo } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 

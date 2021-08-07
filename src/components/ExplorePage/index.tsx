@@ -1,23 +1,25 @@
-import { FunctionComponent, MouseEvent, useCallback, useMemo } from 'react';
-import { GeoJSON, MapContainer, TileLayer } from 'react-leaflet';
+import { FunctionComponent, MouseEvent, useCallback } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import { useDropzone } from 'react-dropzone';
 import { useState } from 'react';
-import { GeoJsonObject, Feature } from 'geojson';
+import { GeoJsonObject } from 'geojson';
 import { useEffect } from 'react';
-import { download, extractGeoObjectFromText, getGeojsonFriendlyName, getTextFromBlob, newId, toBase64DataUri, trySaveToLocalStorage } from 'appUtils';
-import { BarLoader, DotLoader } from 'react-spinners';
-import { NotificationManager } from 'react-notifications';
-import { parse, stringify } from "wkt";
-import { geoJSON, LatLngLiteral, LeafletEvent } from 'leaflet';
+import { download, extractGeoObjectFromText, getGeojsonFriendlyName, getTextFromBlob, newId, openFileDialog, toBase64DataUri, trySaveToLocalStorage } from 'appUtils';
+import { BarLoader } from 'react-spinners';
+import { geoJSON, LatLngBoundsExpression, LatLngLiteral } from 'leaflet';
 import ImportItem from './ImportItem';
 import DragOverlay from './DragOverlay';
-import './index.scss';
 import MapHandler from './MapHandler';
 import PreviewDialog from './PreviewDialog';
 import WarningDialog from './WarningDialog';
 import { Actions } from './Menu';
 import { getContinentFromLatLng, getContinentGeojson, getCountryFromLatLng, getCountryGeojsonByIso3166a3 } from 'api';
 import moment from 'moment';
+import { faClipboard, faList, faUpload } from '@fortawesome/free-solid-svg-icons';
+import Icon from 'components/Icon';
+import Breadcrumbs from 'components/Breadcrumbs';
+import stringify from "json-stringify-pretty-compact"
+import './index.scss';
 
 type GeoObject = {
     id: string;
@@ -57,6 +59,10 @@ const ExplorePage: FunctionComponent = () => {
             type: "Point"
         },
     });
+    const [toggled, setToggled] = useState(false);
+    const [clipboardData, setCliboardData] = useState("");
+    const [text, setText] = useState<string>();
+    const [bounds, setBounds] = useState<LatLngBoundsExpression>();
     const [pageMode, setPageMode] = useState<PageMode>();
     const [center, setCenter] = useState<[number, number]>([51.505, -0.09]);
 
@@ -123,11 +129,11 @@ const ExplorePage: FunctionComponent = () => {
 
             try {
                 const text = await navigator.clipboard.readText();
-                setTimeout(checkClipboard, 2000);    
+                setCliboardData(text);
             } catch (error) {
                 //NotificationManager.error("We could not read content from the clipboard", "Clipboard read error.");
             }
-            
+            setTimeout(checkClipboard, 2000);
         }
 
         setTimeout(checkClipboard, 2000);
@@ -216,9 +222,8 @@ const ExplorePage: FunctionComponent = () => {
             return;
         }
         
-        const { lat,lng } = geoJSON(geojsonObject.data).getBounds().getCenter();
-
-        setCenter([lat, lng]);
+        const bounds = geoJSON(geojsonObject.data).getBounds();
+        setBounds(bounds);
     }
 
     const onShowWarning = (id: string) => {
@@ -231,7 +236,7 @@ const ExplorePage: FunctionComponent = () => {
         }));
     }
 
-    const onHide = () => setPageMode(undefined);
+    const onHide = useCallback(() => setPageMode(undefined), []);
 
     const onShowGeojson = (id: string) => {
         const geojsonObject = geojsonObjects.find(pr => pr.id === id)!;
@@ -246,6 +251,8 @@ const ExplorePage: FunctionComponent = () => {
             id: geojsonObject.id,
             data: geojsonObject.data,
         }));
+        const text = stringify(geojsonObject.data);
+        setText(text);
     }
 
     const onExport = (id: string) => {
@@ -256,7 +263,7 @@ const ExplorePage: FunctionComponent = () => {
         download(text, fileName);
     }
 
-    const onAction = (action: Actions, latlng: LatLngLiteral) => {
+    const onAction = useCallback((action: Actions, latlng: LatLngLiteral) => {
         const { lat, lng } = latlng;
         setUploading(true);
 
@@ -353,54 +360,141 @@ const ExplorePage: FunctionComponent = () => {
         }
 
         onHide();
+    }, [onHide]);
+
+    const onUpload = async () => {
+        setUploading(true);
+        setToggled(true);
+        const file = await openFileDialog();
+        
+        if(!file) {
+            setUploading(false);
+            return;
+        }
+
+        const text = await getTextFromBlob(file);
+        const data = extractGeoObjectFromText(text);
+
+        if(!data) {
+            setUploading(false);
+            return;
+        }
+
+        const name = getGeojsonFriendlyName(data);
+        
+        const geojsonObject: GeoObject = {
+            id: newId(),
+            name,
+            data,
+            invalid: !data,
+            area: 0,
+            featuresCount: 0,
+            isSelected: false,
+            loadedAt: new Date(),
+            points: 0,
+        }
+        const newState = [...geojsonObjects, geojsonObject];
+
+        if(!trySaveToLocalStorage(newState)) {
+            geojsonObject.warning = "We could not save geo-object to local storage. The file size is too big.";
+        }
+
+        setGeojsonObjects(newState);
+        setUploading(false);
     }
+
+    const onClipboard = () => {
+        setToggled(true);
+        setUploading(true);
+
+        const data = extractGeoObjectFromText(clipboardData);
+        let name = "clipboard";
+
+        if(data) {
+            name += `_${getGeojsonFriendlyName(data)}`;
+        }
+
+        const suffix = moment().format("_YYYYMMDDHHmmss");
+        name += suffix;
+
+        const geojsonObject = {
+            id: newId(),
+            name,
+            loadedAt: new Date(),
+            isSelected: false,
+            featuresCount: 0,
+            data,
+            invalid: !data,
+        }  as GeoObject;
+
+        const newState = [...geojsonObjects, geojsonObject];
+
+        if(!trySaveToLocalStorage(newState)) {
+            geojsonObject.warning = "We could not save geo-object to local storage. The file size is too big.";
+        }
+
+        setGeojsonObjects(newState);
+        setUploading(false);
+    }
+
+    console.log("rerender explore page");
+    const onTogglePanel = () => setToggled(state => !state);
 
     return <div className="explore-page" {...getRootProps()}>
         <DragOverlay isShowing={isDragActive}/>
-        <MapContainer
-            zoom={4}
-            center={center}
-            scrollWheelZoom={true}
-            className="explore-page__map">
-            <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-         <MapHandler
-            onAction={onAction}
-            geojsonObjects={geojsonObjects}
-            center={center}
-         />
-        </MapContainer>
         <PreviewDialog
             id={id}
             onHide={onHide}
             onExport={onExport}
             isShowing={pageMode === "show-preview"}
-            data={data}
+            text={text}
             />
         <WarningDialog
             isShowing={pageMode === "show-warning"}
             warning={warning}
             onHide={onHide}
         />
-        <div className="explore-page__panel">
-            <div className="explore-page__loader">
-                <BarLoader speedMultiplier={.5} color={isUploading ? "white" : "transparent"} width="100%"/>
-            </div>
-            <div className="explore-page__toolbar"></div>
-            <div className="explore-page__list">
-                {geojsonObjects.map(pr => <ImportItem
-                    key={pr.id}
-                    onDelete={onDelete}
-                    onExport={onExport}
-                    onToggle={onToggle}
-                    onShowWarning={onShowWarning}
-                    onShowOnMap={onShowOnMap}
-                    onShowGeojson={onShowGeojson}
-                    {...pr} />)}
-            </div>
-            
+        <div className="explore-page__navbar">
+            <Breadcrumbs/>
+            <Icon className="navbar__upload" onClick={onUpload} icon={faUpload}/>
+            <Icon disabled={!clipboardData} className="navbar__clipboard" onClick={onClipboard} icon={faClipboard}/>
+            <Icon className="navbar__toggle" onClick={onTogglePanel} icon={faList}/>
+        </div>
+        <div className="explore-page__content">
+            <MapContainer
+                zoom={4}
+                center={center}
+                scrollWheelZoom={true}
+                className="explore-page__map">
+                <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+            <MapHandler
+                onAction={onAction}
+                geojsonObjects={geojsonObjects}
+                center={center}
+                bounds={bounds}
+            />
+            </MapContainer>
+            {toggled ? <div className="explore-page__panel">
+                <div className="explore-page__loader">
+                    <BarLoader speedMultiplier={.5} color={isUploading ? "white" : "transparent"} width="100%"/>
+                </div>
+                <div className="explore-page__toolbar">
+                </div>
+                <div className="explore-page__list">
+                    {geojsonObjects.map(pr => <ImportItem
+                        key={pr.id}
+                        onDelete={onDelete}
+                        onExport={onExport}
+                        onToggle={onToggle}
+                        onShowWarning={onShowWarning}
+                        onShowOnMap={onShowOnMap}
+                        onShowGeojson={onShowGeojson}
+                        {...pr} />)}
+                </div>
+            </div> : null}
         </div>
     </div>;
 }

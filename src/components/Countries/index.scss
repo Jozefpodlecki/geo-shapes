@@ -1,22 +1,3 @@
-.breadcrumbs {
-    display: flex;
-
-    &__separator {
-        display: flex;
-        align-items: center;
-    }
-
-    &__node {
-        font-size: 25px;
-        padding: 10px;
-
-        &--active {
-            color: gray;
-            pointer-events: none;
-        }
-    }
-}
-
 .search {
     display: flex;
     align-items: center;

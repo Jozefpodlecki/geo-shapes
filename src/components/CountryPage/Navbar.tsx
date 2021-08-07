@@ -6,6 +6,7 @@ import { MapType } from './types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import Breadcrumbs from 'components/Breadcrumbs';
 
 type Props = {
     flagUrl: string;
@@ -13,10 +14,6 @@ type Props = {
     mapType: MapType;
     onMapChange(mapType: MapType): void;
 }
-
-const backgroundImageUrl = (url: string) => ({
-    background: `url(${url}) center center / contain no-repeat`
-})
 
 const Navbar: FunctionComponent<Props> = ({
     flagUrl,
@@ -31,16 +28,10 @@ const Navbar: FunctionComponent<Props> = ({
     }
 
     return <div className="country-page__navbar">
-        <Link className="country-page__navbarCountryTitle" to="/countries">
-            Countries
-        </Link>
-        <div className="country-page__navbarChevron">
-            <FontAwesomeIcon icon={faChevronRight}/>
-        </div>
-        <div className="country-page__navbarCountry">
-            <div className="country-page__navbarCountryFlag" style={backgroundImageUrl(baseUrl + flagUrl)}></div>
-            <div className="country-page__navbarCountryTitle">{fullName}</div>
-        </div>
+        <Breadcrumbs
+            flagUrl={flagUrl}
+            fullName={fullName}
+        />
         <div className="country-page__navbarMapSwitch">
             <div
                 onClick={onMapSelect}

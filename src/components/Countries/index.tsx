@@ -1,17 +1,13 @@
-import React, { MouseEvent, ChangeEvent, FunctionComponent } from 'react';
+import { MouseEvent, ChangeEvent, FunctionComponent } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useCallback } from 'react';
-import { Region } from 'models/Region';
-import { getCountries, getCountry, getCountryGeojson, getCountrySvg, getRegions } from 'api';
-import { Link, NavLink, useParams } from 'react-router-dom';
-import { Country, GeoObject } from "models/GeoObject";
-import { GeoJsonObject } from "geojson";
-import GridLoader from 'react-spinners/GridLoader';
-import './index.scss';
+import { getCountries } from 'api';
+import { Country } from "models/GeoObject";
 import Item from './Item';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Breadcrumbs from 'components/Breadcrumbs';
+import './index.scss';
 
 type State = {
     countries: (Country & { toggled?: boolean })[];
@@ -66,17 +62,7 @@ const Countries: FunctionComponent = () => {
     }
 
     return <div className={`countries-page`}>
-        <div className="breadcrumbs">
-            <NavLink exact activeClassName="breadcrumbs__node--active" className="breadcrumbs__node" to="/">
-                Home
-            </NavLink>
-            <div className="breadcrumbs__separator">
-                <FontAwesomeIcon icon={faChevronRight}/>
-            </div>
-            <NavLink exact activeClassName="breadcrumbs__node--active" className="breadcrumbs__node" to="/countries">
-                Countries
-            </NavLink>
-        </div>
+        <Breadcrumbs/>
         <div className="search">
             <div className="search__icon">
                 <FontAwesomeIcon icon={faSearch}/>

@@ -88,7 +88,7 @@ const Panel: FunctionComponent<Props> = ({
         <div className="items-section">
             <div className="items-section__header">
                 <div>
-                    <Checkbox onChange={onAllItemsSelect} checked={geoObjects.length && selectedCount === geoObjects.length || false}/>
+                    <Checkbox onChange={onAllItemsSelect} checked={geoObjects.length && selectedCount === geoObjects.length ? true : false}/>
                 </div>
                 <div className="items-section__title">Items</div>
             </div>

@@ -1,22 +1,23 @@
-import { LatLngLiteral, LeafletEvent } from 'leaflet';
-import React, { FunctionComponent, MouseEvent, useCallback, useMemo, useState } from 'react';
+import { LatLngBoundsExpression, LatLngLiteral, LeafletEvent } from 'leaflet';
+import { FunctionComponent, memo, useMemo, useState } from 'react';
 import { GeoJsonObject, Feature } from 'geojson';
 import GeoJSONItem from './GeoJSONItem';
 import { useMapEvents } from 'react-leaflet';
 import { useEffect } from 'react';
 import Menu, { Actions } from './Menu';
-import { getCountryFromLatLng, getCountryGeojsonByIso3166a3 } from 'api';
 
 type Props = {
     onAction(action: Actions, latlng: LatLngLiteral): void;
     geojsonObjects: any[];
     center: [number, number];
+    bounds?: LatLngBoundsExpression;
 }
 
 const MapHandler: FunctionComponent<Props> = ({
     onAction,
     geojsonObjects,
     center,
+    bounds,
 }) => {
     const [menu, setMenu] = useState({
         x: 0,
@@ -54,7 +55,13 @@ const MapHandler: FunctionComponent<Props> = ({
 
     useEffect(() => {
         map.setView(center);
-    }, [center]);
+    }, [map, center]);
+
+    useEffect(() => {
+        if(bounds) {
+            map.fitBounds(bounds);
+        }
+    }, [map, bounds]);
     
     const eventHandlers = useMemo(() => ({
         click(event: LeafletEvent) {
@@ -111,4 +118,4 @@ const MapHandler: FunctionComponent<Props> = ({
     </>;
 }
 
-export default MapHandler;
+export default memo(MapHandler);

@@ -1,8 +1,6 @@
-import { FunctionComponent, MouseEvent, useMemo, useRef } from 'react';
+import { useEffect, FunctionComponent, MouseEvent, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import './menu.scss';
-import { useEffect } from 'react';
-import { useState } from 'react';
 
 export type Actions = "nearby-country" | "nearby-continent";
 

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, MouseEvent, useCallback, useMemo } from 'react';
+import { FunctionComponent, memo, useCallback, useMemo } from 'react';
 import { GeoJSON } from 'react-leaflet';
 import { GeoJsonObject, Feature } from 'geojson';
 import { LeafletEventHandlerFnMap } from 'leaflet';

@@ -1,8 +1,8 @@
-import React, { FunctionComponent, memo } from 'react';
+import { FunctionComponent, memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload, faEye, faGlobe, faHome, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
-import './toolbar.scss';
+import { faEye, faGlobe, faHome, faPencilAlt, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom';
+import './toolbar.scss';
 
 type Props = {
     onSearch(): void;

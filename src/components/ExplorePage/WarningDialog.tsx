@@ -42,7 +42,7 @@ const WarningDialog: FunctionComponent<Props> = ({
         return () => {
             window.removeEventListener("click", onOutsideClick);
         }
-    }, [ref, isShowing])
+    }, [ref, onHide, isShowing])
 
     return <animated.div ref={ref} style={{
         ...styles,

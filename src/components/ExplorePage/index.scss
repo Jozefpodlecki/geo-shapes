@@ -1,7 +1,8 @@
 .explore-page {
     flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    //justify-content: center;
     font-family: 'Roboto', sans-serif;
     
     &__loader {
@@ -13,7 +14,26 @@
         height: 100%;
     }
 
+    &__content {
+        display: flex;
+        flex: 1;
+    }
+
+    &__navbar {        
+        display: flex;
+    }
+
+    &__toolbar {
+
+    }
+
     &__panel {
         flex: 0 0 300px;
+    }
+}
+
+.navbar {
+    &__upload {
+        margin-left: auto;
     }
 }

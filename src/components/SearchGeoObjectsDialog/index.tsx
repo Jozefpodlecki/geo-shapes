@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import GridLoader from 'react-spinners/GridLoader';
 import { useState, useCallback, useEffect } from 'react';
