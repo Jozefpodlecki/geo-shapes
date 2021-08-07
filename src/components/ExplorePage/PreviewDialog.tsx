@@ -1,4 +1,4 @@
-import { FunctionComponent, memo, useState, useEffect, useRef } from 'react';
+import { FunctionComponent, memo, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import Highlight from 'react-highlight';
 import Icon from 'components/Icon';

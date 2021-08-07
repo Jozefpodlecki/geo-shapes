@@ -1,12 +1,7 @@
-import React, { FunctionComponent, MouseEvent, memo } from 'react';
-import { baseUrl } from 'appConstants';
-
-import './navbar.scss';
+import { FunctionComponent, MouseEvent, memo } from 'react';
 import { MapType } from './types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import Breadcrumbs from 'components/Breadcrumbs';
+import './navbar.scss';
 
 type Props = {
     flagUrl: string;

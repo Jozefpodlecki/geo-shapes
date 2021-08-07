@@ -59,15 +59,3 @@ const Breadcrumbs: FunctionComponent<Props> = ({
 }
 
 export default memo(Breadcrumbs);
-
-{/* <div className="breadcrumbs">
-<NavLink exact activeClassName="breadcrumbs__node--active" className="breadcrumbs__node" to="/">
-    Home
-</NavLink>
-<div className="breadcrumbs__separator">
-    <FontAwesomeIcon icon={faChevronRight}/>
-</div>
-<NavLink exact activeClassName="breadcrumbs__node--active" className="breadcrumbs__node" to="/countries">
-    Countries
-</NavLink>
-</div> */}

@@ -24,7 +24,7 @@ const RegionTooltip: FunctionComponent<Props> = ({
         y={y}>
         {region ? <div className="region">
             <div>
-                <img className="region__image" src={baseUrl + region.flagUrl}/>
+                <img alt={region.region} className="region__image" src={baseUrl + region.flagUrl}/>
             </div>
             <div className="region__info">
                 <div>Region: {region.region}</div>

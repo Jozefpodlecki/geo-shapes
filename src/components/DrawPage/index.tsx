@@ -1,20 +1,19 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import MapHandler from './MapHandler';
 import Panel, { PanelChangeOptions } from './Panel';
 import { DrawOption, ExportType, GeoObject } from './types';
-import { GeoJsonObject, Geometry, GeometryCollection, Feature } from "geojson";
-import './index.scss';
+import { Geometry } from "geojson";
 import { stringify } from 'wkt';
 import { download, toBase64DataUri } from 'appUtils';
+import './index.scss';
 
 type State = {
     geoObjects: GeoObject[];
     selectedCount: number;
 }
 
-const DrawPage: FunctionComponent = ({
-}) => {
+const DrawPage: FunctionComponent = () => {
     const [{
         geoObjects,
         selectedCount

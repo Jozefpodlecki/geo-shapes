@@ -18,7 +18,6 @@ import moment from 'moment';
 import { faClipboard, faList, faUpload } from '@fortawesome/free-solid-svg-icons';
 import Icon from 'components/Icon';
 import Breadcrumbs from 'components/Breadcrumbs';
-import stringify from "json-stringify-pretty-compact"
 import './index.scss';
 
 type GeoObject = {

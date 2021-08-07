@@ -1,6 +1,5 @@
 import { FunctionComponent, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { GeoJsonObject } from 'geojson';
 import stringify from "json-stringify-pretty-compact"
 import Highlight from 'react-highlight';
 import Icon from 'components/Icon';

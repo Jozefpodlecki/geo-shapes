@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo } from 'react';
+import { FunctionComponent, memo } from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import './svgMap.scss';
@@ -46,7 +46,7 @@ const SvgMap: FunctionComponent<Props> = ({
             svg.addEventListener("mouseleave", onMouseLeave);
         }
 
-    }, [svgWrapperRef])
+    }, [onMouseEnter, onMouseLeave, onMouseMove, svgWrapperRef])
 
     return <div
         className="country-page__svg"

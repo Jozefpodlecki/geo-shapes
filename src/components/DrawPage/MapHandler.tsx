@@ -1,7 +1,7 @@
 import { circleToPolygon, newId }  from 'appUtils';
-import React, { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
-import { GeoJSON, Circle, MapContainer, Pane, TileLayer, useMap, useMapEvents } from 'react-leaflet';
-import { DrawOption, ExportType, GeoObject } from './types';
+import { FunctionComponent, useEffect, useState } from 'react';
+import { GeoJSON, Circle, useMapEvents } from 'react-leaflet';
+import { DrawOption, GeoObject } from './types';
 
 type State = {
     type: "LineString" | "Polygon";
@@ -115,7 +115,7 @@ const DrawHandler: FunctionComponent<Props> = ({
                 data,
             });
         }
-    }, [drawOption, completed]);
+    }, [data, onChange, radius, center, drawOption, completed]);
 
     useEffect(() => {
 

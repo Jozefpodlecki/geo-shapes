@@ -18,7 +18,7 @@ const SearchBox: FunctionComponent<Props> = ({
     const _onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         const value = event.currentTarget.value;
         onChange(value);
-    }, []);
+    }, [onChange]);
 
     return <div className={`searchbox ${value ? "searchbox--typed": ""}`}>
     <div className={`searchbox__icon ${value ? "searchbox__icon--active": ""}`}><FontAwesomeIcon icon={faSearch}/></div>

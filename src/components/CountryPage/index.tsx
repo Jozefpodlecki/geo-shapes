@@ -1,13 +1,12 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useCallback } from 'react';
 import { Region } from 'models/Region';
 import { getCountry, getCountryGeojson, getCountrySvg, getRegions } from 'api';
-import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents, Marker, Popup } from 'react-leaflet';
-import { baseUrl } from 'appConstants';
+import { MapContainer, TileLayer, GeoJSON, useMapEvents, Marker, Popup } from 'react-leaflet';
 import { useParams } from 'react-router-dom';
-import { Country, GeoObject } from "models/GeoObject";
+import { Country } from "models/GeoObject";
 import { GeoJsonObject } from "geojson";
 import GridLoader from 'react-spinners/GridLoader';
 import SvgMap from './SvgMap';
@@ -143,7 +142,7 @@ const CountryPage: FunctionComponent = () => {
          
         })();
        
-    }, [mapType]);
+    }, [iso3166a2, mapType]);
 
     return <div className={`country-page ${state.isLoading || state.hasError ? "center": null}`}>
         {state.isLoading ? <GridLoader color="white" size={15} /> :

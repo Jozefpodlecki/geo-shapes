@@ -46,7 +46,7 @@ const Menu: FunctionComponent<Props> = ({
         return () => {
             window.removeEventListener("click", onOutsideClick);
         }
-    }, [ref, isShowing])
+    }, [ref, onHide, isShowing])
 
     const _onAction = (event: MouseEvent<HTMLDivElement>) => {
         const { action } = event.currentTarget.dataset;
