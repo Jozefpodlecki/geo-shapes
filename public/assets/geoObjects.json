@@ -16,7 +16,7 @@
         "area": 652230,
         "regions": 34,
         "neigboursCount": 5,
-        "tags": ["central-asia", "south-asia", "asia"]
+        "tags": ["central-asia", "southern-asia", "asia"]
     },
     {
         "id": "cz",
@@ -232,7 +232,7 @@
         "area": 676578,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "pk",
@@ -250,7 +250,7 @@
         "area": 907843,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["southern-asia"]
     },
     {
         "id": "pg",
@@ -651,7 +651,7 @@
     {
         "id": "az",
         "type": "country",
-        "fullName": "Azerbaijan",
+        "fullName": "Republic of Azerbaijan",
         "shortName": "Azerbaijan",
         "capital": "Kabul", 
         "iso3166a2": "az",
@@ -664,12 +664,12 @@
         "area": 86600,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": ["landlocked"]
+        "tags": ["landlocked", "western-asia"]
     },
     {
         "id": "at",
         "type": "country",
-        "fullName": "Austria",
+        "fullName": "Republic of Austria",
         "shortName": "Austria",
         "capital": "Vienna", 
         "iso3166a2": "at",
@@ -682,7 +682,7 @@
         "area": 83871,
         "regions": 20,
         "neigboursCount": 8,
-        "tags": ["landlocked", "europe"]
+        "tags": ["landlocked", "europe", "central-europe"]
     },
     {
         "id": "bd",
@@ -700,7 +700,7 @@
         "area": 147570,
         "regions": 8,
         "neigboursCount": 2,
-        "tags": ["south-asia", "asia"]
+        "tags": ["southern-asia", "asia"]
     },
     {
         "id": "ca",
@@ -826,7 +826,7 @@
         "area": 3287263,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["southern-asia"]
     },
     {
         "id": "jp",
@@ -844,12 +844,12 @@
         "area": 377976,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["island-country", "east-asia"]
     },
     {
         "id": "mx",
         "type": "country",
-        "fullName": "Mexico",
+        "fullName": "United Mexican States",
         "shortName": "Mexico",
         "capital": "Mexico City", 
         "iso3166a2": "mx",
@@ -862,12 +862,12 @@
         "area": 1964375,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["north-america"]
     },
     {
         "id": "gh",
         "type": "country",
-        "fullName": "Ghana",
+        "fullName": "Republic of Ghana",
         "shortName": "Ghana",
         "capital": "Accra", 
         "iso3166a2": "gh",
@@ -880,7 +880,7 @@
         "area": 238533,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "ge",
@@ -1078,7 +1078,7 @@
         "area": 330803,
         "regions": 20,
         "neigboursCount": 2,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "py",
@@ -1492,7 +1492,7 @@
         "area": 300000,
         "regions": 20,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "td",
@@ -1582,7 +1582,7 @@
         "area": 1910931,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "il",
@@ -1798,7 +1798,7 @@
         "area": 513120,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "jo",
@@ -2145,7 +2145,7 @@
     {
         "id": "la",
         "type": "country",
-        "fullName": "Laos",
+        "fullName": "Lao People's Democratic Republic",
         "shortName": "Laos",
         "capital": "Vientiane", 
         "iso3166a2": "la",
@@ -2158,7 +2158,7 @@
         "area": 236800,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "south-east-asia"]
     },
     {
         "id": "vn",
@@ -2325,7 +2325,7 @@
     {
         "id": "lk",
         "type": "country",
-        "fullName": "Sri Lanka",
+        "fullName": "Democratic Socialist Republic of Sri Lanka",
         "shortName": "Sri Lanka",
         "capital": "Colombo", 
         "iso3166a2": "lk",
@@ -2338,7 +2338,7 @@
         "area": 65610,
         "regions": 20,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["southern-asia", "island-country"]
     },
     {
         "id": "st",
@@ -2392,7 +2392,7 @@
         "area": 7225,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate"]
+        "tags": ["microstate", "south-east-asia"]
     },
     {
         "id": "ad",
@@ -2516,9 +2516,9 @@
         "countryCenter": [50, 20],
         "zoom": 8,
         "area": 0,
-        "regions": 5,
+        "regions": 12,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["western-africa"]
     },
     {
         "id": "bt",
@@ -2536,7 +2536,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["landlocked", "southern-asia"]
     },
     {
         "id": "ba",
@@ -2577,9 +2577,9 @@
     {
         "id": "lr",
         "type": "country",
-        "fullName": "Liberia",
+        "fullName": "Republic of Liberia",
         "shortName": "Liberia",
-        "capital": "Liberia", 
+        "capital": "Monrovia", 
         "iso3166a2": "lr",
         "iso3166a3": "lbr",
         "thumbnailUrl": "/assets/images/lr.jfif",
@@ -2590,7 +2590,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "tl",
@@ -2608,7 +2608,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["island-country", "south-east-asia"]
     },
     {
         "id": "tt",
@@ -3327,7 +3327,7 @@
         "area": 29743,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["western-asia", "landlocked"]
     },
     {
         "id": "as",
@@ -3812,7 +3812,7 @@
         "area": 5765,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate", "island-country"]
+        "tags": ["microstate", "island-country", "south-east-asia"]
     },
     {
         "id": "mt",
@@ -3956,25 +3956,7 @@
         "area": 747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
-    },
-    {
-        "id": "np",
-        "type": "country",
-        "fullName": "The Federal Democratic Republic of Nepal",
-        "shortName": "Nepal",
-        "capital": "Nepal", 
-        "iso3166a2": "np",
-        "iso3166a3": "npl",
-        "thumbnailUrl": "/assets/images/np.jfif",
-        "flagUrl": "/assets/flags/np.png",
-        "search": "country np npl Nepal",
-        "countryCenter": [50, 20],
-        "zoom": 8,
-        "area": 747,
-        "regions": 5,
-        "neigboursCount": 0,
-        "tags": []
+        "tags": ["southern-asia", "landlocked"]
     },
     {
         "id": "nu",
