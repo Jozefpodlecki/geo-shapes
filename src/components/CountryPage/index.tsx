@@ -1,7 +1,4 @@
-import { FunctionComponent } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useCallback } from 'react';
+import { useCallback, FunctionComponent, useState, useEffect, MouseEvent } from 'react';
 import { Region } from 'models/Region';
 import { getCountry, getCountryGeojson, getCountrySvg, getRegions } from 'api';
 import { MapContainer, TileLayer, GeoJSON, useMapEvents, Marker, Popup } from 'react-leaflet';
@@ -45,6 +42,7 @@ const CountryPage: FunctionComponent = () => {
         isLoading: true,
         hasError: false,
     });
+    const [level, setLevel] = useState<number>(0);
     const [region, setRegion] = useState<Region>();
     const [hasEntered, setEntered] = useState(false);
     const [mapType, setMapType] = useState<MapType>("leaflet");
@@ -88,7 +86,7 @@ const CountryPage: FunctionComponent = () => {
         
     }, [state, iso3166a2])
 
-    const onMouseMove = useCallback((event: MouseEvent) => {
+    const onMouseMove = useCallback((event: globalThis.MouseEvent) => {
         if(state.isLoading || state.hasError) {
             return;
         }
@@ -144,6 +142,11 @@ const CountryPage: FunctionComponent = () => {
        
     }, [iso3166a2, mapType]);
 
+    const onADLChange = (event: MouseEvent<HTMLDivElement>) => {
+        const { level } = event.currentTarget.dataset;
+        setLevel(Number(level));
+    };
+
     return <div className={`country-page ${state.isLoading || state.hasError ? "center": null}`}>
         {state.isLoading ? <GridLoader color="white" size={15} /> :
         state.hasError ? <UnderConstruction/>
@@ -186,7 +189,10 @@ const CountryPage: FunctionComponent = () => {
                 </MapContainer>}
             </div>
             <div className="country-page__footer">
-                
+                <div className="country-page__administrativeDivisions">
+                    <div className={`country-page__administrativeDivision ${level === 0 ? "selected" : ""}`} data-level={0} onClick={onADLChange}>Country</div>
+                    <div className={`country-page__administrativeDivision ${level === 1 ? "selected" : ""}`} data-level={1} onClick={onADLChange}>Departments</div>
+                </div>
             </div>
         </>}
     </div>;

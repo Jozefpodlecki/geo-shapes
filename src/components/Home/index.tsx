@@ -26,6 +26,11 @@ const menuItems = [
         icon: faEye,
         text: "Explore map",
         link: "/explore"
+    },
+    {
+        icon: faEye,
+        text: "Inspect Geojson",
+        link: "/inspect-geojson"
     }
 ]
 

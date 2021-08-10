@@ -24,6 +24,17 @@ const Breadcrumbs: FunctionComponent<Props> = ({
             className="breadcrumbs__node" to="/">
             Home
         </NavLink>
+        {pathname === "/inspect-geojson" ? <>
+            <div className="breadcrumbs__separator">
+                <FontAwesomeIcon icon={faChevronRight}/>
+            </div>
+            <NavLink
+                exact
+                activeClassName="breadcrumbs__node--active"
+                className="breadcrumbs__node" to="/inspect-geojson">
+                Inspect Geojson
+            </NavLink>
+        </> : null}
         {pathname === "/explore" ? <>
             <div className="breadcrumbs__separator">
                 <FontAwesomeIcon icon={faChevronRight}/>

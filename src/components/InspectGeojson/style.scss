@@ -1,0 +1,24 @@
+.inspect-geojson {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__panelTopBar {
+        display: flex;
+    }
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 300px;
+    }
+
+    &__container {
+        flex: 1;
+        display: flex;
+    }
+
+    &__view {
+        flex: 1;
+    }
+}

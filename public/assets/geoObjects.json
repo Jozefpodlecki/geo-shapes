@@ -214,7 +214,7 @@
         "area": 301339,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["mediterranean-country"]
     },
     {
         "id": "mm",
@@ -543,7 +543,7 @@
     {
         "id": "ke",
         "type": "country",
-        "fullName": "Kenya",
+        "fullName": "Republic of Kenya",
         "shortName": "Kenya",
         "capital": "Nairobi", 
         "iso3166a2": "ke",
@@ -556,7 +556,7 @@
         "area": 580367,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-africa"]
     },
     {
         "id": "kr",
@@ -957,7 +957,7 @@
     {
         "id": "et",
         "type": "country",
-        "fullName": "Ethiopia",
+        "fullName": "Federal Democratic Republic of Ethiopia",
         "shortName": "Ethiopia",
         "capital": "Addis Ababa",
         "iso3166a2": "et",
@@ -970,12 +970,12 @@
         "area": 1104300,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "horn-of-africa", "east-africa"]
     },
     {
         "id": "eg",
         "type": "country",
-        "fullName": "Egypt",
+        "fullName": "Arab Republic of Egypt",
         "shortName": "Egypt",
         "capital": "Cairo", 
         "iso3166a2": "ec",
@@ -988,7 +988,7 @@
         "area": 1002450,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["north-east-africa", "mediterranean-country"]
     },
     {
         "id": "ec",
@@ -1045,9 +1045,27 @@
         "tags": []
     },
     {
+        "id": "mw",
+        "type": "country",
+        "fullName": "Republic of Malawi",
+        "shortName": "Malawi",
+        "capital": "Lilongwe", 
+        "iso3166a2": "mw",
+        "iso3166a3": "mwi",
+        "thumbnailUrl": "/assets/images/mw.jfif",
+        "flagUrl": "/assets/flags/mw.png",
+        "search": "country mw Malawi",
+        "countryCenter": [-14.275071731203354, 34.81567382812501],
+        "zoom": 7,
+        "area": 108889,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": ["landlocked", "south-east-africa"]
+    },
+    {
         "id": "pa",
         "type": "country",
-        "fullName": "Panama",
+        "fullName": "Republic of Panama",
         "shortName": "Panama",
         "capital": "Panama City", 
         "iso3166a2": "pa",
@@ -1055,12 +1073,12 @@
         "thumbnailUrl": "/assets/images/pa.jfif",
         "flagUrl": "/assets/flags/pa.png",
         "search": "country pa Panama",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [8.449730480749489, -80.20019531250001],
+        "zoom": 7,
         "area": 75417,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-america", "south-america"]
     },
     {
         "id": "my",
@@ -1073,8 +1091,8 @@
         "thumbnailUrl": "/assets/images/my.jfif",
         "flagUrl": "/assets/flags/my.png",
         "search": "country my mys Malaysia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [2.9844504344943217, 111.13769531250001],
+        "zoom": 6,
         "area": 330803,
         "regions": 20,
         "neigboursCount": 2,
@@ -1083,7 +1101,7 @@
     {
         "id": "py",
         "type": "country",
-        "fullName": "Paraguay",
+        "fullName": "Republic of Paraguay",
         "shortName": "Paraguay",
         "capital": "Asuncion", 
         "iso3166a2": "py",
@@ -1091,17 +1109,17 @@
         "thumbnailUrl": "/assets/images/py.jfif",
         "flagUrl": "/assets/flags/py.png",
         "search": "country py pry Paraguay",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-23.23812755882659, -58.86474609375001],
+        "zoom": 6,
         "area": 406752,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "south-america"]
     },
     {
         "id": "om",
         "type": "country",
-        "fullName": "Oman",
+        "fullName": "Sultanate of Oman",
         "shortName": "Oman",
         "capital": "Muscat", 
         "iso3166a2": "om",
@@ -1114,7 +1132,7 @@
         "area": 309500,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["arabian-peninsula", "western-asia"]
     },
     {
         "id": "gr",
@@ -1317,7 +1335,7 @@
     {
         "id": "si",
         "type": "country",
-        "fullName": "Slovenia",
+        "fullName": "Republic of Slovenia",
         "shortName": "Slovenia",
         "capital": "Ljubljana", 
         "iso3166a2": "si",
@@ -1330,12 +1348,12 @@
         "area": 20273,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["mediterranean-country", "central-europe"]
     },
     {
         "id": "sk",
         "type": "country",
-        "fullName": "Slovakia",
+        "fullName": "Slovak Republic",
         "shortName": "Slovakia",
         "capital": "Bratislava", 
         "iso3166a2": "sk",
@@ -1348,12 +1366,12 @@
         "area": 49037,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "central-europe"]
     },
     {
         "id": "zw",
         "type": "country",
-        "fullName": "Zimbabwe",
+        "fullName": "Republic of Zimbabwe",
         "shortName": "Zimbabwe",
         "capital": "Harare", 
         "iso3166a2": "zw",
@@ -1366,7 +1384,7 @@
         "area": 390757,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "south-east-africa"]
     },
     {
         "id": "tg",
@@ -1389,7 +1407,7 @@
     {
         "id": "es",
         "type": "country",
-        "fullName": "Spain",
+        "fullName": "Kingdom of Spain",
         "shortName": "Spain",
         "capital": "Madrid", 
         "iso3166a2": "es",
@@ -1402,7 +1420,7 @@
         "area": 505992,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["mediterranean-country"]
     },
     {
         "id": "sd",
@@ -1425,7 +1443,7 @@
     {
         "id": "ug",
         "type": "country",
-        "fullName": "Uganda",
+        "fullName": "Republic of Uganda",
         "shortName": "Uganda",
         "capital": "Kampala", 
         "iso3166a2": "ug",
@@ -1438,7 +1456,7 @@
         "area": 241550,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "east-africa"]
     },
     {
         "id": "zm",
@@ -1551,7 +1569,7 @@
     {
         "id": "bw",
         "type": "country",
-        "fullName": "Botswana",
+        "fullName": "Republic of Botswana",
         "shortName": "Botswana",
         "capital": "Gaborone", 
         "iso3166a2": "bw",
@@ -1564,7 +1582,7 @@
         "area": 581730,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-africa", "south-africa", "landlocked"]
     },
     {
         "id": "id",
@@ -1762,7 +1780,7 @@
         "area": 2149690,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["western-asia"]
     },
     {
         "id": "se",
@@ -2482,7 +2500,25 @@
         "area": 760,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["persian-gulf", "microstate"]
+        "tags": ["persian-gulf", "microstate", "western-asia"]
+    },
+    {
+        "id": "qa",
+        "type": "country",
+        "fullName": "State of Qatar",
+        "shortName": "Qatar",
+        "capital": "Doha", 
+        "iso3166a2": "qa",
+        "iso3166a3": "qat",
+        "thumbnailUrl": "/assets/images/qa.jfif",
+        "flagUrl": "/assets/flags/qa.png",
+        "search": "country qa qat Qatar",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 760,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": [ "western-asia"]
     },
     {
         "id": "ss",
@@ -2572,7 +2608,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["landlocked", "south-africa"]
     },
     {
         "id": "lr",
@@ -2968,7 +3004,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["western-asia"]
     },
     {
         "id": "ki",
@@ -3381,7 +3417,7 @@
         "area": 7747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["mediterranean-country"]
     },
     {
         "id": "be",
@@ -3709,7 +3745,7 @@
     {
         "id": "mc",
         "type": "country",
-        "fullName": "Monaco",
+        "fullName": "Principality of Monaco",
         "shortName": "Monaco",
         "capital": "Monaco", 
         "iso3166a2": "mc",
@@ -3722,7 +3758,7 @@
         "area": 2,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate"]
+        "tags": ["microstate", "mediterranean-country"]
     },
     {
         "id": "nr",
@@ -4014,7 +4050,7 @@
     },
     {
         "id": "sz",
-        "type": "australia-external-territory",
+        "type": "country",
         "fullName": "The Kingdom of Eswatini",
         "shortName": "Eswatini",
         "capital": "Eswatini", 
@@ -4028,7 +4064,7 @@
         "area": 747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["landlocked"]
+        "tags": ["landlocked", "south-africa"]
     },
     {
         "id": "sr",

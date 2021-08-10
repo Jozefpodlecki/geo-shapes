@@ -433,7 +433,6 @@ const ExplorePage: FunctionComponent = () => {
         setUploading(false);
     }
 
-    console.log("rerender explore page");
     const onTogglePanel = () => setToggled(state => !state);
 
     return <div className="explore-page" {...getRootProps()}>

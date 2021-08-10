@@ -11,6 +11,7 @@ import { NotificationContainer } from 'react-notifications';
 import './app.scss';
 import WorldPage from 'components/WorldPage';
 import Home from 'components/Home';
+import InspectGeojson from 'components/InspectGeojson';
 
 const App: FunctionComponent = () => {
     const [isShowing, setShow] = useState(false);
@@ -29,6 +30,7 @@ const App: FunctionComponent = () => {
             <Route exact path="/draw" component={DrawPage}/>
             <Route exact path="/country/:iso3166a2" component={CountryPage}/>
             <Route exact path="/countries" component={Countries}/>
+            <Route exact path="/inspect-geojson" component={InspectGeojson}/>
         </Switch>
         <NotificationContainer/>
     </div>;
