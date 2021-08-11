@@ -14,23 +14,15 @@ import './index.scss';
 import UnderConstruction from './UnderConstruction';
 
 type State = {
+    iso3166a2?: string;
     regions: Region[];
-    country?: Country;    
-    isLoading: true;
-    hasError: boolean;
-} | {
-    regions: Region[];
-    country: Country;
-    isLoading: false;
-    hasError: boolean;
-} | {
-    regions?: Region[];
+} & ({
     country?: Country;
-    isLoading: false;
-    hasError: true;
-}
-
-
+    pageState: "loading" | "error";
+} | {
+    country: Country;
+    pageState: "loaded";
+})
 
 const CountryPage: FunctionComponent = () => {
     const [{x,y}, setPosition] = useState({
@@ -39,8 +31,7 @@ const CountryPage: FunctionComponent = () => {
     });
     const [state, setState] = useState<State>({
         regions: [],
-        isLoading: true,
-        hasError: false,
+        pageState: "loading",
     });
     const [level, setLevel] = useState<number>(0);
     const [region, setRegion] = useState<Region>();
@@ -51,8 +42,16 @@ const CountryPage: FunctionComponent = () => {
     const { iso3166a2 } = useParams<{ iso3166a2: string }>();
 
     useEffect(() => {
+        setState(state => ({
+            ...state,
+            iso3166a2,
+            pageState: "loading",
+        }));
+    }, [iso3166a2]);
 
-        if(!iso3166a2 || !state.isLoading) {
+    useEffect(() => {
+
+        if(state.iso3166a2 == iso3166a2 && state.pageState === "loaded") {
             return;
         }
 
@@ -62,32 +61,33 @@ const CountryPage: FunctionComponent = () => {
                 const regions = await getRegions(iso3166a2);
 
                 if(!country) {
-                    setState({
+                    setState(state => ({
+                        ...state,
                         hasError: true,
                         isLoading: false,
-                    });
+                    }));
                     return;
                 }
 
                 setState({
+                    iso3166a2,
                     country,
                     regions,
-                    isLoading: false,
-                    hasError: false,
+                    pageState: "loaded",
                 });
             } catch (error) {
                 console.log(error)
-                setState({
-                    hasError: true,
-                    isLoading: false,
-                });
+                setState(state => ({
+                    ...state,
+                    pageState: "error",
+                }));
             }
         })();
         
-    }, [state, iso3166a2])
+    }, [state])
 
     const onMouseMove = useCallback((event: globalThis.MouseEvent) => {
-        if(state.isLoading || state.hasError) {
+        if(state.pageState !== "loaded") {
             return;
         }
         
@@ -147,54 +147,66 @@ const CountryPage: FunctionComponent = () => {
         setLevel(Number(level));
     };
 
-    return <div className={`country-page ${state.isLoading || state.hasError ? "center": null}`}>
-        {state.isLoading ? <GridLoader color="white" size={15} /> :
-        state.hasError ? <UnderConstruction/>
-        : <>
-            <Navbar
-                flagUrl={state.country.flagUrl}
-                fullName={state.country.fullName}
-                mapType={mapType}
-                onMapChange={setMapType}
-            />
-            <RegionTooltip
-                hasEntered={hasEntered}
-                x={x}
-                y={y}
-                region={region}
-            />
-            <div className="country-page__map">
-                {mapType === "svg" ? <SvgMap
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                    onMouseMove={onMouseMove}
-                    svg={svg}
-                /> :
-                <MapContainer
-                    zoom={state.country.zoom}
-                    center={state.country.countryCenter}
-                    scrollWheelZoom={true}
-                    className="country-page__leafletMap">
-                    <TileLayer
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    {geojson ? <GeoJSON data={geojson}/> : null}
-                    {state.country.capitalCenter ? <Marker position={state.country.capitalCenter}>
-                        <Popup>
-                            {state.country.capital}
-                        </Popup>
-                    </Marker> : null}
-                    <DevInfo/>
-                </MapContainer>}
-            </div>
-            <div className="country-page__footer">
-                <div className="country-page__administrativeDivisions">
-                    <div className={`country-page__administrativeDivision ${level === 0 ? "selected" : ""}`} data-level={0} onClick={onADLChange}>Country</div>
-                    <div className={`country-page__administrativeDivision ${level === 1 ? "selected" : ""}`} data-level={1} onClick={onADLChange}>Departments</div>
+    let content;
+
+    switch(state.pageState) {
+        case "loading":
+            content = <GridLoader color="white" size={15} />;
+        break;
+        case "error":
+            content = <UnderConstruction/>;
+        break;
+        case "loaded":
+            content =  <>
+                <Navbar
+                    flagUrl={state.country.flagUrl}
+                    fullName={state.country.fullName}
+                    mapType={mapType}
+                    onMapChange={setMapType}
+                />
+                <RegionTooltip
+                    hasEntered={hasEntered}
+                    x={x}
+                    y={y}
+                    region={region}
+                />
+                <div className="country-page__map">
+                    {mapType === "svg" ? <SvgMap
+                        onMouseEnter={onMouseEnter}
+                        onMouseLeave={onMouseLeave}
+                        onMouseMove={onMouseMove}
+                        svg={svg}
+                    /> :
+                    <MapContainer
+                        zoom={state.country.zoom}
+                        center={state.country.countryCenter}
+                        scrollWheelZoom={true}
+                        className="country-page__leafletMap">
+                        <TileLayer
+                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        {geojson ? <GeoJSON data={geojson}/> : null}
+                        {state.country.capitalCenter ? <Marker position={state.country.capitalCenter}>
+                            <Popup>
+                                {state.country.capital}
+                            </Popup>
+                        </Marker> : null}
+                        <DevInfo/>
+                    </MapContainer>}
                 </div>
-            </div>
-        </>}
+                <div className="country-page__footer">
+                    <div className="country-page__administrativeDivisions">
+                        <div className={`country-page__administrativeDivision ${level === 0 ? "selected" : ""}`} data-level={0} onClick={onADLChange}>Country</div>
+                        <div className={`country-page__administrativeDivision ${level === 1 ? "selected" : ""}`} data-level={1} onClick={onADLChange}>Departments</div>
+                    </div>
+                </div>
+            </>
+        break;
+    }
+
+    return <div className={`country-page ${state.pageState !== "loaded" ? "center": null}`}>
+        {content}
     </div>;
 }
 

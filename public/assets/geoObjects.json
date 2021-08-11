@@ -659,7 +659,7 @@
         "thumbnailUrl": "/assets/images/az.jfif",
         "flagUrl": "/assets/flags/az.png",
         "search": "country az aze Azerbaijan",
-        "countryCenter": [50, 20],
+        "countryCenter": [40.35123906937988, 48.01025390625001],
         "zoom": 8,
         "area": 86600,
         "regions": 20,
@@ -875,7 +875,7 @@
         "thumbnailUrl": "/assets/images/gh.jfif",
         "flagUrl": "/assets/flags/gh.png",
         "search": "country gh Ghana",
-        "countryCenter": [50, 20],
+        "countryCenter": [8.403049233391831, -1.7468261718750002],
         "zoom": 8,
         "area": 238533,
         "regions": 20,
@@ -893,12 +893,12 @@
         "thumbnailUrl": "/assets/images/ge.jfif",
         "flagUrl": "/assets/flags/ge.png",
         "search": "country ge Georgia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [42.5483989834343, 42.98950195312501],
+        "zoom": 7,
         "area": 69700,
         "regions": 20,
         "neigboursCount": 4,
-        "tags": []
+        "tags": ["east-europe", "western-asia"]
     },
     {
         "id": "er",
@@ -911,12 +911,12 @@
         "thumbnailUrl": "/assets/images/er.jfif",
         "flagUrl": "/assets/flags/er.png",
         "search": "country er Eritrea",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [15.026001143681082, 39.05639648437501],
+        "zoom": 7,
         "area": 117600,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-africa"]
     },
     {
         "id": "ee",
@@ -1217,12 +1217,12 @@
         "thumbnailUrl": "/assets/images/ng.jfif",
         "flagUrl": "/assets/flags/ng.png",
         "search": "country ng Nigeria",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [9.330106516048309, 8.020019531250002],
+        "zoom": 6,
         "area": 923768,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "pe",
@@ -1235,12 +1235,12 @@
         "thumbnailUrl": "/assets/images/pe.jfif",
         "flagUrl": "/assets/flags/pe.png",
         "search": "country pe Peru",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-8.559333295231589, -76.50878906250001],
+        "zoom": 5,
         "area": 1285216,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-america"]
     },
     {
         "id": "ro",
@@ -1253,12 +1253,12 @@
         "thumbnailUrl": "/assets/images/ro.jfif",
         "flagUrl": "/assets/flags/ro.png",
         "search": "country ro Romania",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [46.0084017627864, 24.927978515625004],
+        "zoom": 7,
         "area": 238397,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-europe"]
     },
     {
         "id": "so",
@@ -1271,12 +1271,12 @@
         "thumbnailUrl": "/assets/images/so.jfif",
         "flagUrl": "/assets/flags/so.png",
         "search": "country so Somalia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [5.086280285988212, 45.94482421875],
+        "zoom": 7,
         "area": 637657,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-africa", "horn-of-africa"]
     },
     {
         "id": "tr",
@@ -1299,7 +1299,7 @@
     {
         "id": "uy",
         "type": "country",
-        "fullName": "Uruguay",
+        "fullName": "Oriental Republic of Uruguay",
         "shortName": "Uruguay",
         "capital": "Montevideo", 
         "iso3166a2": "uy",
@@ -1307,17 +1307,17 @@
         "thumbnailUrl": "/assets/images/uy.jfif",
         "flagUrl": "/assets/flags/uy.png",
         "search": "country uy Uruguay",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-32.72647422812709, -55.95336914062501],
+        "zoom": 7,
         "area": 176215,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-america"]
     },
     {
         "id": "uz",
         "type": "country",
-        "fullName": "Uzbekistan",
+        "fullName": "Republic of Uzbekistan",
         "shortName": "Uzbekistan",
         "capital": "Tashkent", 
         "iso3166a2": "uz",
@@ -1325,12 +1325,12 @@
         "thumbnailUrl": "/assets/images/uz.jfif",
         "flagUrl": "/assets/flags/uz.png",
         "search": "country uz Uzbekistan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [42.48019996901214, 63.54492187500001],
+        "zoom": 6,
         "area": 447400,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-asia"]
     },
     {
         "id": "si",
@@ -1343,7 +1343,7 @@
         "thumbnailUrl": "/assets/images/si.jfif",
         "flagUrl": "/assets/flags/si.png",
         "search": "country si Slovenia",
-        "countryCenter": [50, 20],
+        "countryCenter": [45.97267063741218, 14.699707031250002],
         "zoom": 8,
         "area": 20273,
         "regions": 20,
@@ -1361,7 +1361,7 @@
         "thumbnailUrl": "/assets/images/sk.jfif",
         "flagUrl": "/assets/flags/sk.png",
         "search": "country sk Slovakia",
-        "countryCenter": [50, 20],
+        "countryCenter": [48.703865557300546, 19.418334960937504],
         "zoom": 8,
         "area": 49037,
         "regions": 20,
@@ -1379,8 +1379,8 @@
         "thumbnailUrl": "/assets/images/zw.jfif",
         "flagUrl": "/assets/flags/zw.png",
         "search": "country zw Zimbabwe",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-18.733926113977677, 29.707031250000004],
+        "zoom": 7,
         "area": 390757,
         "regions": 20,
         "neigboursCount": 5,
@@ -1389,7 +1389,7 @@
     {
         "id": "tg",
         "type": "country",
-        "fullName": "Togo",
+        "fullName": "Togolese Republic",
         "shortName": "Togo",
         "capital": "Lome", 
         "iso3166a2": "tg",
@@ -1397,12 +1397,12 @@
         "thumbnailUrl": "/assets/images/tg.jfif",
         "flagUrl": "/assets/flags/tg.png",
         "search": "country tg Togo",
-        "countryCenter": [50, 20],
+        "countryCenter": [8.530232218438567, 0.29663085937500006],
         "zoom": 8,
         "area": 56785,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "es",

@@ -4,12 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { baseUrl } from 'appConstants';
 import Breadcrumbs from 'components/Breadcrumbs';
 import Icon from 'components/Icon';
-import { FunctionComponent, memo, useState } from 'react';
+import { FunctionComponent, memo, useState, MouseEvent } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { GeoJSON } from 'react-leaflet';
 import { GeoJsonObject, MultiPolygon } from 'geojson';
 import './style.scss';
 import { useEffect } from 'react';
+import { extractGeoObjectFromText, getTextFromBlob, openFileDialog } from 'appUtils';
 
 const test1 = {
     "type": "MultiPoint", 
@@ -33,8 +34,10 @@ const test2 = {
 
 const breakDownGeojson = (data: GeoJsonObject) => {
     let result = new Array<GeoJsonObject>();
+    let header = "None";
 
     if(data.type === "MultiPolygon") {
+        header = "MultiPolygon";
         const multiPolygon = data as MultiPolygon;
         for(const coordinates of multiPolygon.coordinates) {
 
@@ -46,36 +49,99 @@ const breakDownGeojson = (data: GeoJsonObject) => {
             result.push(polygon);
         }
 
-        return result;
+        return [header, result] as [string, GeoJsonObject[]];
     }
 
-    return result;
+    return [header, result] as [string, GeoJsonObject[]];
 }
 
 type GeoObjectWithId = {
     id: string;
     name: string;
+    selected: boolean;
     data: GeoJsonObject;
 }
 
 const InspectGeojson: FunctionComponent = () => {
     const [center, setCenter] = useState<[number, number]>([51.505, -0.09]);
-    const [data, setData] = useState<GeoObjectWithId[]>([]);
+    const [{
+        header,
+        data
+    }, setData] = useState<{
+        header: string;
+        data: GeoObjectWithId[];
+    }>({
+        header: "",
+        data: [],
+    });
 
     useEffect(() => {
-        const result = breakDownGeojson(test2);
+        const [header, result] = breakDownGeojson(test2);
 
         const data = result.map((data, index) => ({
             id: index.toString(),
             name: `polygon_${index + 1}`,
+            selected: false,
             data,
         }))
 
-        setData(data);
+        setData({header, data});
     }, []);
 
-    const onUpload = () => {
+    const onUpload = async () => {
+        const file = await openFileDialog();
 
+        if(!file) {
+            return false;
+        }
+
+        const text = await getTextFromBlob(file);
+        const geojsonObject = extractGeoObjectFromText(text);
+
+        if(!geojsonObject) {
+            return false;
+        }
+
+        const [header, result] = breakDownGeojson(geojsonObject);
+
+        const data = result.map((data, index) => ({
+            id: index.toString(),
+            name: `polygon_${index + 1}`,
+            selected: false,
+            data,
+        }))
+
+        setData({header, data});
+    }
+
+    const onAllSelect = () => {
+        setData(({header, data}) => {
+            const newState = data.map(pr => ({...pr, selected: true}));
+
+            return {
+                header,
+                data: newState,
+            };
+        })
+    }
+
+    const onSelect = (event: MouseEvent<HTMLDivElement>) => {
+        const { id } = event.currentTarget.dataset;
+        setData(({header, data}) => {
+            const newState = data.map(pr => ({...pr}));
+
+            for(const it of newState.filter(pr => pr.selected)) {
+                it.selected = false;
+            }
+
+            const item = newState.find(pr => pr.id === id)!;
+            item.selected = !item.selected;
+
+            return {
+                header,
+                data: newState,
+            };
+        })
     }
 
     return <div className="inspect-geojson">
@@ -88,7 +154,12 @@ const InspectGeojson: FunctionComponent = () => {
                     <Icon className="navbar__upload" onClick={onUpload} icon={faUpload}/>
                 </div>
                 <div className="inspect-geojson__content">
-                    {data.map(pr => <div key={pr.id}></div>)}
+                    <div onClick={onAllSelect} className="inspect-geojson__header">{header}</div>
+                    {data.map(pr => <div
+                        data-id={pr.id}
+                        onClick={onSelect}
+                        className={`inspect-geojson__item ${pr.selected ? "inspect-geojson__item--selected": ""}`}
+                        key={pr.id}>{pr.name}</div>)}
                 </div>
             </div>
             <div className="inspect-geojson__view">
@@ -103,6 +174,9 @@ const InspectGeojson: FunctionComponent = () => {
                     />
                     {data.map(pr => <GeoJSON
                         key={pr.id}
+                        style={{
+                            color: pr.selected ? "blue" : "gray",
+                        }}
                         data={pr.data} />)}
                 </MapContainer>
             </div>
