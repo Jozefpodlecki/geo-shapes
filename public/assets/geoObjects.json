@@ -119,8 +119,8 @@
         "thumbnailUrl": "/assets/images/jm.jfif",
         "flagUrl": "/assets/flags/jm.png",
         "search": "country jm jam Jamaica",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [18.01898832059924, -77.46185302734376],
+        "zoom": 5,
         "area": 10991,
         "regions": 14,
         "neigboursCount": 0,
@@ -137,12 +137,12 @@
         "thumbnailUrl": "/assets/images/kg.jfif",
         "flagUrl": "/assets/flags/kg.png",
         "search": "country kg Kyrgyzstan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [41.478712535952965, 73.72375488281251],
+        "zoom": 7,
         "area": 199945,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "central-asia"]
     },
     {
         "id": "pl",
@@ -160,7 +160,7 @@
         "area": 312696,
         "regions": 20,
         "neigboursCount": 7,
-        "tags": []
+        "tags": ["central-europe"]
     },
     {
         "id": "al",
@@ -178,12 +178,12 @@
         "area": 28703,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-europe"]
     },
     {
         "id": "ie",
         "type": "country",
-        "fullName": "Ireland",
+        "fullName": "Republic of Ireland",
         "shortName": "Ireland",
         "capital": "Dublin",
         "iso3166a2": "ie",
@@ -191,12 +191,12 @@
         "thumbnailUrl": "/assets/images/ie.jfif",
         "flagUrl": "/assets/flags/ie.png",
         "search": "country ie Ireland",
-        "countryCenter": [50, 20],
+        "countryCenter": [53.28146771163926, -8.464965820312502],
         "zoom": 8,
         "area": 70273,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["north-western-europe"]
     },
     {
         "id": "it",
@@ -206,11 +206,11 @@
         "capital": "Rome",
         "iso3166a2": "it",
         "iso3166a3": "ita",
-        "thumbnailUrl": "/assets/images/it.jfif",
+        "thumbnailUrl": "/assets/images/it.jpg",
         "flagUrl": "/assets/flags/it.png",
         "search": "country it Italy",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [42.181075234008624, 9.942626953125002],
+        "zoom": 6,
         "area": 301339,
         "regions": 20,
         "neigboursCount": 5,
@@ -224,7 +224,7 @@
         "capital": "Nay Pyi Taw", 
         "iso3166a2": "mm",
         "iso3166a3": "mmr",
-        "thumbnailUrl": "/assets/images/mm.jfif",
+        "thumbnailUrl": "/assets/images/mm.jpg",
         "flagUrl": "/assets/flags/mm.png",
         "search": "country mm mmr Myanmar",
         "countryCenter": [21.59916493366621, 96.15234375],
@@ -245,8 +245,8 @@
         "thumbnailUrl": "/assets/images/pk.jfif",
         "flagUrl": "/assets/flags/pk.png",
         "search": "country pk pak Pakistan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [30.97863615109508, 68.36791992187501],
+        "zoom": 5,
         "area": 907843,
         "regions": 20,
         "neigboursCount": 5,
@@ -255,20 +255,20 @@
     {
         "id": "pg",
         "type": "country",
-        "fullName": "Papua New Guinea",
-        "shortName": "Papua New Guinea",
+        "fullName": "Independent State of Papua New Guinea",
+        "shortName": "PNG",
         "capital": "Port Moresby", 
         "iso3166a2": "pg",
         "iso3166a3": "png",
         "thumbnailUrl": "/assets/images/pg.jfif",
         "flagUrl": "/assets/flags/pg.png",
         "search": "country pg Papua New Guinea",
-        "countryCenter": [50, 20],
+        "countryCenter": [-5.550444442674229, 147.55737304687503],
         "zoom": 8,
         "area": 462840,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["oceania"]
     },
     {
         "id": "ne",
@@ -2783,12 +2783,12 @@
         "thumbnailUrl": "/assets/images/vu.jfif",
         "flagUrl": "/assets/flags/vu.png",
         "search": "country vu vut Vanuatu",
-        "countryCenter": [50, 20],
+        "countryCenter": [-15.876809064146757, 167.55249023437503],
         "zoom": 8,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["island-country", "oceania"]
     },
     {
         "id": "vg",
@@ -3022,7 +3022,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country", "microstate"]
+        "tags": ["island-country", "microstate", "oceania"]
     },
     {
         "id": "je",
