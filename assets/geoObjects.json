@@ -16,7 +16,7 @@
         "area": 652230,
         "regions": 34,
         "neigboursCount": 5,
-        "tags": ["central-asia", "south-asia", "asia"]
+        "tags": ["central-asia", "southern-asia", "asia"]
     },
     {
         "id": "cz",
@@ -119,8 +119,8 @@
         "thumbnailUrl": "/assets/images/jm.jfif",
         "flagUrl": "/assets/flags/jm.png",
         "search": "country jm jam Jamaica",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [18.01898832059924, -77.46185302734376],
+        "zoom": 5,
         "area": 10991,
         "regions": 14,
         "neigboursCount": 0,
@@ -137,12 +137,12 @@
         "thumbnailUrl": "/assets/images/kg.jfif",
         "flagUrl": "/assets/flags/kg.png",
         "search": "country kg Kyrgyzstan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [41.478712535952965, 73.72375488281251],
+        "zoom": 7,
         "area": 199945,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "central-asia"]
     },
     {
         "id": "pl",
@@ -160,7 +160,7 @@
         "area": 312696,
         "regions": 20,
         "neigboursCount": 7,
-        "tags": []
+        "tags": ["central-europe"]
     },
     {
         "id": "al",
@@ -178,12 +178,12 @@
         "area": 28703,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-europe"]
     },
     {
         "id": "ie",
         "type": "country",
-        "fullName": "Ireland",
+        "fullName": "Republic of Ireland",
         "shortName": "Ireland",
         "capital": "Dublin",
         "iso3166a2": "ie",
@@ -191,12 +191,12 @@
         "thumbnailUrl": "/assets/images/ie.jfif",
         "flagUrl": "/assets/flags/ie.png",
         "search": "country ie Ireland",
-        "countryCenter": [50, 20],
+        "countryCenter": [53.28146771163926, -8.464965820312502],
         "zoom": 8,
         "area": 70273,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["north-western-europe"]
     },
     {
         "id": "it",
@@ -206,15 +206,15 @@
         "capital": "Rome",
         "iso3166a2": "it",
         "iso3166a3": "ita",
-        "thumbnailUrl": "/assets/images/it.jfif",
+        "thumbnailUrl": "/assets/images/it.jpg",
         "flagUrl": "/assets/flags/it.png",
         "search": "country it Italy",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [42.181075234008624, 9.942626953125002],
+        "zoom": 6,
         "area": 301339,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["mediterranean-country"]
     },
     {
         "id": "mm",
@@ -224,7 +224,7 @@
         "capital": "Nay Pyi Taw", 
         "iso3166a2": "mm",
         "iso3166a3": "mmr",
-        "thumbnailUrl": "/assets/images/mm.jfif",
+        "thumbnailUrl": "/assets/images/mm.jpg",
         "flagUrl": "/assets/flags/mm.png",
         "search": "country mm mmr Myanmar",
         "countryCenter": [21.59916493366621, 96.15234375],
@@ -232,7 +232,7 @@
         "area": 676578,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "pk",
@@ -245,30 +245,30 @@
         "thumbnailUrl": "/assets/images/pk.jfif",
         "flagUrl": "/assets/flags/pk.png",
         "search": "country pk pak Pakistan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [30.97863615109508, 68.36791992187501],
+        "zoom": 5,
         "area": 907843,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["southern-asia"]
     },
     {
         "id": "pg",
         "type": "country",
-        "fullName": "Papua New Guinea",
-        "shortName": "Papua New Guinea",
+        "fullName": "Independent State of Papua New Guinea",
+        "shortName": "PNG",
         "capital": "Port Moresby", 
         "iso3166a2": "pg",
         "iso3166a3": "png",
         "thumbnailUrl": "/assets/images/pg.jfif",
         "flagUrl": "/assets/flags/pg.png",
         "search": "country pg Papua New Guinea",
-        "countryCenter": [50, 20],
+        "countryCenter": [-5.550444442674229, 147.55737304687503],
         "zoom": 8,
         "area": 462840,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["oceania"]
     },
     {
         "id": "ne",
@@ -370,31 +370,31 @@
         "iso3166a3": "sen",
         "thumbnailUrl": "/assets/images/sn.jfif",
         "flagUrl": "/assets/flags/sn.png",
-        "search": "country sn Senegal",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "west africa country sn Senegal",
+        "countryCenter": [13.983852995977797, -14.952392578125002],
+        "zoom": 7,
         "area": 196722,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "za",
         "type": "country",
-        "fullName": "South Africa",
-        "shortName": "South Africa",
+        "fullName": "Republic of South Africa",
+        "shortName": "RSA",
         "capital": "Pretoria, Bloemfontein, Cape Town", 
         "iso3166a2": "za",
         "iso3166a3": "zaf",
         "thumbnailUrl": "/assets/images/za.jfif",
         "flagUrl": "/assets/flags/za.png",
-        "search": "country za South Africa",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "southern africa country za South Africa",
+        "countryCenter": [-29.602118211647333, 24.982910156250004],
+        "zoom": 6,
         "area": 1221037,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-africa"]
     },
     {
         "id": "nz",
@@ -407,12 +407,12 @@
         "thumbnailUrl": "/assets/images/nz.jfif",
         "flagUrl": "/assets/flags/nz.png",
         "search": "country nz New Zealand",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-43.820212573723005, 170.52978515625003],
+        "zoom": 5,
         "area": 270467,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["oceania", "island-country"]
     },
     {
         "id": "nl",
@@ -425,12 +425,12 @@
         "thumbnailUrl": "/assets/images/nl.jfif",
         "flagUrl": "/assets/flags/nl.png",
         "search": "country nl nld Netherlands",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [52.40518085514571, 5.256958007812501],
+        "zoom": 7,
         "area": 41850,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["western-europe"]
     },
     {
         "id": "ga",
@@ -443,12 +443,12 @@
         "thumbnailUrl": "/assets/images/ga.jfif",
         "flagUrl": "/assets/flags/ga.png",
         "search": "country ga Gabon",
-        "countryCenter": [50, 20],
+        "countryCenter": [-0.8393684328926705, 10.695190429687502],
         "zoom": 8,
         "area": 267668,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-africa"]
     },
     {
         "id": "lt",
@@ -461,12 +461,12 @@
         "thumbnailUrl": "/assets/images/lt.jfif",
         "flagUrl": "/assets/flags/lt.png",
         "search": "country lt ltu Lithuania",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [55.1429803127782, 23.186645507812504],
+        "zoom": 7,
         "area": 65300,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["northern-europe"]
     },
     {
         "id": "gb",
@@ -497,17 +497,17 @@
         "thumbnailUrl": "/assets/images/ye.jfif",
         "flagUrl": "/assets/flags/ye.png",
         "search": "country ye Yemen",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [14.91383335497343, 46.48315429687501],
+        "zoom": 6,
         "area": 555000,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["western-asia"]
     },
     {
         "id": "fr",
         "type": "country",
-        "fullName": "France",
+        "fullName": "French Republic",
         "shortName": "France",
         "capital": "Paris", 
         "iso3166a2": "fr",
@@ -515,17 +515,17 @@
         "thumbnailUrl": "/assets/images/fr.jfif",
         "flagUrl": "/assets/flags/fr.png",
         "search": "country fr France",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [46.461114361076554, 0.9558105468750001],
+        "zoom": 6,
         "area": 640679,
         "regions": 20,
         "neigboursCount": 19,
-        "tags": []
+        "tags": ["western-europe"]
     },
     {
         "id": "dk",
         "type": "country",
-        "fullName": "Denmark",
+        "fullName": "Kingdom of Denmark",
         "shortName": "Denmark",
         "capital": "Copenhagen", 
         "iso3166a2": "dk",
@@ -533,17 +533,17 @@
         "thumbnailUrl": "/assets/images/dk.jfif",
         "flagUrl": "/assets/flags/dk.png",
         "search": "country dk Denmark",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [56.361561917851745, 10.068969726562502],
+        "zoom": 7,
         "area": 43094,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["northern-europe"]
     },
     {
         "id": "ke",
         "type": "country",
-        "fullName": "Kenya",
+        "fullName": "Republic of Kenya",
         "shortName": "Kenya",
         "capital": "Nairobi", 
         "iso3166a2": "ke",
@@ -551,12 +551,12 @@
         "thumbnailUrl": "/assets/images/ke.jfif",
         "flagUrl": "/assets/flags/ke.png",
         "search": "country ke Kenya",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [0.2983026071685096, 36.41967773437501],
+        "zoom": 6,
         "area": 580367,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-africa"]
     },
     {
         "id": "kr",
@@ -579,7 +579,7 @@
     {
         "id": "kp",
         "type": "country",
-        "fullName": "North Korea",
+        "fullName": "Democratic People's Republic of Korea (DPRK)",
         "shortName": "Korea (North)",
         "capital": "Pyongyang", 
         "iso3166a2": "kp",
@@ -587,17 +587,17 @@
         "thumbnailUrl": "/assets/images/kp.jfif",
         "flagUrl": "/assets/flags/kp.png",
         "search": "country kp Korea (North)",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [40.46852357842717, 126.91955566406251],
+        "zoom": 7,
         "area": 120540,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-europe"]
     },
     {
         "id": "au",
         "type": "country",
-        "fullName": "Australia",
+        "fullName": "Commonwealth of Australia",
         "shortName": "Australia",
         "capital": "Canberra", 
         "iso3166a2": "au",
@@ -610,12 +610,12 @@
         "area": 7692024,
         "regions": 20,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["oceania"]
     },
     {
         "id": "cr",
         "type": "country",
-        "fullName": "Costa Rica",
+        "fullName": "Republic of Costa Rica",
         "shortName": "Costa Rica",
         "capital": "San Jose", 
         "iso3166a2": "cr",
@@ -623,12 +623,12 @@
         "thumbnailUrl": "/assets/images/cr.jfif",
         "flagUrl": "/assets/flags/cr.png",
         "search": "country cr Costa Rica",
-        "countryCenter": [50, 20],
+        "countryCenter": [9.656773647944252, -84.49310302734376],
         "zoom": 8,
         "area": 51100,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-america"]
     },
     {
         "id": "ao",
@@ -641,8 +641,8 @@
         "thumbnailUrl": "/assets/images/ao.jfif",
         "flagUrl": "/assets/flags/ao.png",
         "search": "country ao ago Angola",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-11.920226182255108, 15.919189453125002],
+        "zoom": 6,
         "area": 1246700,
         "regions": 20,
         "neigboursCount": 5,
@@ -651,7 +651,7 @@
     {
         "id": "az",
         "type": "country",
-        "fullName": "Azerbaijan",
+        "fullName": "Republic of Azerbaijan",
         "shortName": "Azerbaijan",
         "capital": "Kabul", 
         "iso3166a2": "az",
@@ -659,17 +659,17 @@
         "thumbnailUrl": "/assets/images/az.jfif",
         "flagUrl": "/assets/flags/az.png",
         "search": "country az aze Azerbaijan",
-        "countryCenter": [50, 20],
+        "countryCenter": [40.35123906937988, 48.01025390625001],
         "zoom": 8,
         "area": 86600,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": ["landlocked"]
+        "tags": ["landlocked", "western-asia"]
     },
     {
         "id": "at",
         "type": "country",
-        "fullName": "Austria",
+        "fullName": "Republic of Austria",
         "shortName": "Austria",
         "capital": "Vienna", 
         "iso3166a2": "at",
@@ -677,12 +677,12 @@
         "thumbnailUrl": "/assets/images/at.jfif",
         "flagUrl": "/assets/flags/at.png",
         "search": "country at aut Austria",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [47.57338760277524, 13.002319335937502],
+        "zoom": 7,
         "area": 83871,
         "regions": 20,
         "neigboursCount": 8,
-        "tags": ["landlocked", "europe"]
+        "tags": ["landlocked", "europe", "central-europe"]
     },
     {
         "id": "bd",
@@ -695,12 +695,12 @@
         "thumbnailUrl": "/assets/images/bd.jfif",
         "flagUrl": "/assets/flags/bd.png",
         "search": "country bd bgd Bangladesh",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [23.689740703474136, 89.13757324218751],
+        "zoom": 7,
         "area": 147570,
         "regions": 8,
         "neigboursCount": 2,
-        "tags": ["south-asia", "asia"]
+        "tags": ["southern-asia", "asia"]
     },
     {
         "id": "ca",
@@ -790,7 +790,7 @@
         "area": 112492,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-america"]
     },
     {
         "id": "hu",
@@ -826,7 +826,7 @@
         "area": 3287263,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["southern-asia"]
     },
     {
         "id": "jp",
@@ -839,17 +839,17 @@
         "thumbnailUrl": "/assets/images/jp.jfif",
         "flagUrl": "/assets/flags/jp.png",
         "search": "country jp Japan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [35.15379382005375, 136.95556640625003],
+        "zoom": 5,
         "area": 377976,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["island-country", "east-asia"]
     },
     {
         "id": "mx",
         "type": "country",
-        "fullName": "Mexico",
+        "fullName": "United Mexican States",
         "shortName": "Mexico",
         "capital": "Mexico City", 
         "iso3166a2": "mx",
@@ -862,12 +862,12 @@
         "area": 1964375,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["north-america"]
     },
     {
         "id": "gh",
         "type": "country",
-        "fullName": "Ghana",
+        "fullName": "Republic of Ghana",
         "shortName": "Ghana",
         "capital": "Accra", 
         "iso3166a2": "gh",
@@ -875,12 +875,12 @@
         "thumbnailUrl": "/assets/images/gh.jfif",
         "flagUrl": "/assets/flags/gh.png",
         "search": "country gh Ghana",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [8.403049233391831, -1.7468261718750002],
+        "zoom": 7,
         "area": 238533,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "ge",
@@ -893,12 +893,12 @@
         "thumbnailUrl": "/assets/images/ge.jfif",
         "flagUrl": "/assets/flags/ge.png",
         "search": "country ge Georgia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [42.5483989834343, 42.98950195312501],
+        "zoom": 7,
         "area": 69700,
         "regions": 20,
         "neigboursCount": 4,
-        "tags": []
+        "tags": ["east-europe", "western-asia"]
     },
     {
         "id": "er",
@@ -911,17 +911,17 @@
         "thumbnailUrl": "/assets/images/er.jfif",
         "flagUrl": "/assets/flags/er.png",
         "search": "country er Eritrea",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [15.026001143681082, 39.05639648437501],
+        "zoom": 7,
         "area": 117600,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-africa"]
     },
     {
         "id": "ee",
         "type": "country",
-        "fullName": "Estonia",
+        "fullName": "Republic of Estonia",
         "shortName": "Estonia",
         "capital": "Tallinn", 
         "iso3166a2": "ee",
@@ -934,7 +934,7 @@
         "area": 45227,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["northern-europe"]
     },
     {
         "id": "sv",
@@ -957,38 +957,38 @@
     {
         "id": "et",
         "type": "country",
-        "fullName": "Ethiopia",
+        "fullName": "Federal Democratic Republic of Ethiopia",
         "shortName": "Ethiopia",
         "capital": "Addis Ababa",
         "iso3166a2": "et",
         "iso3166a3": "eth",
         "thumbnailUrl": "/assets/images/et.jfif",
         "flagUrl": "/assets/flags/et.png",
-        "search": "country et eth Ethiopia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "landlocked east africa country et eth Ethiopia",
+        "countryCenter": [8.87373486405993, 41.08886718750001],
+        "zoom": 6,
         "area": 1104300,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "horn-of-africa", "east-africa"]
     },
     {
         "id": "eg",
         "type": "country",
-        "fullName": "Egypt",
+        "fullName": "Arab Republic of Egypt",
         "shortName": "Egypt",
         "capital": "Cairo", 
-        "iso3166a2": "ec",
+        "iso3166a2": "eg",
         "iso3166a3": "egy",
         "thumbnailUrl": "/assets/images/eg.jfif",
         "flagUrl": "/assets/flags/eg.png",
-        "search": "country eg Egypt",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "north east africa mediterranean country eg Egypt",
+        "countryCenter": [27.457003113646007, 30.959472656250004],
+        "zoom": 6,
         "area": 1002450,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["north-east-africa", "mediterranean-country"]
     },
     {
         "id": "ec",
@@ -1001,8 +1001,8 @@
         "thumbnailUrl": "/assets/images/ec.jfif",
         "flagUrl": "/assets/flags/ec.png",
         "search": "country ec ecu Ecuador",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-0.253820031440114, -85.27587890625001],
+        "zoom": 6,
         "area": 276841,
         "regions": 20,
         "neigboursCount": 5,
@@ -1045,9 +1045,27 @@
         "tags": []
     },
     {
+        "id": "mw",
+        "type": "country",
+        "fullName": "Republic of Malawi",
+        "shortName": "Malawi",
+        "capital": "Lilongwe", 
+        "iso3166a2": "mw",
+        "iso3166a3": "mwi",
+        "thumbnailUrl": "/assets/images/mw.jfif",
+        "flagUrl": "/assets/flags/mw.png",
+        "search": "country mw Malawi",
+        "countryCenter": [-14.275071731203354, 34.81567382812501],
+        "zoom": 7,
+        "area": 108889,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": ["landlocked", "south-east-africa"]
+    },
+    {
         "id": "pa",
         "type": "country",
-        "fullName": "Panama",
+        "fullName": "Republic of Panama",
         "shortName": "Panama",
         "capital": "Panama City", 
         "iso3166a2": "pa",
@@ -1055,12 +1073,12 @@
         "thumbnailUrl": "/assets/images/pa.jfif",
         "flagUrl": "/assets/flags/pa.png",
         "search": "country pa Panama",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [8.449730480749489, -80.20019531250001],
+        "zoom": 7,
         "area": 75417,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-america", "south-america"]
     },
     {
         "id": "my",
@@ -1073,17 +1091,17 @@
         "thumbnailUrl": "/assets/images/my.jfif",
         "flagUrl": "/assets/flags/my.png",
         "search": "country my mys Malaysia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [2.9844504344943217, 111.13769531250001],
+        "zoom": 6,
         "area": 330803,
         "regions": 20,
         "neigboursCount": 2,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "py",
         "type": "country",
-        "fullName": "Paraguay",
+        "fullName": "Republic of Paraguay",
         "shortName": "Paraguay",
         "capital": "Asuncion", 
         "iso3166a2": "py",
@@ -1091,17 +1109,17 @@
         "thumbnailUrl": "/assets/images/py.jfif",
         "flagUrl": "/assets/flags/py.png",
         "search": "country py pry Paraguay",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-23.23812755882659, -58.86474609375001],
+        "zoom": 6,
         "area": 406752,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "south-america"]
     },
     {
         "id": "om",
         "type": "country",
-        "fullName": "Oman",
+        "fullName": "Sultanate of Oman",
         "shortName": "Oman",
         "capital": "Muscat", 
         "iso3166a2": "om",
@@ -1114,7 +1132,7 @@
         "area": 309500,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["arabian-peninsula", "western-asia"]
     },
     {
         "id": "gr",
@@ -1198,13 +1216,13 @@
         "iso3166a3": "nga",
         "thumbnailUrl": "/assets/images/ng.jfif",
         "flagUrl": "/assets/flags/ng.png",
-        "search": "country ng Nigeria",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "west africa country ng Nigeria",
+        "countryCenter": [9.330106516048309, 8.020019531250002],
+        "zoom": 6,
         "area": 923768,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "pe",
@@ -1217,12 +1235,12 @@
         "thumbnailUrl": "/assets/images/pe.jfif",
         "flagUrl": "/assets/flags/pe.png",
         "search": "country pe Peru",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-8.559333295231589, -76.50878906250001],
+        "zoom": 5,
         "area": 1285216,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-america"]
     },
     {
         "id": "ro",
@@ -1235,12 +1253,12 @@
         "thumbnailUrl": "/assets/images/ro.jfif",
         "flagUrl": "/assets/flags/ro.png",
         "search": "country ro Romania",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [46.0084017627864, 24.927978515625004],
+        "zoom": 7,
         "area": 238397,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-europe"]
     },
     {
         "id": "so",
@@ -1253,12 +1271,12 @@
         "thumbnailUrl": "/assets/images/so.jfif",
         "flagUrl": "/assets/flags/so.png",
         "search": "country so Somalia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [5.086280285988212, 45.94482421875],
+        "zoom": 7,
         "area": 637657,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-africa", "horn-of-africa"]
     },
     {
         "id": "tr",
@@ -1281,7 +1299,7 @@
     {
         "id": "uy",
         "type": "country",
-        "fullName": "Uruguay",
+        "fullName": "Oriental Republic of Uruguay",
         "shortName": "Uruguay",
         "capital": "Montevideo", 
         "iso3166a2": "uy",
@@ -1289,17 +1307,17 @@
         "thumbnailUrl": "/assets/images/uy.jfif",
         "flagUrl": "/assets/flags/uy.png",
         "search": "country uy Uruguay",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-32.72647422812709, -55.95336914062501],
+        "zoom": 7,
         "area": 176215,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-america"]
     },
     {
         "id": "uz",
         "type": "country",
-        "fullName": "Uzbekistan",
+        "fullName": "Republic of Uzbekistan",
         "shortName": "Uzbekistan",
         "capital": "Tashkent", 
         "iso3166a2": "uz",
@@ -1307,17 +1325,17 @@
         "thumbnailUrl": "/assets/images/uz.jfif",
         "flagUrl": "/assets/flags/uz.png",
         "search": "country uz Uzbekistan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [42.48019996901214, 63.54492187500001],
+        "zoom": 6,
         "area": 447400,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-asia"]
     },
     {
         "id": "si",
         "type": "country",
-        "fullName": "Slovenia",
+        "fullName": "Republic of Slovenia",
         "shortName": "Slovenia",
         "capital": "Ljubljana", 
         "iso3166a2": "si",
@@ -1325,17 +1343,17 @@
         "thumbnailUrl": "/assets/images/si.jfif",
         "flagUrl": "/assets/flags/si.png",
         "search": "country si Slovenia",
-        "countryCenter": [50, 20],
+        "countryCenter": [45.97267063741218, 14.699707031250002],
         "zoom": 8,
         "area": 20273,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["mediterranean-country", "central-europe"]
     },
     {
         "id": "sk",
         "type": "country",
-        "fullName": "Slovakia",
+        "fullName": "Slovak Republic",
         "shortName": "Slovakia",
         "capital": "Bratislava", 
         "iso3166a2": "sk",
@@ -1343,17 +1361,17 @@
         "thumbnailUrl": "/assets/images/sk.jfif",
         "flagUrl": "/assets/flags/sk.png",
         "search": "country sk Slovakia",
-        "countryCenter": [50, 20],
+        "countryCenter": [48.703865557300546, 19.418334960937504],
         "zoom": 8,
         "area": 49037,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "central-europe"]
     },
     {
         "id": "zw",
         "type": "country",
-        "fullName": "Zimbabwe",
+        "fullName": "Republic of Zimbabwe",
         "shortName": "Zimbabwe",
         "capital": "Harare", 
         "iso3166a2": "zw",
@@ -1361,17 +1379,17 @@
         "thumbnailUrl": "/assets/images/zw.jfif",
         "flagUrl": "/assets/flags/zw.png",
         "search": "country zw Zimbabwe",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-18.733926113977677, 29.707031250000004],
+        "zoom": 7,
         "area": 390757,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "south-east-africa"]
     },
     {
         "id": "tg",
         "type": "country",
-        "fullName": "Togo",
+        "fullName": "Togolese Republic",
         "shortName": "Togo",
         "capital": "Lome", 
         "iso3166a2": "tg",
@@ -1379,17 +1397,17 @@
         "thumbnailUrl": "/assets/images/tg.jfif",
         "flagUrl": "/assets/flags/tg.png",
         "search": "country tg Togo",
-        "countryCenter": [50, 20],
+        "countryCenter": [8.530232218438567, 0.29663085937500006],
         "zoom": 8,
         "area": 56785,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "es",
         "type": "country",
-        "fullName": "Spain",
+        "fullName": "Kingdom of Spain",
         "shortName": "Spain",
         "capital": "Madrid", 
         "iso3166a2": "es",
@@ -1402,7 +1420,7 @@
         "area": 505992,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["mediterranean-country"]
     },
     {
         "id": "sd",
@@ -1425,7 +1443,7 @@
     {
         "id": "ug",
         "type": "country",
-        "fullName": "Uganda",
+        "fullName": "Republic of Uganda",
         "shortName": "Uganda",
         "capital": "Kampala", 
         "iso3166a2": "ug",
@@ -1438,7 +1456,7 @@
         "area": 241550,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "east-africa"]
     },
     {
         "id": "zm",
@@ -1492,7 +1510,7 @@
         "area": 300000,
         "regions": 20,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "td",
@@ -1551,7 +1569,7 @@
     {
         "id": "bw",
         "type": "country",
-        "fullName": "Botswana",
+        "fullName": "Republic of Botswana",
         "shortName": "Botswana",
         "capital": "Gaborone", 
         "iso3166a2": "bw",
@@ -1564,7 +1582,7 @@
         "area": 581730,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-africa", "south-africa", "landlocked"]
     },
     {
         "id": "id",
@@ -1582,7 +1600,7 @@
         "area": 1910931,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "il",
@@ -1762,12 +1780,12 @@
         "area": 2149690,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["western-asia"]
     },
     {
         "id": "se",
         "type": "country",
-        "fullName": "Sweden",
+        "fullName": "Kingdom of Sweden",
         "shortName": "Sweden",
         "capital": "Stockholm", 
         "iso3166a2": "se",
@@ -1775,12 +1793,12 @@
         "thumbnailUrl": "/assets/images/se.jfif",
         "flagUrl": "/assets/flags/se.png",
         "search": "country se Sudan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [62.29820150449536, 13.908691406250002],
+        "zoom": 5,
         "area": 450295,
         "regions": 20,
         "neigboursCount": 2,
-        "tags": []
+        "tags": ["northern-europe"]
     },
     {
         "id": "th",
@@ -1798,7 +1816,7 @@
         "area": 513120,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-east-asia"]
     },
     {
         "id": "jo",
@@ -1847,8 +1865,8 @@
         "thumbnailUrl": "/assets/images/pt.jfif",
         "flagUrl": "/assets/flags/pt.png",
         "search": "country pt Portugal",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [37.83251054729506, -18.995361328125],
+        "zoom": 6,
         "area": 92090,
         "regions": 20,
         "neigboursCount": 1,
@@ -2063,8 +2081,8 @@
         "thumbnailUrl": "/assets/images/bf.jfif",
         "flagUrl": "/assets/flags/bf.png",
         "search": "country bf Burkina Faso",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [12.578421262714246, -1.8511962890625002],
+        "zoom": 7,
         "area": 274222,
         "regions": 20,
         "neigboursCount": 5,
@@ -2145,7 +2163,7 @@
     {
         "id": "la",
         "type": "country",
-        "fullName": "Laos",
+        "fullName": "Lao People's Democratic Republic",
         "shortName": "Laos",
         "capital": "Vientiane", 
         "iso3166a2": "la",
@@ -2158,7 +2176,7 @@
         "area": 236800,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "south-east-asia"]
     },
     {
         "id": "vn",
@@ -2242,13 +2260,13 @@
         "iso3166a3": "cog",
         "thumbnailUrl": "/assets/images/cg.jfif",
         "flagUrl": "/assets/flags/cg.png",
-        "search": "country cg Congo (Brazzaville)",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "central africa country cg Congo (Brazzaville)",
+        "countryCenter": [0.07631669912256711, 15.754394531250002],
+        "zoom": 6,
         "area": 342000,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-africa"]
     },
     {
         "id": "cd",
@@ -2260,13 +2278,13 @@
         "iso3166a3": "cod",
         "thumbnailUrl": "/assets/images/cd.jfif",
         "flagUrl": "/assets/flags/cd.png",
-        "search": "country cd Congo, (Kinshasa)",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "central africa country cd Congo, (Kinshasa)",
+        "countryCenter": [-5.067113513370723, 21.1376953125],
+        "zoom": 5,
         "area": 2344858,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-africa"]
     },
     {
         "id": "tn",
@@ -2325,7 +2343,7 @@
     {
         "id": "lk",
         "type": "country",
-        "fullName": "Sri Lanka",
+        "fullName": "Democratic Socialist Republic of Sri Lanka",
         "shortName": "Sri Lanka",
         "capital": "Colombo", 
         "iso3166a2": "lk",
@@ -2338,7 +2356,7 @@
         "area": 65610,
         "regions": 20,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["southern-asia", "island-country"]
     },
     {
         "id": "st",
@@ -2392,7 +2410,7 @@
         "area": 7225,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate"]
+        "tags": ["microstate", "south-east-asia"]
     },
     {
         "id": "ad",
@@ -2482,7 +2500,25 @@
         "area": 760,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["persian-gulf", "microstate"]
+        "tags": ["persian-gulf", "microstate", "western-asia"]
+    },
+    {
+        "id": "qa",
+        "type": "country",
+        "fullName": "State of Qatar",
+        "shortName": "Qatar",
+        "capital": "Doha", 
+        "iso3166a2": "qa",
+        "iso3166a3": "qat",
+        "thumbnailUrl": "/assets/images/qa.jfif",
+        "flagUrl": "/assets/flags/qa.png",
+        "search": "country qa qat Qatar",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 760,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": [ "western-asia"]
     },
     {
         "id": "ss",
@@ -2495,12 +2531,12 @@
         "thumbnailUrl": "/assets/images/ss.jfif",
         "flagUrl": "/assets/flags/ss.png",
         "search": "country ss ssd South Sudan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [6.829606150677597, 30.882568359375004],
+        "zoom": 7,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["landlocked", "east-africa", "central-africa"]
     },
     {
         "id": "bj",
@@ -2513,12 +2549,12 @@
         "thumbnailUrl": "/assets/images/bj.jfif",
         "flagUrl": "/assets/flags/bj.png",
         "search": "country bj ben Benin",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [9.151189565713668, 1.9500732421875002],
+        "zoom": 7,
         "area": 0,
-        "regions": 5,
+        "regions": 12,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["western-africa"]
     },
     {
         "id": "bt",
@@ -2531,12 +2567,12 @@
         "thumbnailUrl": "/assets/images/bt.jfif",
         "flagUrl": "/assets/flags/bt.png",
         "search": "country bt btn Benin",
-        "countryCenter": [50, 20],
+        "countryCenter": [27.197974551296372, 90.24444580078126],
         "zoom": 8,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["landlocked", "southern-asia"]
     },
     {
         "id": "ba",
@@ -2572,25 +2608,25 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["landlocked", "south-africa"]
     },
     {
         "id": "lr",
         "type": "country",
-        "fullName": "Liberia",
+        "fullName": "Republic of Liberia",
         "shortName": "Liberia",
-        "capital": "Liberia", 
+        "capital": "Monrovia", 
         "iso3166a2": "lr",
         "iso3166a3": "lbr",
         "thumbnailUrl": "/assets/images/lr.jfif",
         "flagUrl": "/assets/flags/lr.png",
         "search": "country lr lbr Liberia",
-        "countryCenter": [50, 20],
+        "countryCenter": [6.444310932104742, -9.461975097656252],
         "zoom": 8,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["west-africa"]
     },
     {
         "id": "tl",
@@ -2603,12 +2639,12 @@
         "thumbnailUrl": "/assets/images/tl.jfif",
         "flagUrl": "/assets/flags/tl.png",
         "search": "country tl tls Timor-Leste",
-        "countryCenter": [50, 20],
+        "countryCenter": [-9.197003998984497, 125.41717529296876],
         "zoom": 8,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["island-country", "south-east-asia"]
     },
     {
         "id": "tt",
@@ -2621,8 +2657,8 @@
         "thumbnailUrl": "/assets/images/tt.jfif",
         "flagUrl": "/assets/flags/tt.png",
         "search": "country tt tto Timor-Leste",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [10.564904310341356, -61.25289916992188],
+        "zoom": 9,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
@@ -2747,12 +2783,12 @@
         "thumbnailUrl": "/assets/images/vu.jfif",
         "flagUrl": "/assets/flags/vu.png",
         "search": "country vu vut Vanuatu",
-        "countryCenter": [50, 20],
+        "countryCenter": [-15.876809064146757, 167.55249023437503],
         "zoom": 8,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["island-country", "oceania"]
     },
     {
         "id": "vg",
@@ -2783,8 +2819,8 @@
         "thumbnailUrl": "/assets/images/vc.jfif",
         "flagUrl": "/assets/flags/vc.png",
         "search": "country vc vct Saint Vincent and the Grenadines",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [13.342140529043109, -61.38748168945313],
+        "zoom": 9,
         "area": 389,
         "regions": 5,
         "neigboursCount": 0,
@@ -2793,7 +2829,7 @@
     {
         "id": "tk",
         "type": "country",
-        "fullName": "Tokelau",
+        "fullName": "Tokelau Islands",
         "shortName": "Tokelau",
         "capital": "Tokelau", 
         "iso3166a2": "tk",
@@ -2818,13 +2854,13 @@
         "iso3166a3": "tza",
         "thumbnailUrl": "/assets/images/tz.jfif",
         "flagUrl": "/assets/flags/tz.png",
-        "search": "country tz tza Tanzania",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "search": "east africa country tz tza Tanzania",
+        "countryCenter": [-6.154349408500069, 34.26635742187501],
+        "zoom": 6,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["east-africa"]
     },
     {
         "id": "tw",
@@ -2837,8 +2873,8 @@
         "thumbnailUrl": "/assets/images/tw.jfif",
         "flagUrl": "/assets/flags/tw.png",
         "search": "country tw twn Taiwan",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [23.638757660578143, 120.31677246093751],
+        "zoom": 7,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
@@ -2855,8 +2891,8 @@
         "thumbnailUrl": "/assets/images/ma.jfif",
         "flagUrl": "/assets/flags/ma.png",
         "search": "country ma mar Morocco",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [29.670347042428507, -10.920410156250002],
+        "zoom": 5,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
@@ -2891,8 +2927,8 @@
         "thumbnailUrl": "/assets/images/mo.jfif",
         "flagUrl": "/assets/flags/mo.png",
         "search": "country mo mac Macao",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [36.08405791540972, 118.98193359375001],
+        "zoom": 5,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
@@ -2968,7 +3004,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["western-asia"]
     },
     {
         "id": "ki",
@@ -2986,7 +3022,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country", "microstate"]
+        "tags": ["island-country", "microstate", "oceania", "micronesia"]
     },
     {
         "id": "je",
@@ -2998,13 +3034,13 @@
         "iso3166a3": "jey",
         "thumbnailUrl": "/assets/images/je.jfif",
         "flagUrl": "/assets/flags/je.png",
-        "search": "country je jey Jersey",
+        "search": "crown dependency je jey Jersey",
         "countryCenter": [50, 20],
         "zoom": 8,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["channel-islands", "island", "western-europe"]
     },
     {
         "id": "io",
@@ -3034,13 +3070,13 @@
         "iso3166a3": "imn",
         "thumbnailUrl": "/assets/images/im.jfif",
         "flagUrl": "/assets/flags/im.png",
-        "search": "country im imn Isle of Man",
+        "search": "crown dependency im imn Isle of Man",
         "countryCenter": [50, 20],
         "zoom": 8,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["channel-islands"]
     },
     {
         "id": "ht",
@@ -3115,7 +3151,7 @@
         "tags": ["south-america"]
     }, {
         "id": "gu",
-        "type": "unincorporated-territory",
+        "type": "unincorporated-territory-usa",
         "fullName": "The Territory of Guam",
         "shortName": "Guam",
         "capital": "Guam", 
@@ -3123,13 +3159,11 @@
         "iso3166a3": "gum",
         "thumbnailUrl": "/assets/images/gu.jfif",
         "flagUrl": "/assets/flags/gu.png",
-        "search": "country gu gum Guam",
-        "countryCenter": [50, 20],
+        "search": "Unincorporated territories of the United States gu gum Guam",
+        "center": [50, 20],
         "zoom": 8,
         "area": 544,
-        "regions": 5,
-        "neigboursCount": 0,
-        "tags": ["micronesia"]
+        "tags": ["micronesia", "western-pacific-ocean"]
     },
     {
         "id": "gd",
@@ -3148,6 +3182,24 @@
         "regions": 5,
         "neigboursCount": 0,
         "tags": ["island-country", "microstate"]
+    },
+    {
+        "id": "gn",
+        "type": "country",
+        "fullName": "Republic of Guinea",
+        "shortName": "Guinea",
+        "capital": "Guinea", 
+        "iso3166a2": "gn",
+        "iso3166a3": "gin",
+        "thumbnailUrl": "/assets/images/gn.jfif",
+        "flagUrl": "/assets/flags/gn.png",
+        "search": "country gn gin Equatorial Guinea",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 28051,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["west-africa"]
     },
     {
         "id": "gq",
@@ -3213,13 +3265,13 @@
         "iso3166a3": "ggy",
         "thumbnailUrl": "/assets/images/gg.jfif",
         "flagUrl": "/assets/flags/gg.png",
-        "search": "country gg ggy Guernsey",
+        "search": "crown dependency gg ggy Guernsey",
         "countryCenter": [50, 20],
         "zoom": 8,
         "area": 78,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["channel-islands"]
     },
     {
         "id": "fm",
@@ -3237,7 +3289,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country", "microstate"]
+        "tags": ["island-country", "microstate", "micronesia"]
     },
     {
         "id": "fo",
@@ -3327,7 +3379,7 @@
         "area": 29743,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["western-asia", "landlocked"]
     },
     {
         "id": "as",
@@ -3366,6 +3418,42 @@
         "tags": []
     },
     {
+        "id": "gp",
+        "type": "france-overseas-territory",
+        "fullName": "Guadeloupe",
+        "shortName": "Guadeloupe",
+        "capital": "Guadeloupe", 
+        "iso3166a2": "gp",
+        "iso3166a3": "glp",
+        "thumbnailUrl": "/assets/images/gp.jfif",
+        "flagUrl": "/assets/flags/gp.png",
+        "search": "country gl glp Guadeloupe",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 7747,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["caribbean", "leeward-islands"]
+    },
+    {
+        "id": "ms",
+        "type": "france-overseas-territory",
+        "fullName": "Montserrat",
+        "shortName": "Montserrat",
+        "capital": "Montserrat", 
+        "iso3166a2": "ms",
+        "iso3166a3": "msr",
+        "thumbnailUrl": "/assets/images/ms.jfif",
+        "flagUrl": "/assets/flags/ms.png",
+        "search": "country ms msr Montserrat",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 7747,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["caribbean", "leeward-islands"]
+    },
+    {
         "id": "tf",
         "type": "france-overseas-territory",
         "fullName": "The French Southern and Antarctic Lands",
@@ -3381,7 +3469,7 @@
         "area": 7747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["mediterranean-country"]
     },
     {
         "id": "be",
@@ -3484,8 +3572,8 @@
         "thumbnailUrl": "/assets/images/bb.jfif",
         "flagUrl": "/assets/flags/bb.png",
         "search": "country bb brb Barbados",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [13.12977194965304, -59.54383850097657],
+        "zoom": 10,
         "area": 430,
         "regions": 5,
         "neigboursCount": 0,
@@ -3502,12 +3590,12 @@
         "thumbnailUrl": "/assets/images/cf.jfif",
         "flagUrl": "/assets/flags/cf.png",
         "search": "country cf caf Central African Republic",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [6.676300947750442, 20.687255859375],
+        "zoom": 6,
         "area": 622984,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["landlocked", "central-africa"]
     },
     {
         "id": "ci",
@@ -3520,12 +3608,12 @@
         "thumbnailUrl": "/assets/images/ci.jfif",
         "flagUrl": "/assets/flags/ci.png",
         "search": "country ci civ Côte d'Ivoire",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [7.087998274189119, -5.982055664062501],
+        "zoom": 7,
         "area": 322463,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["west-africa"]
     },
     {
         "id": "ck",
@@ -3538,8 +3626,8 @@
         "thumbnailUrl": "/assets/images/ck.jfif",
         "flagUrl": "/assets/flags/ck.png",
         "search": "country ck cok Cook Islands",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-15.184005432954692, -162.39990234375],
+        "zoom": 5,
         "area": 236,
         "regions": 5,
         "neigboursCount": 0,
@@ -3556,7 +3644,7 @@
         "thumbnailUrl": "/assets/images/cv.jfif",
         "flagUrl": "/assets/flags/cv.png",
         "search": "country cv cpv Cabo Verde",
-        "countryCenter": [50, 20],
+        "countryCenter": [15.979679052602291, -24.57916259765625],
         "zoom": 8,
         "area": 4033,
         "regions": 5,
@@ -3574,8 +3662,8 @@
         "thumbnailUrl": "/assets/images/cw.jfif",
         "flagUrl": "/assets/flags/cw.png",
         "search": "country cw cuw Curaçao",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [12.216821905675772, -68.98899078369142],
+        "zoom": 11,
         "area": 444,
         "regions": 5,
         "neigboursCount": 0,
@@ -3592,8 +3680,8 @@
         "thumbnailUrl": "/assets/images/ky.jfif",
         "flagUrl": "/assets/flags/ky.png",
         "search": "country ky cym The Cayman Islands",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [19.48601523790048, -80.80307006835939],
+        "zoom": 9,
         "area": 264,
         "regions": 5,
         "neigboursCount": 0,
@@ -3610,7 +3698,7 @@
         "thumbnailUrl": "/assets/images/dj.jfif",
         "flagUrl": "/assets/flags/dj.png",
         "search": "country dj dji Djibouti",
-        "countryCenter": [50, 20],
+        "countryCenter": [11.90309887921631, 42.392120361328125],
         "zoom": 8,
         "area": 0,
         "regions": 5,
@@ -3627,8 +3715,8 @@
         "thumbnailUrl": "/assets/images/tv.jfif",
         "flagUrl": "/assets/flags/tv.png",
         "search": "country tv tza Tuvalu",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-7.847525565079627, 177.9180908203125],
+        "zoom": 7,
         "area": 26,
         "regions": 5,
         "neigboursCount": 0,
@@ -3645,8 +3733,8 @@
         "thumbnailUrl": "/assets/images/dm.jfif",
         "flagUrl": "/assets/flags/dm.png",
         "search": "country dm dma Dominica",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [15.433015122111032, -61.39400482177735],
+        "zoom": 11,
         "area": 48670,
         "regions": 5,
         "neigboursCount": 0,
@@ -3663,7 +3751,7 @@
         "thumbnailUrl": "/assets/images/do.jfif",
         "flagUrl": "/assets/flags/do.png",
         "search": "country do dom The Dominican Republic",
-        "countryCenter": [50, 20],
+        "countryCenter": [18.71150057552185, -70.78765869140626],
         "zoom": 8,
         "area": 48670,
         "regions": 5,
@@ -3681,8 +3769,8 @@
         "thumbnailUrl": "/assets/images/fj.jfif",
         "flagUrl": "/assets/flags/fj.png",
         "search": "country fj fji Fiji",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-18.364536751951242, 177.57202148437503],
+        "zoom": 6,
         "area": 18274,
         "regions": 5,
         "neigboursCount": 0,
@@ -3699,8 +3787,8 @@
         "thumbnailUrl": "/assets/images/va.jfif",
         "flagUrl": "/assets/flags/va.png",
         "search": "country va vat The Holy See",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [41.903297321070966, 12.453053891658785],
+        "zoom": 18,
         "area": 0.49,
         "regions": 5,
         "neigboursCount": 0,
@@ -3709,7 +3797,7 @@
     {
         "id": "mc",
         "type": "country",
-        "fullName": "Monaco",
+        "fullName": "Principality of Monaco",
         "shortName": "Monaco",
         "capital": "Monaco", 
         "iso3166a2": "mc",
@@ -3717,12 +3805,12 @@
         "thumbnailUrl": "/assets/images/mc.jfif",
         "flagUrl": "/assets/flags/mc.png",
         "search": "country mc mco Monaco",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [43.741550092944024, 7.397360801696778],
+        "zoom": 14,
         "area": 2,
         "regions": 5,
-        "neigboursCount": 0,
-        "tags": ["microstate"]
+        "neigboursCount": 1,
+        "tags": ["microstate", "mediterranean-country"]
     },
     {
         "id": "nr",
@@ -3735,8 +3823,8 @@
         "thumbnailUrl": "/assets/images/nr.jfif",
         "flagUrl": "/assets/flags/nr.png",
         "search": "country nr nru Nauru",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-0.5284410087164103, 166.93854331970218],
+        "zoom": 13,
         "area": 21,
         "regions": 5,
         "neigboursCount": 0,
@@ -3753,8 +3841,8 @@
         "thumbnailUrl": "/assets/images/sm.jfif",
         "flagUrl": "/assets/flags/sm.png",
         "search": "country sm smr San Marino",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [43.93579289215576, 12.436094284057619],
+        "zoom": 13,
         "area": 61,
         "regions": 5,
         "neigboursCount": 1,
@@ -3771,12 +3859,12 @@
         "thumbnailUrl": "/assets/images/mh.jfif",
         "flagUrl": "/assets/flags/mh.png",
         "search": "country mh mhl Marshall Islands",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [9.30623227211278, 169.15649414062503],
+        "zoom": 6,
         "area": 181,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate", "island-country"]
+        "tags": ["microstate", "island-country", "micronesia"]
     },
     {
         "id": "mv",
@@ -3812,7 +3900,7 @@
         "area": 5765,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate", "island-country"]
+        "tags": ["microstate", "island-country", "south-east-asia"]
     },
     {
         "id": "mt",
@@ -3956,25 +4044,7 @@
         "area": 747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
-    },
-    {
-        "id": "np",
-        "type": "country",
-        "fullName": "The Federal Democratic Republic of Nepal",
-        "shortName": "Nepal",
-        "capital": "Nepal", 
-        "iso3166a2": "np",
-        "iso3166a3": "npl",
-        "thumbnailUrl": "/assets/images/np.jfif",
-        "flagUrl": "/assets/flags/np.png",
-        "search": "country np npl Nepal",
-        "countryCenter": [50, 20],
-        "zoom": 8,
-        "area": 747,
-        "regions": 5,
-        "neigboursCount": 0,
-        "tags": []
+        "tags": ["southern-asia", "landlocked"]
     },
     {
         "id": "nu",
@@ -4032,7 +4102,7 @@
     },
     {
         "id": "sz",
-        "type": "australia-external-territory",
+        "type": "country",
         "fullName": "The Kingdom of Eswatini",
         "shortName": "Eswatini",
         "capital": "Eswatini", 
@@ -4046,7 +4116,7 @@
         "area": 747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["landlocked"]
+        "tags": ["landlocked", "south-africa"]
     },
     {
         "id": "sr",
@@ -4087,7 +4157,7 @@
     {
         "id": "sh",
         "type": "british-overseas-territory",
-        "fullName": " Saint Helena, Ascension and Tristan da Cunha",
+        "fullName": "Saint Helena, Ascension and Tristan da Cunha",
         "shortName": "Saint Helena",
         "capital": "Saint Helena", 
         "iso3166a2": "sh",
@@ -4100,7 +4170,135 @@
         "area": 747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["south-atlantic-ocean"]
+    },
+    {
+        "id": "mp",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Commonwealth of the Northern Mariana Islands",
+        "shortName": "CNMI",
+        "capital": "Saipan", 
+        "iso3166a2": "mp",
+        "iso3166a3": "mnp",
+        "thumbnailUrl": "/assets/images/mp.jfif",
+        "flagUrl": "/assets/flags/mp.png",
+        "search": "Unincorporated territories of the United States Northern Mariana Islands",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["micronesia"]
+    },
+    {
+        "id": "johnston-atoll",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Johnston Atoll",
+        "shortName": "Johnston Atoll",
+        "capital": "Johnston Atoll", 
+        "search": "Unincorporated territories of the United States Johnston Atoll",
+        "countryCenter": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "regions": 5,
+        "neigboursCount": 0,
+        "tags": ["micronesia"]
+    },
+    {
+        "id": "kingman-reef",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Kingman Reef",
+        "shortName": "Kingman Reef",
+        "capital": "Kingman Reef", 
+        "search": "Unincorporated territories of the United States Kingman Reef",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["north-pacific-ocean"]
+    },
+    {
+        "id": "howland-island",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Howland Island",
+        "shortName": "Howland Island",
+        "capital": "Howland Island", 
+        "search": "Unincorporated territories of the United States Howland Island",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["central-pacific-ocean"]
+    },
+    {
+        "id": "united-states-virgin-islands",
+        "type": "unincorporated-territory-usa",
+        "fullName": "United States Virgin Islands",
+        "shortName": "United States Virgin Islands",
+        "capital": "United States Virgin Islands", 
+        "search": "Unincorporated territories of the United States United States Virgin Islands",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["caribbean", "leeward-islands"]
+    },
+    {
+        "id": "baker-island",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Baker Island",
+        "shortName": "Baker Island",
+        "capital": "Baker Island", 
+        "search": "Unincorporated territories of the United States Baker Island",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["central-pacific-ocean"]
+    },
+    {
+        "id": "jarvis-island",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Jarvis Island",
+        "shortName": "Jarvis Island",
+        "capital": "Jarvis Island", 
+        "search": "Unincorporated territories of the United States Jarvis Island",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["central-pacific-ocean"]
+    },
+    {
+        "id": "midway-atoll",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Midway Atoll",
+        "shortName": "Midway Atoll",
+        "capital": "Midway Atoll", 
+        "search": "Unincorporated territories of the United States Midway Atoll",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["north-pacific-ocean"]
+    },
+    {
+        "id": "navassa-island",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Navassa Island",
+        "shortName": "Navassa Island",
+        "capital": "Navassa Island", 
+        "search": "Unincorporated territories of the United States Navassa Island",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["western-pacific-ocean"]
+    },
+    {
+        "id": "wake-atoll",
+        "type": "unincorporated-territory-usa",
+        "fullName": "Wake Atoll",
+        "shortName": "Wake Atoll",
+        "capital": "Wake Atoll", 
+        "search": "Unincorporated territories of the United States Wake Atoll",
+        "center": [50, 20],
+        "zoom": 8,
+        "area": 747,
+        "tags": ["western-pacific-ocean"]
     },
     {
         "id": "abkhazia",

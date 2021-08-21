@@ -1,1 +1,62 @@
-[]
+[
+    {
+        "id": "Alibori",
+        "name": "Alibori",
+        "capital": "Kandi"
+    },
+    {
+        "id": "Atakora",
+        "name": "Alibori",
+        "capital": "Natitingou"
+    },
+    {
+        "id": "Atlantique",
+        "name": "Atlantique",
+        "capital": "Allada"
+    },
+    {
+        "id": "Borgou",
+        "name": "Borgou",
+        "capital": "Parakou"
+    },
+    {
+        "id": "Collines",
+        "name": "Collines",
+        "capital": "Dassa-Zoumé"
+    },
+    {
+        "id": "Kouffo",
+        "name": "Kouffo",
+        "capital": "Aplahoué"
+    },
+    {
+        "id": "Donga",
+        "name": "Donga",
+        "capital": "Djougou"
+    },
+    {
+        "id": "Littoral",
+        "name": "Littoral",
+        "capital": "Cotonou"
+    },
+    {
+        "id": "Mono",
+        "name": "Mono",
+        "capital": "Lokossa"
+    },
+    {
+        "id": "Ouémé",
+        "name": "Ouémé",
+        "capital": "Porto-Novo"
+    },
+    {
+        "id": "Plateau",
+        "name": "Plateau",
+        "capital": "Pobè"
+    },
+    {
+        "id": "Zou",
+        "name": "Zou",
+        "capital": "Abomey"
+    }
+]
