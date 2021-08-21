@@ -7,53 +7,11 @@ import Icon from 'components/Icon';
 import { FunctionComponent, memo, useState, MouseEvent } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { GeoJSON } from 'react-leaflet';
-import { GeoJsonObject, MultiPolygon } from 'geojson';
-import './style.scss';
+import { GeoJsonObject, Feature, MultiPolygon } from 'geojson';
 import { useEffect } from 'react';
 import { extractGeoObjectFromText, getTextFromBlob, openFileDialog } from 'appUtils';
-
-const test1 = {
-    "type": "MultiPoint", 
-    "coordinates": [
-        [10.0, 40.0], [40.0, 30.0], [20.0, 20.0], [30.0, 10.0]
-    ]
-} as const
-
-const test2 = {
-    "type": "MultiPolygon", 
-    "coordinates": [
-        [
-            [[40.0, 40.0], [20.0, 45.0], [45.0, 30.0], [40.0, 40.0]]
-        ], 
-        [
-            [[20.0, 35.0], [10.0, 30.0], [10.0, 10.0], [30.0, 5.0], [45.0, 20.0], [20.0, 35.0]],
-            [[30.0, 20.0], [20.0, 15.0], [20.0, 25.0], [30.0, 20.0]]
-        ]
-    ]
-} as const;
-
-const breakDownGeojson = (data: GeoJsonObject) => {
-    let result = new Array<GeoJsonObject>();
-    let header = "None";
-
-    if(data.type === "MultiPolygon") {
-        header = "MultiPolygon";
-        const multiPolygon = data as MultiPolygon;
-        for(const coordinates of multiPolygon.coordinates) {
-
-            const polygon = {
-                type: "Polygon" as const,
-                coordinates
-            }
-
-            result.push(polygon);
-        }
-
-        return [header, result] as [string, GeoJsonObject[]];
-    }
-
-    return [header, result] as [string, GeoJsonObject[]];
-}
+import { breakDownGeojson } from './utils';
+import './style.scss';
 
 type GeoObjectWithId = {
     id: string;
@@ -76,16 +34,7 @@ const InspectGeojson: FunctionComponent = () => {
     });
 
     useEffect(() => {
-        const [header, result] = breakDownGeojson(test2);
-
-        const data = result.map((data, index) => ({
-            id: index.toString(),
-            name: `polygon_${index + 1}`,
-            selected: false,
-            data,
-        }))
-
-        setData({header, data});
+     
     }, []);
 
     const onUpload = async () => {
@@ -104,12 +53,14 @@ const InspectGeojson: FunctionComponent = () => {
 
         const [header, result] = breakDownGeojson(geojsonObject);
 
-        const data = result.map((data, index) => ({
-            id: index.toString(),
-            name: `polygon_${index + 1}`,
-            selected: false,
-            data,
-        }))
+        const data = result.map((data, index) => {
+            return {
+                id: (Date.now() + index).toString(),
+                name: `${data.type}_${index + 1}`,
+                selected: false,
+                data,
+            }
+        });
 
         setData({header, data});
     }
@@ -144,15 +95,15 @@ const InspectGeojson: FunctionComponent = () => {
         })
     }
 
-    return <div className="inspect-geojson">
-        <div className="inspect-geojson__topBar">
+    return <main className="inspect-geojson">
+        <nav className="inspect-geojson__topBar">
             <Breadcrumbs/>
-        </div>
+        </nav>
         <div className="inspect-geojson__container">
             <div className="inspect-geojson__panel">
-                <div className="inspect-geojson__panelTopBar">
+                <nav className="inspect-geojson__panelTopBar">
                     <Icon className="navbar__upload" onClick={onUpload} icon={faUpload}/>
-                </div>
+                </nav>
                 <div className="inspect-geojson__content">
                     <div onClick={onAllSelect} className="inspect-geojson__header">{header}</div>
                     {data.map(pr => <div
@@ -181,7 +132,7 @@ const InspectGeojson: FunctionComponent = () => {
                 </MapContainer>
             </div>
         </div>
-    </div>
+    </main>
 }
 
 export default memo(InspectGeojson);

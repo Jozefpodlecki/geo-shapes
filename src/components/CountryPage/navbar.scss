@@ -1,5 +1,10 @@
 .country-page {
 
+    &__link {
+        margin-left: 125px;
+        font-size: 25px;
+    }
+
     &__navbar {
         display: flex;
         align-items: center;

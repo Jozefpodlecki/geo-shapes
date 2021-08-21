@@ -12,6 +12,7 @@ import './app.scss';
 import WorldPage from 'components/WorldPage';
 import Home from 'components/Home';
 import InspectGeojson from 'components/InspectGeojson';
+import Capitals from 'components/Capitals';
 
 const App: FunctionComponent = () => {
     const [isShowing, setShow] = useState(false);
@@ -29,7 +30,9 @@ const App: FunctionComponent = () => {
             <Route exact path="/explore" component={ExplorePage}/>
             <Route exact path="/draw" component={DrawPage}/>
             <Route exact path="/country/:iso3166a2" component={CountryPage}/>
+            <Route exact path="/country/:iso3166a2/neighbours" component={CountryPage}/>
             <Route exact path="/countries" component={Countries}/>
+            <Route exact path="/capitals" component={Capitals}/>
             <Route exact path="/inspect-geojson" component={InspectGeojson}/>
         </Switch>
         <NotificationContainer/>

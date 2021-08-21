@@ -2,8 +2,11 @@ import { FunctionComponent, MouseEvent, memo } from 'react';
 import { MapType } from './types';
 import Breadcrumbs from 'components/Breadcrumbs';
 import './navbar.scss';
+import { Link } from 'react-router-dom';
 
 type Props = {
+    hasNeigbours: boolean
+    iso3166a2: string;
     flagUrl: string;
     fullName: string;
     mapType: MapType;
@@ -11,6 +14,8 @@ type Props = {
 }
 
 const Navbar: FunctionComponent<Props> = ({
+    hasNeigbours,
+    iso3166a2,
     flagUrl,
     fullName,
     mapType,
@@ -24,9 +29,15 @@ const Navbar: FunctionComponent<Props> = ({
 
     return <div className="country-page__navbar">
         <Breadcrumbs
+            iso3166a2={iso3166a2}
             flagUrl={flagUrl}
             fullName={fullName}
         />
+        <div>
+            {hasNeigbours ? <Link
+                className="country-page__link"
+                to={`/country/${iso3166a2}/neighbours`}>Neighbours</Link> : null}
+        </div>
         <div className="country-page__navbarMapSwitch">
             <div
                 onClick={onMapSelect}

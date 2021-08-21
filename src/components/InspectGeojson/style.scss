@@ -6,6 +6,8 @@
 
     &__content {
         padding: 10px;
+        overflow-y: auto;
+        flex: 1;
     }
 
     &__item {
@@ -30,6 +32,7 @@
     &__container {
         flex: 1;
         display: flex;
+        height: 100%;
     }
 
     &__view {

@@ -4,14 +4,17 @@ import { baseUrl } from 'appConstants';
 import { backgroundImageUrl } from 'appUtils';
 import { FunctionComponent, memo } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import BasicNode from './BasicNode';
 import './breadcrumbs.scss';
 
 type Props = {
+    iso3166a2?: string;
     flagUrl?: string;
     fullName?: string;
 }
 
 const Breadcrumbs: FunctionComponent<Props> = ({
+    iso3166a2,
     flagUrl,
     fullName,
 }) => {
@@ -24,48 +27,39 @@ const Breadcrumbs: FunctionComponent<Props> = ({
             className="breadcrumbs__node" to="/">
             Home
         </NavLink>
-        {pathname === "/inspect-geojson" ? <>
-            <div className="breadcrumbs__separator">
-                <FontAwesomeIcon icon={faChevronRight}/>
-            </div>
-            <NavLink
-                exact
-                activeClassName="breadcrumbs__node--active"
-                className="breadcrumbs__node" to="/inspect-geojson">
-                Inspect Geojson
-            </NavLink>
-        </> : null}
-        {pathname === "/explore" ? <>
-            <div className="breadcrumbs__separator">
-                <FontAwesomeIcon icon={faChevronRight}/>
-            </div>
-            <NavLink
-                exact
-                activeClassName="breadcrumbs__node--active"
-                className="breadcrumbs__node" to="/explore">
-                Explore
-            </NavLink>
-        </> : null}
-        {pathname.includes("/country") || pathname.includes("/countries") ? <>
-            <div className="breadcrumbs__separator">
-                <FontAwesomeIcon icon={faChevronRight}/>
-            </div>
-            <NavLink
-                exact
-                activeClassName="breadcrumbs__node--active"
-                className="breadcrumbs__node" to="/countries">
-                Countries
-            </NavLink>
-        </> : null}
+        <BasicNode
+            match={pathname === "/inspect-geojson"}
+            linkPath="/inspect-geojson"
+            text="Inspect Geojson" />
+        <BasicNode
+            match={pathname === "/explore"}
+            linkPath="/explore"
+            text="Explore" />
+        <BasicNode
+            match={pathname === "/capitals"}
+            linkPath="/capitals"
+            text="Capitals" />
+        <BasicNode
+            match={pathname.includes("/country") || pathname.includes("/countries")}
+            linkPath="/countries"
+            text="Countries" />
         {flagUrl && fullName ? <>
             <div className="breadcrumbs__separator">
                 <FontAwesomeIcon icon={faChevronRight}/>
             </div>
-            <div className="countryNode">
+            <NavLink
+                exact
+                activeClassName="breadcrumbs__node--active"
+                className="countryNode breadcrumbs__node"
+                to={`/country/${iso3166a2}`}>
                 <div className="countryNode__flag" style={backgroundImageUrl(baseUrl + flagUrl)}></div>
                 <div className="countryNode__title">{fullName}</div>
-            </div>
+            </NavLink>
         </>: null}
+        <BasicNode
+            match={pathname.includes("/neighbours")}
+            linkPath={`/country/${iso3166a2}/neighbours`}
+            text="Neigbours" />
     </div>;
 }
 

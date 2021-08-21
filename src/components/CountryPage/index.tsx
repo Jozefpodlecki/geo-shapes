@@ -1,8 +1,8 @@
 import { useCallback, FunctionComponent, useState, useEffect, MouseEvent } from 'react';
 import { Region } from 'models/Region';
-import { getCountry, getCountryGeojson, getCountrySvg, getRegions } from 'api';
+import { getCountry, getCountryGeojson, getCountrySvg, getNeighbours, getRegions } from 'api';
 import { MapContainer, TileLayer, GeoJSON, useMapEvents, Marker, Popup } from 'react-leaflet';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { Country } from "models/GeoObject";
 import { GeoJsonObject } from "geojson";
 import GridLoader from 'react-spinners/GridLoader';
@@ -10,8 +10,10 @@ import SvgMap from './SvgMap';
 import Navbar from './Navbar';
 import RegionTooltip from './RegionTooltip';
 import { MapType } from './types';
-import './index.scss';
 import UnderConstruction from './UnderConstruction';
+import { latLng, point, geoJSON, LatLng, LatLngBoundsExpression, LatLngLiteral } from 'leaflet';
+import MapHandler from './MapHandler';
+import './index.scss';
 
 type State = {
     iso3166a2?: string;
@@ -40,14 +42,25 @@ const CountryPage: FunctionComponent = () => {
     const [geojson, setGeojson] = useState<GeoJsonObject>();
     const [svg, setSvg] = useState<string>("");
     const { iso3166a2 } = useParams<{ iso3166a2: string }>();
+    const location = useLocation();
+
+    const [center, setCenter] = useState<LatLngLiteral>({
+        lat: 51.505,
+        lng: -0.09,
+    });
+    const [bounds, setBounds] = useState<LatLngBoundsExpression>();
+    const [neighbours, setNeighbours] = useState<GeoJsonObject[]>([]);
+    const [hasNeighbours, setHasNeighbours] = useState(false);
+    const neighboursPath = location.pathname.includes("neighbours");
 
     useEffect(() => {
+        setNeighbours([]);
         setState(state => ({
             ...state,
             iso3166a2,
             pageState: "loading",
         }));
-    }, [iso3166a2]);
+    }, [location, iso3166a2]);
 
     useEffect(() => {
 
@@ -55,20 +68,75 @@ const CountryPage: FunctionComponent = () => {
             return;
         }
 
-        (async () => {
-            try {
+        if(neighboursPath) {
+            (async () => {
                 const country = await getCountry(iso3166a2);
-                const regions = await getRegions(iso3166a2);
+                const neighbours = await getNeighbours(iso3166a2);
+                const geojsons = []
 
                 if(!country) {
                     setState(state => ({
                         ...state,
-                        hasError: true,
-                        isLoading: false,
+                        pageState: "error",
                     }));
                     return;
                 }
 
+                const landNeighbours = neighbours?.landNeighbours || [];
+
+                for(const neighbour of landNeighbours) {
+
+                    if(!neighbour.iso3166a2) {
+                        continue;
+                    }
+
+                    const geojson = await getCountryGeojson(neighbour.iso3166a2);
+
+                    if(!geojson) {
+                        continue;
+                    }
+
+                    geojsons.push(geojson!);
+                }
+                console.log(landNeighbours);
+                const concatenatedGeojson = {
+                    type: "FeatureCollection" as const,
+                    features: geojsons,
+                };
+
+                const bounds = geoJSON(concatenatedGeojson).getBounds();
+                setBounds(bounds);
+                setNeighbours(geojsons);
+                setState(state => ({
+                    ...state,
+                    iso3166a2,
+                    country,
+                    regions: [],
+                    pageState: "loaded",
+                }));
+            })();
+            return;
+        }
+
+        (async () => {
+            try {
+                const country = await getCountry(iso3166a2);
+                const regions = await getRegions(iso3166a2);
+                const neighbours = await getNeighbours(iso3166a2);
+
+                if(!country) {
+                    setState(state => ({
+                        ...state,
+                        pageState: "error",
+                    }));
+                    return;
+                }
+
+                const [lat, lng] = country.countryCenter;
+                const bounds = latLng(lat, lng).toBounds(1000000);
+                setBounds(bounds);
+
+                setHasNeighbours(!!neighbours?.landNeighboursCount);
                 setState({
                     iso3166a2,
                     country,
@@ -84,7 +152,7 @@ const CountryPage: FunctionComponent = () => {
             }
         })();
         
-    }, [state])
+    }, [location, state])
 
     const onMouseMove = useCallback((event: globalThis.MouseEvent) => {
         if(state.pageState !== "loaded") {
@@ -159,6 +227,8 @@ const CountryPage: FunctionComponent = () => {
         case "loaded":
             content =  <>
                 <Navbar
+                    hasNeigbours={!neighboursPath && hasNeighbours}
+                    iso3166a2={iso3166a2}
                     flagUrl={state.country.flagUrl}
                     fullName={state.country.fullName}
                     mapType={mapType}
@@ -179,14 +249,19 @@ const CountryPage: FunctionComponent = () => {
                     /> :
                     <MapContainer
                         zoom={state.country.zoom}
-                        center={state.country.countryCenter}
+                        center={center}
                         scrollWheelZoom={true}
                         className="country-page__leafletMap">
                         <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-                        {geojson ? <GeoJSON data={geojson}/> : null}
+                        <MapHandler
+                            center={center}
+                            bounds={bounds}
+                        />
+                        {!neighboursPath && geojson ? <GeoJSON data={geojson}/> : null}
+                        {neighbours.map((pr, index) => <GeoJSON key={index} data={pr}/>)}
                         {state.country.capitalCenter ? <Marker position={state.country.capitalCenter}>
                             <Popup>
                                 {state.country.capital}

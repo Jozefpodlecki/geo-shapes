@@ -1,5 +1,5 @@
 import { baseUrl } from "./appConstants";
-import { Country, GeoObject } from "models/GeoObject";
+import { Country, GeoObject, TerritoryWithCapital } from "models/GeoObject";
 import { Region } from "./models/Region";
 import { GeoJsonObject, FeatureCollection, Feature, Polygon, MultiPolygon } from "geojson";
 import PolygonLookup from "polygon-lookup";
@@ -20,7 +20,7 @@ export const searchGeoObjects = async (options: Options): Promise<GeoObject[]> =
     const geoObjects = await geoObjectsPromise;
 
     return geoObjects
-        .filter(pr => pr.search.toLowerCase().includes(options.phrase))
+        .filter(pr => "search" in pr && pr.search.toLowerCase().includes(options.phrase))
         .slice(0, options.pageSize);
 }
 
@@ -38,6 +38,18 @@ export const getCountries = async ({
     const countries = geoObjects
     .filter(pr => pr.type === "country"
         && pr.search.toLowerCase().includes(phrase)) as Country[];
+
+    return countries.slice(0, pageSize);
+}
+
+export const getCapitals = async ({
+    pageSize,
+    phrase
+}: Options): Promise<TerritoryWithCapital[]> => {
+    const geoObjects = await geoObjectsPromise;
+    const countries = geoObjects
+        .filter(pr => "capital" in pr
+            && pr.search.toLowerCase().includes(phrase)) as TerritoryWithCapital[];
 
     return countries.slice(0, pageSize);
 }
@@ -120,7 +132,15 @@ export const getContinentGeojson = async (continent: string): Promise<GeoJsonObj
         .then(pr => pr.json());
 }
 
-export const getCountryGeojson = (iso3166a2: string): Promise<GeoJsonObject | undefined> => {
-    return fetch(`${baseUrl}/assets/geojson/${iso3166a2}.geojson`)
-        .then(pr => pr.json());
+export const getCountryGeojson = async (iso3166a2: string): Promise<GeoJsonObject | undefined> => {
+    try {
+        const geojson = await fetch(`${baseUrl}/assets/geojson/${iso3166a2}.geojson`)
+            .then(pr => pr.json());   
+
+        return geojson;
+    } catch (error) {
+        debugger;
+        return undefined;
+    }
+     
 }
