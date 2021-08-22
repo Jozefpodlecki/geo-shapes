@@ -358,7 +358,7 @@
         "area": 41284,
         "regions": 26,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["germanophone", "landlocked", "central-europe", "western-europe"]
     },
     {
         "id": "sn",
@@ -682,7 +682,7 @@
         "area": 83871,
         "regions": 20,
         "neigboursCount": 8,
-        "tags": ["landlocked", "europe", "central-europe"]
+        "tags": ["landlocked", "europe", "central-europe", "germanophone"]
     },
     {
         "id": "bd",
@@ -1006,7 +1006,25 @@
         "area": 276841,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["south-america"]
+    },
+    {
+        "id": "me",
+        "type": "country",
+        "fullName": "Montenegro",
+        "shortName": "Montenegro",
+        "capital": "Podgorica", 
+        "iso3166a2": "me",
+        "iso3166a3": "mne",
+        "thumbnailUrl": "/assets/images/me.jfif",
+        "flagUrl": "/assets/flags/me.png",
+        "search": "country me mne Montenegro",
+        "countryCenter": [-0.253820031440114, -85.27587890625001],
+        "zoom": 6,
+        "area": 276841,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": ["south-east-europe"]
     },
     {
         "id": "fi",
@@ -1019,12 +1037,12 @@
         "thumbnailUrl": "/assets/images/fi.jfif",
         "flagUrl": "/assets/flags/fi.png",
         "search": "country fi Finland",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [64.29060355587563, 26.19140625],
+        "zoom": 5,
         "area": 338425,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["northern-europe", "nordic-country"]
     },
     {
         "id": "gt",
@@ -1037,12 +1055,12 @@
         "thumbnailUrl": "/assets/images/gt.jfif",
         "flagUrl": "/assets/flags/gt.png",
         "search": "country gt Guatemala",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [15.794754774886886, -90.13183593750001],
+        "zoom": 7,
         "area": 108889,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["central-america"]
     },
     {
         "id": "mw",
@@ -2945,12 +2963,12 @@
         "thumbnailUrl": "/assets/images/lu.jfif",
         "flagUrl": "/assets/flags/lu.png",
         "search": "country lu lux Luxembourg",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [49.833302593911114, 6.231994628906251],
+        "zoom": 9,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["landlocked"]
+        "tags": ["landlocked", "germanophone"]
     },
     {
         "id": "ls",
@@ -2963,12 +2981,12 @@
         "thumbnailUrl": "/assets/images/ls.jfif",
         "flagUrl": "/assets/flags/ls.png",
         "search": "country ls lso Lesotho",
-        "countryCenter": [50, 20],
+        "countryCenter": [-29.53317861574907, 28.273315429687504],
         "zoom": 8,
         "area": 30355,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": []
+        "tags": ["enclaved-country", "landlocked", "south-africa"]
     },
     {
         "id": "li",
@@ -2981,12 +2999,12 @@
         "thumbnailUrl": "/assets/images/li.jfif",
         "flagUrl": "/assets/flags/li.png",
         "search": "country li lie Liechtenstein",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [47.114771916827536, 9.516906738281252],
+        "zoom": 11,
         "area": 160,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate"]
+        "tags": ["microstate", "germanophone", "central-europe"]
     },
     {
         "id": "kw",
@@ -2999,8 +3017,8 @@
         "thumbnailUrl": "/assets/images/kw.jfif",
         "flagUrl": "/assets/flags/kw.png",
         "search": "country kw kwt Kuwait",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [29.34752316782401, 47.493896484375],
+        "zoom": 9,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
@@ -3017,8 +3035,8 @@
         "thumbnailUrl": "/assets/images/ki.jfif",
         "flagUrl": "/assets/flags/ki.png",
         "search": "country ki kir Kiribati",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-2.614357548623436, -163.38867187500003],
+        "zoom": 5,
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
@@ -3482,12 +3500,12 @@
         "thumbnailUrl": "/assets/images/be.jfif",
         "flagUrl": "/assets/flags/be.png",
         "search": "country be bel Belgium",
-        "countryCenter": [50, 20],
+        "countryCenter": [50.5886092273445, 4.625244140625001],
         "zoom": 8,
         "area": 30528,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["germanophone", "western-europe"]
     },
     {
         "id": "bs",
@@ -3536,12 +3554,12 @@
         "thumbnailUrl": "/assets/images/bz.jfif",
         "flagUrl": "/assets/flags/bz.png",
         "search": "country bz blz Belize",
-        "countryCenter": [50, 20],
+        "countryCenter": [16.89645802887457, -88.62670898437501],
         "zoom": 8,
         "area": 22966,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["microstate"]
+        "tags": ["central-america", "caribbean"]
     },
     {
         "id": "bm",
