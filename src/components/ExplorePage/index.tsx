@@ -19,6 +19,7 @@ import { faClipboard, faList, faUpload } from '@fortawesome/free-solid-svg-icons
 import Icon from 'components/Icon';
 import Breadcrumbs from 'components/Breadcrumbs';
 import './index.scss';
+import OpenStreetMapTileLayer from 'common/OpenStreetMapTileLayer';
 
 type GeoObject = {
     id: string;
@@ -461,10 +462,7 @@ const ExplorePage: FunctionComponent = () => {
                 center={center}
                 scrollWheelZoom={true}
                 className="explore-page__map">
-                <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
+                <OpenStreetMapTileLayer/>
             <MapHandler
                 onAction={onAction}
                 geojsonObjects={geojsonObjects}

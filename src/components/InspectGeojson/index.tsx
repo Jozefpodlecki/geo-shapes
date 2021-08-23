@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { extractGeoObjectFromText, getTextFromBlob, openFileDialog } from 'appUtils';
 import { breakDownGeojson } from './utils';
 import './style.scss';
+import OpenStreetMapTileLayer from 'common/OpenStreetMapTileLayer';
 
 type GeoObjectWithId = {
     id: string;
@@ -119,10 +120,7 @@ const InspectGeojson: FunctionComponent = () => {
                     center={center}
                     scrollWheelZoom={true}
                     className="explore-page__map">
-                    <TileLayer
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
+                    <OpenStreetMapTileLayer/>
                     {data.map(pr => <GeoJSON
                         key={pr.id}
                         style={{

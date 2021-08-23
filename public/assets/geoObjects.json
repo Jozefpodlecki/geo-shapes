@@ -91,6 +91,24 @@
         "tags": ["landlocked"]
     },
     {
+        "id": "mk",
+        "type": "country",
+        "fullName": "The Republic of North Macedonia",
+        "shortName": "North Macedonia",
+        "capital": "Skopje",
+        "iso3166a2": "mk",
+        "iso3166a3": "mkd",
+        "thumbnailUrl": "/assets/images/mk.jfif",
+        "flagUrl": "/assets/flags/mk.png",
+        "search": "country mk mkd North Macedonia",
+        "countryCenter": [46.466250760323675, 102.65625000000001],
+        "zoom": 5,
+        "area": 0,
+        "regions": 20,
+        "neigboursCount": 5,
+        "tags": ["landlocked", "south-east-europe"]
+    },
+    {
         "id": "mn",
         "type": "country",
         "fullName": "Mongolia",
@@ -100,13 +118,13 @@
         "iso3166a3": "mng",
         "thumbnailUrl": "/assets/images/mn.jfif",
         "flagUrl": "/assets/flags/mn.png",
-        "search": "country mn Mongolia",
+        "search": "country mn mng Mongolia",
         "countryCenter": [46.466250760323675, 102.65625000000001],
         "zoom": 5,
         "area": 1564116,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked"]
     },
     {
         "id": "jm",
@@ -192,7 +210,7 @@
         "flagUrl": "/assets/flags/ie.png",
         "search": "country ie Ireland",
         "countryCenter": [53.28146771163926, -8.464965820312502],
-        "zoom": 8,
+        "zoom": 7,
         "area": 70273,
         "regions": 20,
         "neigboursCount": 5,
@@ -281,12 +299,12 @@
         "thumbnailUrl": "/assets/images/ne.jfif",
         "flagUrl": "/assets/flags/ne.png",
         "search": "country ne ner Niger",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [18.011304653125368, 8.481445312500002],
+        "zoom": 6,
         "area": 1267000,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "west-africa"]
     },
     {
         "id": "tm",
@@ -988,7 +1006,7 @@
         "area": 1002450,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": ["north-east-africa", "mediterranean-country"]
+        "tags": ["north-east-africa", "mediterranean-country", "sahara-desert"]
     },
     {
         "id": "ec",
@@ -1456,7 +1474,7 @@
         "area": 1861484,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["sahara-desert", "north-africa", "north-east-africa"]
     },
     {
         "id": "ug",
@@ -1546,7 +1564,7 @@
         "area": 1284000,
         "regions": 20,
         "neigboursCount": 6,
-        "tags": []
+        "tags": ["sahara-desert"]
     },
     {
         "id": "co",
@@ -1973,12 +1991,12 @@
         "thumbnailUrl": "/assets/images/dz.jfif",
         "flagUrl": "/assets/flags/dz.png",
         "search": "country dz Algeria",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [29.706965928765825, -0.30761718750000006],
+        "zoom": 5,
         "area": 2381741,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["sahara-desert", "maghreb", "north-africa"]
     },
     {
         "id": "ir",
@@ -2027,12 +2045,12 @@
         "thumbnailUrl": "/assets/images/mg.jfif",
         "flagUrl": "/assets/flags/mg.png",
         "search": "country mg Madagascar",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [-18.548528946639557, 46.8017578125],
+        "zoom": 6,
         "area": 587041,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["east-africa", "island-country"]
     },
     {
         "id": "ml",
@@ -2045,12 +2063,12 @@
         "thumbnailUrl": "/assets/images/ml.jfif",
         "flagUrl": "/assets/flags/ml.png",
         "search": "country ml Mali",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [17.905055838204774, -4.768066406250001],
+        "zoom": 6,
         "area": 1240192,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["landlocked", "west-africa", "sahara-desert"]
     },
     {
         "id": "cy",
@@ -2063,12 +2081,12 @@
         "thumbnailUrl": "/assets/images/cy.jfif",
         "flagUrl": "/assets/flags/cy.png",
         "search": "country cy Cyprus",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [34.88958878584475, 32.96722412109376],
+        "zoom": 9,
         "area": 9251,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["island-country", "mediterranean-country"]
     },
     {
         "id": "cu",
@@ -2081,12 +2099,12 @@
         "thumbnailUrl": "/assets/images/cu.jfif",
         "flagUrl": "/assets/flags/cu.png",
         "search": "country cu Cuba",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [21.631319015641424, -79.92553710937501],
+        "zoom": 7,
         "area": 109884,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["island-country", "caribbean"]
     },
     {
         "id": "bf",
@@ -2140,7 +2158,7 @@
         "area": 1030700,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": ["africa", "north-west-africa"]
+        "tags": ["africa", "north-west-africa", "sahara-desert"]
     },
     {
         "id": "ve",
@@ -2248,7 +2266,7 @@
         "area": 1676198,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["sahara-desert"]
     },
     {
         "id": "kh",
@@ -2315,12 +2333,12 @@
         "thumbnailUrl": "/assets/images/tn.jfif",
         "flagUrl": "/assets/flags/tn.png",
         "search": "country tn Tunisia",
-        "countryCenter": [50, 20],
-        "zoom": 8,
+        "countryCenter": [33.82999960499924, 9.667968750000002],
+        "zoom": 7,
         "area": 155360,
         "regions": 20,
         "neigboursCount": 5,
-        "tags": []
+        "tags": ["sahara-desert"]
     },
     {
         "id": "de",
@@ -2468,7 +2486,7 @@
     },
     {
         "id": "ai",
-        "type": "country",
+        "type": "british-overseas-territory",
         "fullName": "Anguilla",
         "shortName": "Anguilla",
         "capital": "The Valley", 
@@ -2914,7 +2932,7 @@
         "area": 0,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["island-country"]
+        "tags": ["sahara-desert"]
     },
     {
         "id": "mf",
@@ -4170,7 +4188,7 @@
         "area": 747,
         "regions": 5,
         "neigboursCount": 0,
-        "tags": ["north-west-africa"]
+        "tags": ["north-west-africa", "sahara-desert"]
     },
     {
         "id": "sh",

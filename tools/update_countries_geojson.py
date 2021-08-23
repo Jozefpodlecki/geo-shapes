@@ -14,15 +14,15 @@ countries_metadata_path = os.path.join(script_dir, countries_metadata_path)
 
 def search(list, iso3166a3):
     for i in range(len(list)):
-        if list[i]["iso3166a3"] == iso3166a3:
+        if list[i].get("iso3166a3") == iso3166a3:
             return list[i]
     return None
 
-with open(countries_geojson_path, "r") as file_descriptor:
-    countries_geojson = json.load(file_descriptor)
+with open(countries_geojson_path, "r", encoding='utf-8') as file_descriptor:
+    countries_geojson = json.load(file_descriptor, encoding='utf-8')
 
-with open(countries_metadata_path, "r") as file_descriptor:
-    countries_metadata = json.load(file_descriptor)
+with open(countries_metadata_path, "r", encoding='utf-8') as file_descriptor:
+    countries_metadata = json.load(file_descriptor, encoding='utf-8')
 
 features = []
 
@@ -37,7 +37,7 @@ for country in countries_geojson["features"]:
         country["properties"]["name"] = name
 
         continue
-
+    
     country_metadata = search(countries_metadata, isoA3)
 
     if not country_metadata:

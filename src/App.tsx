@@ -31,6 +31,7 @@ const App: FunctionComponent = () => {
             <Route exact path="/draw" component={DrawPage}/>
             <Route exact path="/country/:iso3166a2" component={CountryPage}/>
             <Route exact path="/country/:iso3166a2/neighbours" component={CountryPage}/>
+            <Route exact path="/bot/:iso3166a2" component={CountryPage}/>
             <Route exact path="/countries" component={Countries}/>
             <Route exact path="/capitals" component={Capitals}/>
             <Route exact path="/inspect-geojson" component={InspectGeojson}/>

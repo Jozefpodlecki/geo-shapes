@@ -12,8 +12,9 @@ import RegionTooltip from './RegionTooltip';
 import { MapType } from './types';
 import UnderConstruction from './UnderConstruction';
 import { latLng, point, geoJSON, LatLng, LatLngBoundsExpression, LatLngLiteral } from 'leaflet';
-import MapHandler from './MapHandler';
 import './index.scss';
+import { GeoJsonObjectWithId } from 'models/GeoJsonObjectWithId';
+import BaseMapContainer from 'common/BaseMapContainer';
 
 type State = {
     iso3166a2?: string;
@@ -39,7 +40,8 @@ const CountryPage: FunctionComponent = () => {
     const [region, setRegion] = useState<Region>();
     const [hasEntered, setEntered] = useState(false);
     const [mapType, setMapType] = useState<MapType>("leaflet");
-    const [geojson, setGeojson] = useState<GeoJsonObject>();
+    const [geojsonObjects, setGeojsonObjects] = useState<GeoJsonObjectWithId[]>([]);
+
     const [svg, setSvg] = useState<string>("");
     const { iso3166a2 } = useParams<{ iso3166a2: string }>();
     const location = useLocation();
@@ -48,13 +50,13 @@ const CountryPage: FunctionComponent = () => {
         lat: 51.505,
         lng: -0.09,
     });
+    const [zoom, setZoom] = useState(5);
     const [bounds, setBounds] = useState<LatLngBoundsExpression>();
-    const [neighbours, setNeighbours] = useState<GeoJsonObject[]>([]);
+    
     const [hasNeighbours, setHasNeighbours] = useState(false);
     const neighboursPath = location.pathname.includes("neighbours");
 
     useEffect(() => {
-        setNeighbours([]);
         setState(state => ({
             ...state,
             iso3166a2,
@@ -98,15 +100,20 @@ const CountryPage: FunctionComponent = () => {
 
                     geojsons.push(geojson!);
                 }
-                console.log(landNeighbours);
+
                 const concatenatedGeojson = {
                     type: "FeatureCollection" as const,
                     features: geojsons,
                 };
 
                 const bounds = geoJSON(concatenatedGeojson).getBounds();
+                
                 setBounds(bounds);
-                setNeighbours(geojsons);
+                setGeojsonObjects(geojsons.map((data, index) => ({
+                    id: index.toString(),
+                    data,
+                })));
+
                 setState(state => ({
                     ...state,
                     iso3166a2,
@@ -123,8 +130,9 @@ const CountryPage: FunctionComponent = () => {
                 const country = await getCountry(iso3166a2);
                 const regions = await getRegions(iso3166a2);
                 const neighbours = await getNeighbours(iso3166a2);
+                const geojson = await getCountryGeojson(iso3166a2);
 
-                if(!country) {
+                if(!country || !geojson) {
                     setState(state => ({
                         ...state,
                         pageState: "error",
@@ -133,8 +141,14 @@ const CountryPage: FunctionComponent = () => {
                 }
 
                 const [lat, lng] = country.countryCenter;
-                const bounds = latLng(lat, lng).toBounds(1000000);
-                setBounds(bounds);
+                
+                setGeojsonObjects([{
+                    id: Date.now().toString(),
+                    data: geojson,
+                }]);
+                setBounds(undefined);
+                setCenter({lat, lng});
+                setZoom(country.zoom);
 
                 setHasNeighbours(!!neighbours?.landNeighboursCount);
                 setState({
@@ -144,7 +158,7 @@ const CountryPage: FunctionComponent = () => {
                     pageState: "loaded",
                 });
             } catch (error) {
-                console.log(error)
+
                 setState(state => ({
                     ...state,
                     pageState: "error",
@@ -188,27 +202,27 @@ const CountryPage: FunctionComponent = () => {
         setEntered(false);
     }
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        (async () => {
+    //     (async () => {
 
-            try {
-                if(mapType === "svg") {
-                    const svg = await getCountrySvg(iso3166a2);
-                    setSvg(svg);
-                }
-                else {
-                    const geojson = await getCountryGeojson(iso3166a2);
-                    setGeojson(geojson);
-                }
-            } catch (error) {
+    //         try {
+    //             if(mapType === "svg") {
+    //                 const svg = await getCountrySvg(iso3166a2);
+    //                 setSvg(svg);
+    //             }
+    //             else {
+    //                 const geojson = await getCountryGeojson(iso3166a2);
+    //                 setGeojson(geojson);
+    //             }
+    //         } catch (error) {
                 
-            }
+    //         }
 
          
-        })();
+    //     })();
        
-    }, [iso3166a2, mapType]);
+    // }, [iso3166a2, mapType]);
 
     const onADLChange = (event: MouseEvent<HTMLDivElement>) => {
         const { level } = event.currentTarget.dataset;
@@ -247,28 +261,19 @@ const CountryPage: FunctionComponent = () => {
                         onMouseMove={onMouseMove}
                         svg={svg}
                     /> :
-                    <MapContainer
-                        zoom={state.country.zoom}
+                    <BaseMapContainer
+                        zoom={zoom}
                         center={center}
-                        scrollWheelZoom={true}
+                        bounds={bounds}
+                        geoJsons={geojsonObjects}
                         className="country-page__leafletMap">
-                        <TileLayer
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
-                        <MapHandler
-                            center={center}
-                            bounds={bounds}
-                        />
-                        {!neighboursPath && geojson ? <GeoJSON data={geojson}/> : null}
-                        {neighbours.map((pr, index) => <GeoJSON key={index} data={pr}/>)}
                         {state.country.capitalCenter ? <Marker position={state.country.capitalCenter}>
                             <Popup>
                                 {state.country.capital}
                             </Popup>
                         </Marker> : null}
                         <DevInfo/>
-                    </MapContainer>}
+                    </BaseMapContainer>}
                 </div>
                 <div className="country-page__footer">
                     <div className="country-page__administrativeDivisions">

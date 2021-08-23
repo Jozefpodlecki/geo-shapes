@@ -7,6 +7,7 @@ import { Geometry } from "geojson";
 import { stringify } from 'wkt';
 import { download, toBase64DataUri } from 'appUtils';
 import './index.scss';
+import OpenStreetMapTileLayer from 'common/OpenStreetMapTileLayer';
 
 type State = {
     geoObjects: GeoObject[];
@@ -132,10 +133,7 @@ const DrawPage: FunctionComponent = () => {
             center={[51.505, -0.09]}
             scrollWheelZoom={true}
             className="draw-page__map">
-            <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+            <OpenStreetMapTileLayer/>
             <MapHandler
                 onChange={onDrawChange}
                 geoObjects={geoObjects}
