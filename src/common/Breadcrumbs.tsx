@@ -40,9 +40,17 @@ const Breadcrumbs: FunctionComponent<Props> = ({
             linkPath="/capitals"
             text="Capitals" />
         <BasicNode
+            match={pathname.includes("/bot") || pathname.includes("/bot")}
+            linkPath="/bots"
+            text="British Overseas territories" />
+        <BasicNode
             match={pathname.includes("/country") || pathname.includes("/countries")}
             linkPath="/countries"
             text="Countries" />
+        <BasicNode
+            match={pathname.includes("/bot")}
+            linkPath={pathname}
+            text={fullName || ""} />
         {flagUrl && fullName ? <>
             <div className="breadcrumbs__separator">
                 <FontAwesomeIcon icon={faChevronRight}/>

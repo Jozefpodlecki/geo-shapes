@@ -1,8 +1,8 @@
 import { MouseEvent, ChangeEvent, FunctionComponent } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { getCountries } from 'api';
-import { Country } from "models/GeoObject";
+import { getBots, getCapitals, getCountries } from 'api';
+import { BritishOverseasTerritory } from "models/GeoObject";
 import Item from './Item';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -10,15 +10,15 @@ import Breadcrumbs from 'common/Breadcrumbs';
 import './index.scss';
 
 type State = {
-    countries: (Country & { toggled?: boolean })[];
+    items: (BritishOverseasTerritory & { toggled?: boolean })[];
     isLoading: boolean;
     hasError: boolean;
 }
 
-const Countries: FunctionComponent = () => {
+const BOTPage: FunctionComponent = () => {
     const [value, setValue] = useState("");
     const [state, setState] = useState<State>({
-        countries: [],
+        items: [],
         isLoading: true,
         hasError: false,
     });
@@ -27,19 +27,19 @@ const Countries: FunctionComponent = () => {
 
         (async () => {
             try {
-                const countries = await getCountries({
+                const items = await getBots({
                     pageSize: 25,
                     phrase: value.toLowerCase(),
                 });
 
                 setState({
-                    countries,
+                    items,
                     isLoading: false,
                     hasError: false,
                 });
             } catch (error) {
                 setState({
-                    countries: [],
+                    items: [],
                     hasError: true,
                     isLoading: false,
                 });
@@ -52,7 +52,7 @@ const Countries: FunctionComponent = () => {
         const { id } = event.currentTarget.dataset;
         setState(state => ({
             ...state,
-            countries: state.countries.map(pr => ({...pr, toggled: pr.id === id ? !pr.toggled : false}))
+            items: state.items.map(pr => ({...pr, toggled: pr.id === id ? !pr.toggled : false}))
         }));
     }
 
@@ -61,7 +61,7 @@ const Countries: FunctionComponent = () => {
         setValue(value);
     }
 
-    return <div className={`countries-page`}>
+    return <div className={`capitals-page`}>
         <Breadcrumbs/>
         <div className="search">
             <div className="search__icon">
@@ -75,14 +75,10 @@ const Countries: FunctionComponent = () => {
                 type="text"/>
         </div>
         <div>
-            <div className="countries-page__headers">
-                <div className="countries-page__header">Full Name</div>
-                <div className="countries-page__header">Capital</div>
-                <div className="countries-page__header">Flag</div>
-                <div className="countries-page__header">ISO 3166-2</div>
-                <div className="countries-page__header">ISO 3166-3</div>
+            <div className="table__headers">
+                <div className="table__header">Territory</div>
             </div>
-            {state.countries.map(pr => <Item
+            {state.items.map(pr => <Item
                 toggled={pr.toggled || false}
                 onClick={onItemClick}
                 key={pr.id}
@@ -92,4 +88,4 @@ const Countries: FunctionComponent = () => {
 }
 
 
-export default Countries;
+export default BOTPage;

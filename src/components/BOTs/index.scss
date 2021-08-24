@@ -1,0 +1,63 @@
+.search {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-bottom: 1px solid gray;
+
+    &__icon {
+        padding: 10px;
+    }
+
+    &__input {
+        padding: 10px;
+        background: transparent;
+        border: none;
+        caret-color: white;
+        color: white;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.capitals-page {
+    letter-spacing: 1px;
+}
+
+.table {
+    &__headers {
+        display: flex;
+        font-size: 25px;
+        padding: 5px 10px;
+        background: gray;
+        font-weight: bold;
+    }
+    
+    &__header {
+        &:nth-child(1) {
+            flex-basis: 250px;
+        }
+    
+        &:nth-child(2) {
+            flex-basis: 200px;
+        }
+    
+        &:nth-child(3) {
+            flex-basis: 130px;
+            text-align: center;
+        }
+    
+        &:nth-child(4) {
+            flex-basis: 150px;
+            
+        }
+    
+        &:nth-child(5) {
+            flex-basis: 100px;
+            
+        }
+    }
+}

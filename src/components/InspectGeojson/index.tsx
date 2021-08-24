@@ -2,7 +2,7 @@ import { faEye } from '@fortawesome/free-regular-svg-icons';
 import { faList, faPen, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { baseUrl } from 'appConstants';
-import Breadcrumbs from 'components/Breadcrumbs';
+import Breadcrumbs from 'common/Breadcrumbs';
 import Icon from 'components/Icon';
 import { FunctionComponent, memo, useState, MouseEvent } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';

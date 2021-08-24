@@ -35,7 +35,7 @@ def match_country(iso31666_country_or_territory, country_or_territory):
 
     ratio = fuzz.ratio(country_or_territory, iso31666_country_or_territory)
 
-    if ratio >= 90:
+    if ratio >= 95:
         country_dict[country_or_territory] = iso31666_country_or_territory
         return True
 

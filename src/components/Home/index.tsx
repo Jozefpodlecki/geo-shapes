@@ -18,6 +18,11 @@ const menuItems = [
         link: "/capitals"
     },
     {
+        icon: faList,
+        text: "List of british overseas territories",
+        link: "/bots"
+    },
+    {
         icon: faPen,
         text: "Draw shapes",
         link: "/draw"

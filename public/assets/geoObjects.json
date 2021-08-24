@@ -1477,6 +1477,85 @@
         "tags": ["sahara-desert", "north-africa", "north-east-africa"]
     },
     {
+        "id": "Somaliland",
+        "type": "disputed-territories",
+        "name": "Somaliland",
+        "tags": ["horn-of-africa"],
+        "center": [50, 20]
+    },
+    {
+        "id": "serranilla-bank",
+        "type": "place",
+        "name": "Serranilla Bank",
+        "tags": ["reef"],
+        "center": [50, 20]
+    },
+    {
+        "id": "ashmore-and-cartier-Islands",
+        "type": "australia-territory",
+        "name": "Ashmore and Cartier Islands",
+        "tags": ["indian-ocean", "reef", "island"],
+        "center": [50, 20]
+    },
+    {
+        "id": "akrotiri-sovereign-base-area",
+        "type": "british-overseas-territory",
+        "fullName": "The Sovereign Base Areas of Akrotiri and Dhekelia",
+        "name": "Akrotiri Sovereign Base Area",
+        "position": [32.9743, 34.5803]
+    },
+    {
+        "id": "US-naval-base-guantanamo-bay",
+        "type": "place",
+        "name": "US Naval Base Guantanamo Bay",
+        "tags": ["military-base", "usa"],
+        "center": [50, 20]
+    },
+    {
+        "id": "scarborough-reef",
+        "type": "disputed archipelago",
+        "name": "Scarborough Reef",
+        "center": [50, 20]
+    },
+    {
+        "id": "spratly-islands",
+        "type": "disputed archipelago",
+        "name": "Spratly Islands",
+        "tags": ["south-china-sea"],
+        "center": [50, 20]
+    },
+    {
+        "id": "baykonur-cosmodrome",
+        "type": "place",
+        "name": "Baykonur Cosmodrome",
+        "tags": ["spaceport", "Kazachstan"],
+        "center": [50, 20]
+    },
+    {
+        "id": "siachen-glacier",
+        "type": "place",
+        "name": "Spratly Islands",
+        "center": [50, 20]
+    },
+    {
+        "id": "coral-sea-islands",
+        "type": "external territory of Australia",
+        "name": "Spratly Islands",
+        "center": [50, 20]
+    },
+    {
+        "id": "clipperton-island",
+        "type": "coral atoll",
+        "name": "Clipperton Island",
+        "center": [50, 20]
+    },
+    {
+        "id": "bajo-nuevo-bank",
+        "type": "reef",
+        "name": "Bajo Nuevo Bank (Petrel Is.)",
+        "center": [50, 20]
+    },
+    {
         "id": "ug",
         "type": "country",
         "fullName": "Republic of Uganda",

@@ -20,12 +20,15 @@
 .list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: auto;
 }
 
 .link {
     padding: 10px 20px;
     border: 1px solid white;
-    margin: 0 10px;
+    margin: 5px 10px;
     display: flex;
     flex-wrap: wrap;
     transition: opacity .3s ease-in;

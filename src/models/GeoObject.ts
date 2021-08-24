@@ -18,9 +18,18 @@ export type Country = {
     tags: string[];
 }
 
+export type BritishOverseasTerritory = {
+    id: string;
+    type: "british-overseas-territory";
+    fullName: string;
+    name?: string;
+    iso3166a2?: string;
+    iso3166a3?: string;
+    position?: [number, number]
+}
+
 export type TerritoryWithCapital = {
-    type: "british-overseas-territory" 
-        | "unincorporated-territory-usa" 
+    type: "unincorporated-territory-usa" 
         | "crown-dependency" 
         | "disputed-territories" 
         | "autonomous-region-of-portugal" 
@@ -40,7 +49,7 @@ export type Continent = {
     search: string;
 }
 
-export type GeoObject = Country | TerritoryWithCapital | Continent;
+export type GeoObject = Country | TerritoryWithCapital | Continent | BritishOverseasTerritory;
 
 export const GeoObjectTypeMap = {
     "british-overseas-territory": "British overseas territory",

@@ -6,7 +6,7 @@ import { TerritoryWithCapital } from "models/GeoObject";
 import Item from './Item';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Breadcrumbs from 'components/Breadcrumbs';
+import Breadcrumbs from 'common/Breadcrumbs';
 import './index.scss';
 
 type State = {

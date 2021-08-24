@@ -1,6 +1,6 @@
 import { FunctionComponent, MouseEvent, memo } from 'react';
 import { MapType } from './types';
-import Breadcrumbs from 'components/Breadcrumbs';
+import Breadcrumbs from 'common/Breadcrumbs';
 import './navbar.scss';
 import { Link } from 'react-router-dom';
 

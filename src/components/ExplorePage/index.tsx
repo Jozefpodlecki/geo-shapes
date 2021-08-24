@@ -17,7 +17,7 @@ import { getContinentFromLatLng, getContinentGeojson, getCountryFromLatLng, getC
 import moment from 'moment';
 import { faClipboard, faList, faUpload } from '@fortawesome/free-solid-svg-icons';
 import Icon from 'components/Icon';
-import Breadcrumbs from 'components/Breadcrumbs';
+import Breadcrumbs from 'common/Breadcrumbs';
 import './index.scss';
 import OpenStreetMapTileLayer from 'common/OpenStreetMapTileLayer';
 

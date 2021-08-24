@@ -1,5 +1,5 @@
 import { baseUrl } from "./appConstants";
-import { Country, GeoObject, TerritoryWithCapital } from "models/GeoObject";
+import { BritishOverseasTerritory, Country, GeoObject, TerritoryWithCapital } from "models/GeoObject";
 import { Region } from "./models/Region";
 import { GeoJsonObject, FeatureCollection, Feature, Polygon, MultiPolygon } from "geojson";
 import PolygonLookup from "polygon-lookup";
@@ -40,6 +40,25 @@ export const getCountries = async ({
         && pr.search.toLowerCase().includes(phrase)) as Country[];
 
     return countries.slice(0, pageSize);
+}
+
+export const getBots = async ({
+    pageSize,
+    phrase
+}: Options): Promise<BritishOverseasTerritory[]> => {
+    const geoObjects = await geoObjectsPromise;
+    const countries = geoObjects
+        .filter(pr => pr.type === "british-overseas-territory") as BritishOverseasTerritory[];
+
+    return countries.slice(0, pageSize);
+}
+
+export const getBot = async (name: string): Promise<BritishOverseasTerritory | undefined> => {
+    const geoObjects = await geoObjectsPromise;
+    const bot = geoObjects.find(pr => pr.type === "british-overseas-territory"
+        && pr.fullName === name) as BritishOverseasTerritory | undefined;
+
+    return bot;
 }
 
 export const getCapitals = async ({

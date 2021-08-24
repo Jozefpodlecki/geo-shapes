@@ -15,6 +15,7 @@ import { latLng, point, geoJSON, LatLng, LatLngBoundsExpression, LatLngLiteral }
 import './index.scss';
 import { GeoJsonObjectWithId } from 'models/GeoJsonObjectWithId';
 import BaseMapContainer from 'common/BaseMapContainer';
+import PositionOnClick from 'components/PositionOnClick';
 
 type State = {
     iso3166a2?: string;
@@ -272,7 +273,7 @@ const CountryPage: FunctionComponent = () => {
                                 {state.country.capital}
                             </Popup>
                         </Marker> : null}
-                        <DevInfo/>
+                        <PositionOnClick/>
                     </BaseMapContainer>}
                 </div>
                 <div className="country-page__footer">
@@ -288,18 +289,6 @@ const CountryPage: FunctionComponent = () => {
     return <div className={`country-page ${state.pageState !== "loaded" ? "center": null}`}>
         {content}
     </div>;
-}
-
-const DevInfo = () => {
-    const map = useMapEvents({
-        click(event) {
-            const { lat, lng } = map.getCenter();
-            
-            console.log([lat, lng], map.getZoom());
-        }
-    })
-
-    return null;
 }
 
 export default CountryPage;
